@@ -16,7 +16,7 @@ Version autonome, sans serveur : ouvrir `dist/nyvo.html` dans Chrome/Chromebook 
 
 ```bash
 npm install               # outils de test et de build uniquement (Playwright, esbuild, police Inter)
-npm test                  # 25 tests de logique (node:test)
+npm test                  # 38 tests de logique et du serveur pilote (node:test)
 npm run test:e2e          # tests Chromium : profils smartphone 390 px et Chromebook 1366 px
 NYVO_URL="file://$PWD/dist/nyvo.html" npm run test:e2e   # mêmes tests sur la version monofichier
 npm run test:legacy       # 12 scénarios hérités du prototype V0.2 (DOM simulé)
@@ -31,6 +31,16 @@ Adresses utiles pour la recette (le paramètre `etat` simule un état) :
 
 Si l'énumération des interfaces réseau échoue, `npm start` continue de servir `localhost` (essai : `NYVO_NO_IFACES=1 npm start`).
 
+## Pilote API-Football (côté serveur)
+
+Intégration préparée mais **non activée** : voir [docs/PILOTE_API_FOOTBALL.md](docs/PILOTE_API_FOOTBALL.md). La clé `API_FOOTBALL_KEY` est un secret serveur, à saisir dans les secrets de l'environnement ou un `.env` local ignoré par Git, jamais dans le dépôt ni dans une conversation.
+
+```bash
+npm run api:check                    # simulation : présence de la clé et coût estimé, aucun appel
+npm run api:check -- --confirmer     # vérifie les saisons accessibles (≈ 3 requêtes)
+NYVO_REAL_MATCHES=1 npm run pilote   # serveur pilote local, vrais matchs seulement si saisons vérifiées
+```
+
 ## Structure
 
 ```
@@ -42,7 +52,8 @@ app/                  prototype (HTML + CSS + modules JS, sans build)
   src/ui/             composants (écussons et drapeaux SVG, icônes, cartes, lignes de match…)
   src/screens/        écrans ; src/overlays/ panneaux (Où regarder, recherche, réglages…)
 dist/nyvo.html        version monofichier générée
-tests/unit, tests/e2e tests de logique et tests navigateur
+server/               serveur pilote : relais API-Football (clé, quota, cache, activation)
+tests/unit, tests/server, tests/e2e   tests de logique, serveur pilote et navigateur
 reference/v0.2/       dossier de reprise V0.2 (maquettes validées, documentation, prototype et tests d'origine)
 reference/v0.4/       maquettes V0.4 validées, inventaire, prompt et décisions d'implémentation V0.4
 docs/                 rapports V0.3 et V0.4, captures et comparaisons

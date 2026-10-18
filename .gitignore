@@ -1,3 +1,8 @@
 node_modules/
 test-results/
 playwright-report/
+# Secrets et données d’exécution du serveur pilote
+.env
+.env.*
+!.env.example
+server/.cache/

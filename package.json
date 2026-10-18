@@ -8,11 +8,13 @@
     "start": "node scripts/serve.mjs app",
     "serve:dist": "node scripts/serve.mjs dist",
     "build": "node scripts/build.mjs",
-    "test": "node --test tests/unit/*.test.mjs",
+    "test": "node --test tests/unit/*.test.mjs tests/server/*.test.mjs",
     "test:e2e": "playwright test",
     "test:legacy": "cd reference/v0.2/03_PROTOTYPE && node tests/journey.cjs",
     "screenshots": "node scripts/screenshots.mjs",
-    "compare": "node scripts/compare.mjs"
+    "compare": "node scripts/compare.mjs",
+    "pilote": "node server/index.mjs",
+    "api:check": "node scripts/api-check.mjs"
   },
   "devDependencies": {
     "@fontsource-variable/inter": "5.2.8",
