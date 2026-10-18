@@ -155,7 +155,7 @@ Les maquettes se contredisent sur quelques points. J'ai tranché comme suit, san
 |---|---|---|
 | Logique (node:test) | `npm test` | 12/12 |
 | Navigateur Chromium, smartphone 390 px + Chromebook 1366 px, app servie | `npm run test:e2e` | 35 réussis, 1 ignoré volontairement (contrôle 360 px réservé au profil smartphone) ; 3 répétitions complètes sans échec |
-| Mêmes tests sur `dist/nyvo.html` en `file://` | `NYVO_URL=file://…/dist/nyvo.html npm run test:e2e` | 35 réussis, 1 ignoré ; 3 répétitions sans échec |
+| Mêmes tests sur `dist/nyvo.html` en `file://` | `NYVO_URL=file://…/dist/nyvo.html npm run test:e2e` | 35 réussis, 1 ignoré ; 3 répétitions sans échec. Les vérifications de persistance après rechargement sont sautées dans ce mode (voir ci-dessous) |
 | Scénarios V0.2 hérités | `npm run test:legacy` | 12/12 (ancien prototype, DOM simulé) |
 
 Les tests navigateur couvrent :
@@ -175,6 +175,8 @@ Les tests navigateur couvrent :
 - le Programme TV ;
 - l'absence de débordement horizontal à 360 px sur 19 écrans ;
 - des cibles d'au moins 40 px et des noms accessibles.
+
+**Constat `file://` :** dans le contexte éphémère de Playwright, Chromium perd parfois tout le `localStorage` au rechargement d'une page ouverte en `file://` (environ 1 fois sur 3 ; la clé est entièrement absente, ce n'est pas un défaut d'écriture de l'application). Servie en HTTP, la persistance a été stable sur toutes les répétitions. Ce comportement n'a pas pu être vérifié dans un vrai profil Chrome. Pour tester les favoris après rechargement, préférez la version servie (`npm start`).
 
 **Limites :** tout a été vérifié dans Chromium. Safari iOS, Firefox, les vrais appareils et les lecteurs d'écran (VoiceOver/TalkBack) n'ont pas été testés. Il n'y a pas d'audit de contraste automatisé.
 
