@@ -6,6 +6,7 @@ const ROUTES = [
   ['bienvenue', /^bienvenue$/],
   ['accueil', /^accueil$/],
   ['matchs', /^matchs$/],
+  ['reels', /^reels$/],
   ['match', /^match\/([\w-]+)$/],
   ['programme', /^programme$/],
   ['actualites', /^actualites$/],

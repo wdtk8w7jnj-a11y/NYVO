@@ -19,6 +19,7 @@ export function defaults() {
     saved: { matches: [], articles: [], videos: [] },
     savedAt: {},
     spoiler: { global: false, teams: [] },
+    pilot: { saved: [], spoilerMatches: [], spoilerTeams: [] },
     // Mes accès, par pays : { FR: { services: { id: { offer, options } }, legacy: [chaînes] } }
     access: {},
     searchHistory: [],
@@ -27,6 +28,7 @@ export function defaults() {
 }
 
 const keep = (list, table) => (Array.isArray(list) ? [...new Set(list.filter((id) => typeof id === 'string' && table[id]))] : []);
+const realIds = list => Array.isArray(list) ? [...new Set(list.filter(n => Number.isSafeInteger(n) && n > 0))].slice(0, 1000) : [];
 
 // Accès déclarés : seuls les services, offres et options du catalogue du pays sont gardés.
 // Une offre inconnue redevient « à préciser » (null) ; rien n'est inventé.
@@ -75,6 +77,7 @@ export function sanitize(raw) {
     saved: { matches: keep(s.matches, MATCH), articles: keep(s.articles, ARTICLE), videos: keep(s.videos, VIDEO) },
     savedAt: raw.savedAt && typeof raw.savedAt === 'object' ? Object.fromEntries(Object.entries(raw.savedAt).filter(([, v]) => typeof v === 'number')) : {},
     spoiler: { global: sp.global === true, teams: keep(sp.teams, TEAM) },
+    pilot: { saved: realIds(raw.pilot?.saved), spoilerMatches: realIds(raw.pilot?.spoilerMatches), spoilerTeams: realIds(raw.pilot?.spoilerTeams) },
     access: sanitizeAccess(raw.access),
     searchHistory: Array.isArray(raw.searchHistory) ? raw.searchHistory.filter((q) => typeof q === 'string' && q.length <= 60).slice(0, 8) : [],
     accountCardDismissed: raw.accountCardDismissed === true,

@@ -1,10 +1,12 @@
 #NYVO
 
-Application football premium (iPhone/Android, web responsive). Ce dépôt contient le **prototype interactif V0.4** (Programme TV, filtres, Mes accès, accès au diffuseur) : données, chaînes, actualités et vidéos **fictives**. Aucune API, aucun direct réel, aucune notification, aucune synchronisation ni lecture vidéo n'est opérationnelle.
+Application football premium (iPhone/Android, web responsive). Cette branche **V0.5 pilote** conserve la démo V0.4 et ajoute un espace **Matchs réels**, connecté à API-Football uniquement lorsque la clé serveur est configurée. Les chaînes, actualités et vidéos de la démo restent fictives. Aucune notification, synchronisation ou lecture vidéo réelle n'est opérationnelle. L'intégration fournisseur attend sa validation avec une vraie clé ; aucune saison actuelle n'est garantie avec l'offre gratuite.
+
+Pour activer le pilote : [docs/PILOTE_API_FOOTBALL.md](docs/PILOTE_API_FOOTBALL.md). Ne communiquez jamais votre clé dans le chat ou GitHub.
 
 ## Lancer
 
-Prérequis : Node.js ≥ 20. L'application elle-même n'a aucune dépendance.
+Prérequis : Node.js ≥ 20.6 (Node 22 ou 24 conseillé). L'application elle-même n'a aucune dépendance.
 
 ```bash
 npm start                 # sert app/ sur http://localhost:4173 (et l'adresse réseau locale pour un smartphone sur le même Wi-Fi)
@@ -16,7 +18,7 @@ Version autonome, sans serveur : ouvrir `dist/nyvo.html` dans Chrome/Chromebook 
 
 ```bash
 npm install               # outils de test et de build uniquement (Playwright, esbuild, police Inter)
-npm test                  # 25 tests de logique (node:test)
+npm test                  # logique, cache, quota, secrets, serveur HTTP (node:test)
 npm run test:e2e          # tests Chromium : profils smartphone 390 px et Chromebook 1366 px
 NYVO_URL="file://$PWD/dist/nyvo.html" npm run test:e2e   # mêmes tests sur la version monofichier
 npm run test:legacy       # 12 scénarios hérités du prototype V0.2 (DOM simulé)

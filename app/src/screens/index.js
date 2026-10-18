@@ -9,6 +9,7 @@ import favorites from './favorites.js';
 import { news, videos, article, video } from './content.js';
 import { team, competition, player } from './entity.js';
 import { access, offer } from './access.js';
+import pilot from './pilot.js';
 
 const notFound = {
   render(ctx) {
@@ -24,6 +25,7 @@ export const SCREENS = {
   bienvenue: onboarding,
   accueil: home,
   matchs: matches,
+  reels: pilot,
   match,
   programme: tvguide,
   actualites: news,

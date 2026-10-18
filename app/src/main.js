@@ -122,7 +122,8 @@ function render(nav = 'update') {
     ? h`<div class="storage-banner" role="note">Stockage local indisponible : vos choix ne seront pas conservés après fermeture.</div>`
     : '';
   appEl.className = `shell screen-${route.name} ${out.nav ? 'has-nav' : ''}`;
-  appEl.innerHTML = String(h`${banner}<main id="main" class="main">${out.body}</main>${out.nav ? bottomNav(out.nav, hrefs) : ''}`);
+  const pilotLink = ['accueil', 'matchs', 'favoris'].includes(route.name) ? h`<a class="pilot-entry" href="#/reels">Découvrir le pilote · Matchs réels <span aria-hidden="true">↗</span></a>` : '';
+  appEl.innerHTML = String(h`${banner}<main id="main" class="main">${pilotLink}${out.body}</main>${out.nav ? bottomNav(out.nav, hrefs) : ''}`);
   document.title = out.title ? `${out.title} · NYVO` : 'NYVO';
 
   const changed = key !== lastScreenKey;
@@ -245,6 +246,7 @@ const COMMON = {
     });
     session.revealed.clear();
     session.revealedContent.clear();
+    session.pilot?.revealed.clear();
     if (store.storageStatus() === 'ok') toast(on ? 'Mode sans spoilers activé.' : 'Mode sans spoilers désactivé.');
   },
   'toggle-team-spoiler': (el) => {
