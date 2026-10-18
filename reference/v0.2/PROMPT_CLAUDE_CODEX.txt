@@ -1,0 +1,32 @@
+Tu reprends NYVO, une application football premium pour iPhone/Android avec accès web responsive. Utilise l'archive NYVO_HANDOFF_V0.2.zip jointe à la Release de ce dépôt. Si elle n'est pas présente dans le clone, télécharge cet asset avec les outils autorisés, ou utilise le dossier fourni. Ne prétends pas l'avoir lu sans avoir accès à son contenu.
+
+OBJECTIF IMMÉDIAT
+Poursuivre le prototype interactif complet, améliorer sa fidélité aux maquettes validées et corriger les parcours avant d'intégrer de vraies données. Le produit cible et le prototype actuel sont deux périmètres distincts. Ne crée pas une page marketing.
+
+ORDRE DE LECTURE OBLIGATOIRE
+1. LIRE_EN_PREMIER.txt.
+2. 04_DOCUMENTATION/01_DECISIONS_PRODUIT.txt, puis 02_ETAT_ET_PROCHAINES_ETAPES.txt et 03_REFERENCES_ET_RECETTE.txt.
+3. INVENTAIRE_MAQUETTES.json et SHA256SUMS.txt : vérifie intégrité et inventaire.
+4. Ouvre et examine les NEUF maquettes de 01_MAQUETTES_VALIDEES, une par une. Les onze images d'archives ne sont pas des références à réintroduire.
+5. Lis 03_PROTOTYPE/dist/index.html et 03_PROTOTYPE/tests/journey.cjs. Exécute les tests depuis 03_PROTOTYPE et explique leur portée réelle.
+
+CONTRAINTES NON NÉGOCIABLES
+NYVO, noir profond et rouge rubis, néons fins, luxe épuré, typographie précise. Pas de retour à l'or, indigo/violet ni style générique. Cinq onglets : Accueil, Matchs, Actualités, Vidéos, Favoris. Dans Favoris : Mon espace et Enregistrés, jamais Je suis.
+Toutes les décisions du dossier restent valides. En cas de contradiction, l'instruction récente explicite du propriétaire prime, puis les décisions écrites, puis les maquettes finales, puis le prototype. Signale une ambiguïté matérielle au lieu de fabriquer une validation.
+Parcours : premier lancement facultatif pays/favoris → Accueil → Matchs → Fiche match → Où regarder → Favoris ; aperçus Actualités/Vidéos. États sans spoilers, diffusion non confirmée, direct interrompu et données limitées.
+Données de démonstration clairement identifiées. Aucune vraie chaîne, couverture mondiale, licence, exclusivité, API, notification, synchronisation ou lecture vidéo ne doit être annoncée sans fonctionnement vérifié. Une donnée absente n'est pas zéro. Aucun mouvement réel de but inventé. Aucun contenu social récupéré sans droits établis.
+Le compte reste facultatif. Révéler un match ou consulter le programme ne requiert pas une inscription. Préférences invité conservées, mode sans spoilers respecté partout.
+
+TRAVAIL ATTENDU
+- Inspecte le nouveau dépôt et son état Git avant modification. Préserve fichiers existants et instructions applicables ; pas d'écrasement global, suppression massive ni fusion automatique. Travaille dans une branche dédiée.
+- Fais un bref état des lieux, puis implémente le parcours central sans te limiter à donner des conseils. Réutilise la base là où utile, refactorise proprement ; ne considère pas le HTML monolithique comme architecture finale imposée.
+- Compare visuellement tes écrans aux références à chaque étape. Reproduis les composants, pas une image plein écran non interactive. Icônes cohérentes, vrais états, contrastes et cibles tactiles accessibles. Préserve la priorité smartphone tout en adaptant Chromebook/PC/tablette.
+- Corrige les limites identifiées dans 02_ETAT_ET_PROCHAINES_ETAPES, en priorisant fidélité visuelle et cohérence du parcours ; ne traite pas des placeholders comme fonctionnalités terminées. Documente les tâches du produit cible qui restent différées.
+- Vérifie navigation réelle, formulaires, dialogues, retour navigateur, filtres/date, recherche, favoris après rechargement, stockage indisponible, sources/chaînes par rencontre, scénarios et spoilers. Tests navigateur si outils disponibles et captures de comparaison ; sinon indique explicitement la limite sans annoncer une recette réussie.
+- Fournis code, commandes de lancement/build/tests, changelog, matrice fonctionnalités implémentées/simulées/différées et captures si possible. Donne un moyen concret de tester avec les outils disponibles. Aucun achat fournisseur ni publication publique ni fusion sans instruction explicite.
+- N'ajoute pas d'autre produit (Phantom IPTV, Pet Home, Nexora). Ne présume pas qu'un autre agent travaille en parallèle.
+
+COMMUNICATION
+Réponds en français, avance de façon organisée, préserve les décisions et distingue faits vérifiés, simulation et travaux restants. Pour une décision visuelle importante, propose une seule question avec SIX choix dont un recommandé. Ne redemande pas les décisions déjà approuvées. Les choix techniques courants réversibles peuvent être résolus par jugement ; fais valider les changements de périmètre ou d'identité.
+
+Commence maintenant par l'audit du dossier et des neuf références, vérifie les 12 scénarios de logique, puis réalise une version du prototype plus fidèle et plus complète. L'intégration de fournisseurs réels intervient dans un second jalon après validation du prototype.

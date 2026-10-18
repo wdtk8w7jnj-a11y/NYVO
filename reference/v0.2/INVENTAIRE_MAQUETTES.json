@@ -1,0 +1,142 @@
+[
+  {
+    "source": "exec-151436ad-6ca3-4e09-842a-d001955a56d2.png",
+    "path": "01_MAQUETTES_VALIDEES/02_MATCHS.png",
+    "status": "validee",
+    "bytes": 1322249,
+    "sha256": "c91b5a46212cf2c784b096f377f27c030ac39b65aa99a43c65fcacb05dc39287"
+  },
+  {
+    "source": "exec-1ff516e4-4cf4-4234-b2d9-a57b03f6b012.png",
+    "path": "02_ARCHIVES_VISUELLES_NON_CANONIQUES/exec-1ff516e4-4cf4-4234-b2d9-a57b03f6b012.png",
+    "status": "archive_non_canonique",
+    "bytes": 2103069,
+    "sha256": "bcfb09df9c842cd291e73980565033424f0f23bc76fc9c847a25024734b525c4"
+  },
+  {
+    "source": "exec-2fb46f17-d550-4c87-a09b-0d175b5d4da4.png",
+    "path": "02_ARCHIVES_VISUELLES_NON_CANONIQUES/exec-2fb46f17-d550-4c87-a09b-0d175b5d4da4.png",
+    "status": "archive_non_canonique",
+    "bytes": 1671166,
+    "sha256": "e2c0d63595d2ec72d182ba9f6e4ad96ca776ae3970d85b337479f887b389150d"
+  },
+  {
+    "source": "exec-3fe6f24d-d254-4d55-99e0-502fadb1aa3a.png",
+    "path": "02_ARCHIVES_VISUELLES_NON_CANONIQUES/exec-3fe6f24d-d254-4d55-99e0-502fadb1aa3a.png",
+    "status": "archive_non_canonique",
+    "bytes": 1660359,
+    "sha256": "a689882bc3c37a4bcd208ae0d62cfc2f1a93899fbbc91073b154632f85173ca1"
+  },
+  {
+    "source": "exec-553e98fe-a0ff-4345-a55e-4572e6e4a73d.png",
+    "path": "01_MAQUETTES_VALIDEES/01_ACCUEIL.png",
+    "status": "validee",
+    "bytes": 1554495,
+    "sha256": "428b41ca67a1c658d5df9198f50796113c3ab2ab1625f453d12a9b2d81e1de18"
+  },
+  {
+    "source": "exec-57ab3ee2-3ce4-476f-ad80-15597cc9a184.png",
+    "path": "02_ARCHIVES_VISUELLES_NON_CANONIQUES/exec-57ab3ee2-3ce4-476f-ad80-15597cc9a184.png",
+    "status": "archive_non_canonique",
+    "bytes": 1561528,
+    "sha256": "9b515f7869fd5227031a12c5bcbf7186864e9d09b7f926e12fd81cf11746533b"
+  },
+  {
+    "source": "exec-6c9c9de8-90c0-4df8-8810-5dd3a8adba81.png",
+    "path": "02_ARCHIVES_VISUELLES_NON_CANONIQUES/exec-6c9c9de8-90c0-4df8-8810-5dd3a8adba81.png",
+    "status": "archive_non_canonique",
+    "bytes": 1732131,
+    "sha256": "a65a948d1aa829711490f61ee724ff419217db952adbfc49813b60e6244d99e0"
+  },
+  {
+    "source": "exec-7cd4d718-5406-460d-a950-c926458de652.png",
+    "path": "01_MAQUETTES_VALIDEES/09_ACTUALITES_ET_VIDEOS.png",
+    "status": "validee",
+    "bytes": 1746588,
+    "sha256": "570a6308aed784e57bec463b1f53483d046da98f6d63ac73f1c0374b0a0d510e"
+  },
+  {
+    "source": "exec-820b8e7e-4bfd-44b1-87ac-a1ccf94fd33a.png",
+    "path": "01_MAQUETTES_VALIDEES/03_FICHE_MATCH.png",
+    "status": "validee",
+    "bytes": 1504199,
+    "sha256": "f8b4e3eb3fe0e3131401b1420115f59e7db3d9303e22426adee1b646b2234255"
+  },
+  {
+    "source": "exec-8806b605-0696-468b-b4e5-9169a0a16781.png",
+    "path": "01_MAQUETTES_VALIDEES/05_SANS_SPOILERS.png",
+    "status": "validee",
+    "bytes": 1497616,
+    "sha256": "52c95a3f7a3b81003a7baf5ca18d82fa01d42d2dc75d649c559b7b1d24e38d8e"
+  },
+  {
+    "source": "exec-8f4d6cca-f2bd-4d32-917f-215058e38c85.png",
+    "path": "02_ARCHIVES_VISUELLES_NON_CANONIQUES/exec-8f4d6cca-f2bd-4d32-917f-215058e38c85.png",
+    "status": "archive_non_canonique",
+    "bytes": 1732016,
+    "sha256": "62bf41b0c0784fa9e4c4421cd731c7ee211897391c4084103927eb353bf13860"
+  },
+  {
+    "source": "exec-9b3bb0dd-91ce-41ed-801a-a0e00d51e76c.png",
+    "path": "01_MAQUETTES_VALIDEES/04_OU_REGARDER.png",
+    "status": "validee",
+    "bytes": 1464444,
+    "sha256": "27be6f10bb062c6d9e920b931f0b731cca5e0525fe7295bc954e684d70900c1e"
+  },
+  {
+    "source": "exec-af3ec514-cc30-48c1-b859-7711edc0e26c.png",
+    "path": "01_MAQUETTES_VALIDEES/07_FAVORIS_MON_ESPACE_ET_ENREGISTRES.png",
+    "status": "validee",
+    "bytes": 1410948,
+    "sha256": "848e02eb41599fe0df0ae031df19d6e2209ad8f56d77bb1b7598e0f502c55ca2"
+  },
+  {
+    "source": "exec-b787d1e7-cc27-4c3c-938d-cd82521f0144.png",
+    "path": "02_ARCHIVES_VISUELLES_NON_CANONIQUES/exec-b787d1e7-cc27-4c3c-938d-cd82521f0144.png",
+    "status": "archive_non_canonique",
+    "bytes": 1618596,
+    "sha256": "d2d65391f123fc037d759de7cd9e218eff617632cc71e4df532d4ff9ad653ef3"
+  },
+  {
+    "source": "exec-b7ec40ce-37d0-4d1d-b49e-e1070660b7c6.png",
+    "path": "01_MAQUETTES_VALIDEES/08_PREMIER_LANCEMENT.png",
+    "status": "validee",
+    "bytes": 1365335,
+    "sha256": "954cbb9ecb38986a82469437da74093d5872053655649659a49aa8c6cbe5497d"
+  },
+  {
+    "source": "exec-be82d7be-90a1-4403-84e4-b5573cda55c3.png",
+    "path": "02_ARCHIVES_VISUELLES_NON_CANONIQUES/exec-be82d7be-90a1-4403-84e4-b5573cda55c3.png",
+    "status": "archive_non_canonique",
+    "bytes": 2118564,
+    "sha256": "cc1c0923a7c6ddf0255b3e78d7d013c216744030ae2970191a70861e9603f2c2"
+  },
+  {
+    "source": "exec-d2489b16-ead5-48bc-8d30-83d987e2400c.png",
+    "path": "02_ARCHIVES_VISUELLES_NON_CANONIQUES/exec-d2489b16-ead5-48bc-8d30-83d987e2400c.png",
+    "status": "archive_non_canonique",
+    "bytes": 2062627,
+    "sha256": "64e505a5a69c192d67f390b88898593d4ab48074576a369c5ed81efc0df72ae7"
+  },
+  {
+    "source": "exec-f0b73632-4e62-4846-af57-d10748c0dc82.png",
+    "path": "02_ARCHIVES_VISUELLES_NON_CANONIQUES/exec-f0b73632-4e62-4846-af57-d10748c0dc82.png",
+    "status": "archive_non_canonique",
+    "bytes": 1732121,
+    "sha256": "de892f80882c141cf83654c6f901d0e4e6e9d8e655211654bcb0365cec6d9ef5"
+  },
+  {
+    "source": "exec-f2afd17b-3461-4ef3-a158-5975eca10928.png",
+    "path": "02_ARCHIVES_VISUELLES_NON_CANONIQUES/exec-f2afd17b-3461-4ef3-a158-5975eca10928.png",
+    "status": "archive_non_canonique",
+    "bytes": 1658483,
+    "sha256": "957e30aa27c17d8664efc4a5d8510d4a6c2fae4d0d859b510a747254c4d2116e"
+  },
+  {
+    "source": "exec-f6777e15-9d12-48c0-b6b5-8dd256f5c6ab.png",
+    "path": "01_MAQUETTES_VALIDEES/06_DIFFUSION_NON_CONFIRMEE_ET_DIRECT_INTERROMPU.png",
+    "status": "validee",
+    "bytes": 1588045,
+    "sha256": "3f5bc0ddf1fddeddf135cec0dbe5dd24e625cf09cac89d5970b39aca8c54ba7a"
+  }
+]
