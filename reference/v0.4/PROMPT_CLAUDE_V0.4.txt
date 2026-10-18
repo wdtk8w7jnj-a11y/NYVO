@@ -1,0 +1,98 @@
+NYVO — MISSION V0.4 POUR CLAUDE CODE / CODEX
+
+Tu dois développer et livrer la V0.4 du prototype NYVO à partir de la V0.3 existante. Réalise les modifications, les tests et la documentation ; ne t’arrête pas à un plan.
+
+DÉPÔT ET POINT DE DÉPART
+Dépôt : https://github.com/wdtk8w7jnj-a11y/NYVO
+Branche V0.3 : claude/youthful-euler-lgq3fj
+Dernier commit audité : f013a9baad491419eecc99a51f9271cfbd893a5c.
+Commence par vérifier l’état distant. Si la branche a avancé, inspecte les changements avant de poursuivre. Pars du travail V0.3, même si main ne contient encore que le README. Crée une branche de travail V0.4 depuis ce travail et conserve tout l’historique. Pas de fusion dans main, de publication publique, de suppression de branche, d’achat ni d’abonnement fournisseur dans cette mission.
+
+Lis README.md, docs/RAPPORT_V0.3.md et les décisions dans reference/v0.2/04_DOCUMENTATION. Lis les éventuels AGENTS.md applicables. Inspecte le code et les tests existants. Décompresse le dossier joint NYVO_V0.4_CLAUDE.zip, vérifie SHA256SUMS.txt et examine ses neuf maquettes une à une. Si la pièce jointe est absente, demande-la : ne prétends pas avoir vu ses images.
+
+OBJECTIF
+Compléter le Programme TV et le parcours Mes accès selon les nouvelles maquettes validées, en préservant les parcours V0.3. Le prototype reste intégralement fictif : pas de vrais matchs, de vrais diffuseurs, de vraies vidéos, de connexion à un fournisseur ou d’ouverture externe en mode démo.
+
+IDENTITÉ ET PÉRIMÈTRE PRÉSERVÉS
+Noir profond, cartes anthracite fumées, blanc et argent, touches rubis et néons fins. Finition premium, lisible et sobre. Reprends les composants existants ; pas de refonte ni de framework supplémentaire sans nécessité démontrée.
+Cinq onglets : Accueil, Matchs, Actualités, Vidéos, Favoris. Favoris conserve Mon espace et Enregistrés. Consultation et préférences sans compte. Pays FR, BE, CH, UK, ES, IT, DE conservés ; seule la couverture réellement présente en démonstration est affichée. Ne prétends pas que les données TV sont confirmées dans tous les pays.
+Maintiens sans spoilers, recherche, favoris, navigation Retour, accessibilité, stockage local et migration. L’anglais, les comptes synchronisés, les notifications réelles, les applications natives, les données réelles et le hors connexion complet restent hors de ce lot ; n’affiche pas ces fonctions comme opérationnelles.
+
+1. PROGRAMME TV — TROIS VUES COHÉRENTES
+Maquettes 01, 02, 03.
+- Ajouter Horaire / Chaîne / Match. Même jeu de données et mêmes filtres dans les trois vues.
+- Horaire : chronologie globale selon les instants réels, avec gestion du fuseau et du passage de minuit.
+- Chaîne : regroupement par chaîne, ordre chronologique interne.
+- Match : regrouper avant-match, match intégral, multiplex et après-match. Plusieurs options simultanées sont possibles et doivent être clairement distinguées.
+- Ne pas confondre multiplex et match intégral. Modéliser le format distinctement du moment de la soirée. Éviter de dupliquer un même programme multiplex regroupant plusieurs rencontres dans les vues horaire/chaîne.
+- Dates, pays, fuseau et dernière vérification visibles ; démo explicite. Les horaires prévisionnels restent étiquetés comme tels.
+- Diffusions non confirmées : rubrique séparée, sans chaîne attribuée ni faux lien. Le défaut de la maquette 01 (rencontre 21 h placée après 23 h) doit être corrigé dans le code et les captures.
+- Conserver la vue, la date, les filtres et la position au retour de la fiche ou d’un panneau.
+
+2. FILTRES DÉTAILLÉS
+Maquette 04.
+- Favoris ; compétitions ; accès Tous / Gratuit / Payant ; types Avant-match / Match intégral / Multiplex / Après-match ; Mes accès ; afficher les diffusions non confirmées.
+- Sélections multiples pour compétitions et types. Les filtres se combinent de façon cohérente.
+- Réinitialiser remet le brouillon des filtres aux valeurs par défaut ; Appliquer seul valide. Fermer, Échap ou Retour annule les changements non appliqués.
+- Les réglages rapides et le panneau détaillé représentent le même état appliqué. Pas de différence cachée entre les vues.
+- Un état vide doit expliquer le périmètre sans inventer de cause, avec ajustement des filtres et accès à tout le programme.
+- Avec Mes accès activé, les diffusions non confirmées ne peuvent pas être présentées comme incluses. Les exclure des correspondances, expliquer cette règle et permettre de revenir à tout le programme.
+
+3. MES ACCÈS — SERVICES, OFFRES, OPTIONS
+Maquettes 05 et 06.
+La V0.3 stocke des identifiants de chaînes dans prefs.services : remplacer ce raccourci par un modèle explicite, sans perdre les préférences historiques.
+- Catalogue fictif séparant service, offre, option et chaîne, avec pays et état/date de vérification de la correspondance.
+- Recherche de service, sélection facultative, choix d’offre, options supplémentaires indépendantes.
+- Vision Sport Démo : Pack Essentiel inclut Sport Démo 1 ; Pack Football inclut Sport Démo 1 et 2 ; Option Sport Plus ajoute Sport Démo 3 uniquement si déclarée et vérifiée. Les autres données de démo doivent rester cohérentes.
+- Arena Démo peut être sélectionné avec offre à préciser : inclusion non confirmée et exclusion du filtre Mes accès, sans prétendre que l’utilisateur n’a pas de droits.
+- Les libellés de la maquette sont fictifs. Aucun prix ni achat, aucun identifiant diffuseur ni vérification du compte de l’utilisateur.
+- Vérifier une correspondance offre/chaîne ne signifie pas authentifier la possession d’un abonnement. Employer « offre déclarée ».
+- Aucun abonnement souscrit depuis NYVO. Enregistrer/Confirmer ne fait que conserver les préférences locales.
+- Migration des anciennes sélections de chaînes : les conserver comme accès historiques à préciser ; ne pas inventer une offre vérifiée. Conserver les favoris, enregistrements, historique et choix sans spoilers existants. Valider les valeurs stockées et gérer le stockage indisponible comme en V0.3.
+- Les accès sont associés au pays. Changer le pays ne doit pas faire passer une offre française pour compatible ailleurs.
+- Si une offre manque, proposer de garder le service à préciser et de voir toutes les diffusions ; ne pas inventer son contenu.
+
+4. PROGRAMME AVEC MES ACCÈS ACTIVÉ
+Maquette 07.
+- Afficher le filtre actif, les offres qui permettent des correspondances vérifiées et Gérer mes services.
+- Correspondances uniquement à partir de l’offre et des options déclarées pour le pays concerné, sans ajouter automatiquement les chaînes payantes ou gratuites absentes de ces offres.
+- Indiquer « Chaînes incluses dans ton offre déclarée » et la nature fictive de la vérification.
+- « Voir tout le programme » enlève uniquement le filtre Mes accès et garde les autres critères.
+- Corriger la phrase V0.3 « Aucune de vos offres sélectionnées ne diffuse ce match » par « Aucune diffusion confirmée ne correspond à tes offres renseignées ».
+- Distinguer aucune préférence, aucune correspondance et correspondance non vérifiée ; actions utiles pour modifier les accès ou afficher toutes les diffusions. Ces états sont des compléments fonctionnels, pas de nouvelles maquettes déjà validées.
+
+5. ACCÈS AU DIFFUSEUR
+Maquette 08.
+- Depuis Où regarder ou une diffusion, ouvrir un panneau indiquant match, format, horaire, pays, chaîne, service, destination et gratuit/payant selon les données.
+- Expliciter l’abonnement requis et l’inclusion éventuelle dans l’offre déclarée. Connexion et droits d’accès restent gérés par le diffuseur.
+- Prévoir dans le modèle un lien compatible vers la page du match dans l’application, puis un site officiel en secours. En mode démo, les boutons montrent une simulation explicite, sans appel réseau ni ouverture externe.
+- Employer un domaine réservé fictif, par exemple vision-sport.example, étiqueté comme tel. Pas d’URL commerciale inventée.
+- Aucun lecteur de match ni abonnement vendu par NYVO. Pas de redirection automatique.
+
+6. LIEN INDISPONIBLE
+Maquette 09.
+- Message : le lien direct vers ce match n’est pas disponible ; ne pas en déduire que la diffusion est annulée.
+- Actions : Ouvrir le site officiel, Voir les autres diffusions, Signaler le lien. Toujours simulées en démo.
+- Ne pas afficher un lien « officiel » s’il n’existe pas dans les données. Prévoir alors seulement les actions disponibles.
+- Le signalement demande un geste explicite. Ne pas afficher « envoyé » si aucun service ne reçoit le signalement ; utiliser « Simulation de signalement » ou une sauvegarde locale explicitement annoncée.
+
+COHÉRENCE DES MAQUETTES ET DES DONNÉES
+Les images représentent des intentions UI ; elles contiennent quelques divergences avec la V0.3. Conserver les identifiants et la cohérence du catalogue existant. En particulier Lyon Nord – Berlin Union a une diffusion dans la V0.3 mais sert d’exemple non confirmé dans les nouvelles images : utiliser le scénario non confirmé existant ou le match déjà non confirmé pour démontrer cet état, sans modifier arbitrairement sa diffusion dans tout le catalogue. Garder les équipes masculines/féminines distinctes.
+Aucun score, but, déplacement, chaîne, inclusion d’offre ou vérification réelle ne doit être inventé. Données absentes ≠ zéro ; diffusion inconnue ≠ absence de diffusion. Préserver les horaires et chaînes en mode sans spoilers.
+
+ACCESSIBILITÉ ET ADAPTATION
+Mobile en priorité : 360/390 px, puis Chromebook et tablette. Aucun débordement horizontal. Cibles tactiles pratiques, contrastes lisibles, focus visible. Dialogues correctement nommés, focus capturé/restauré, Échap et Retour cohérents. Champs radio et cases à cocher avec libellés, états accessibles, aucun code couleur seul. Respecter la préférence de réduction des animations.
+
+CORRECTION TECHNIQUE REPÉRÉE LORS DE L’AUDIT
+Les 12 tests unitaires V0.3 et npm run build ont réussi indépendamment. Les tests navigateur n’ont pas pu redémarrer dans l’environnement de l’audit car scripts/serve.mjs appelle networkInterfaces() sans protection : uv_interface_addresses peut échouer. Rendre cet affichage d’adresses locales facultatif, capturer l’erreur et continuer à servir localhost. Ne pas présenter cette restriction comme un défaut rencontré sur l’appareil de l’utilisateur. Vérifier le démarrage normal et le cas où l’énumération des interfaces échoue.
+
+VALIDATION ET LIVRAISON
+- Exécuter les suites existantes appropriées et ajouter des tests ciblés des nouvelles règles : ordre/format multiplex, cohérence des trois vues, application/annulation des filtres, migration, options non sélectionnées, correspondance non vérifiée, changement de pays, état vide, lien indisponible et absence d’ouverture externe en démo.
+- Vérifier la navigation clavier/Retour, la conservation des favoris et le sans spoilers sur les nouveaux parcours.
+- Construire dist/nyvo.html et vérifier son fonctionnement. Signaler les limites file:// de persistance, sans promettre une installation native iPhone.
+- Tester dans un vrai navigateur disponible. Captures mobile et Chromebook des nouvelles vues ; comparer visuellement aux maquettes, corriger les défauts visibles. Safari iOS seulement si réellement testé.
+- Séparer clairement tests exécutés, résultats et blocages. Ne jamais compter un test ignoré ou impossible comme réussi.
+- Ajouter les neuf maquettes, cet inventaire et les décisions V0.4 au dépôt, sans écraser les références V0.2. Fournir docs/RAPPORT_V0.4.md et mettre README à jour.
+- Le rapport doit indiquer réalisé/simulé/différé, corrections, résultats de tests, chemins des captures et procédure de recette smartphone/Chromebook.
+- Commits sur la branche V0.4, puis ouvrir une PR en brouillon vers la branche d’intégration appropriée. Expliquer toute dépendance à la branche V0.3 non fusionnée et éviter les PR empilées ambiguës. Ne fusionner aucune PR et ne publier aucun site dans cette mission.
+- Finir avec branche, commit, lien PR, instructions exactes pour tester et limites restantes. Ne pas déclarer NYVO prêt pour la production.

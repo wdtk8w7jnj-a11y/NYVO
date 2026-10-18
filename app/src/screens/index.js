@@ -8,6 +8,7 @@ import tvguide from './tvguide.js';
 import favorites from './favorites.js';
 import { news, videos, article, video } from './content.js';
 import { team, competition, player } from './entity.js';
+import { access, offer } from './access.js';
 
 const notFound = {
   render(ctx) {
@@ -33,6 +34,8 @@ export const SCREENS = {
   equipe: team,
   competition,
   joueur: player,
+  acces: access,
+  offre: offer,
   introuvable: notFound,
   racine: home,
 };

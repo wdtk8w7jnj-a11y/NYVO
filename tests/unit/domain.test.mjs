@@ -6,7 +6,8 @@ import { TEAM, TEAMS, CHANNEL } from '../../app/src/data/catalog.js';
 import { ARTICLES, VIDEOS } from '../../app/src/data/content.js';
 import { broadcastFor, isMasked, contentMasked, matchSummary, scenarioOf, standingsMasked } from '../../app/src/domain/matchState.js';
 import { selectMatches, groupByCompetition, homeHighlights, isPinnedMatch } from '../../app/src/domain/matchList.js';
-import { guideEntries, homeProgramme } from '../../app/src/domain/tvGuide.js';
+import { guide, homeProgramme } from '../../app/src/domain/tvGuide.js';
+import { PROGRAMMES } from '../../app/src/data/programmes.js';
 import { search, normalize } from '../../app/src/domain/search.js';
 import { newsFeed, videoFeed } from '../../app/src/domain/feeds.js';
 import { time, dayKey, addDays } from '../../app/src/domain/time.js';
@@ -19,10 +20,10 @@ test('jeu de données : références cohérentes et équipes masculines/féminin
   for (const m of MATCHES) {
     assert.ok(TEAM[m.home] && TEAM[m.away], m.id);
     assert.equal(TEAM[m.home].gender, TEAM[m.away].gender, `${m.id} oppose deux équipes de même catégorie`);
-    for (const b of Object.values(m.broadcasts || {})) {
-      for (const o of b.options) assert.ok(CHANNEL[o.channel], `chaîne inconnue ${o.channel}`);
-      for (const s of b.schedule) assert.ok(CHANNEL[s.channel], `chaîne inconnue ${s.channel}`);
-    }
+  }
+  for (const p of Object.values(PROGRAMMES).flat()) {
+    assert.ok(CHANNEL[p.channel], `chaîne inconnue ${p.channel}`);
+    for (const id of p.matches) assert.ok(MATCH[id], `rencontre inconnue ${id}`);
   }
   const ids = new Set(TEAMS.map((t) => t.id));
   assert.equal(ids.size, TEAMS.length);
@@ -108,14 +109,13 @@ test('accueil : favoris épinglés et programme du jour', () => {
   assert.equal(homeProgramme('2026-10-18', prefs({ country: 'IT' }), session()), null);
 });
 
-test('programme TV : chronologique, filtres gratuit/payant et Mes accès', () => {
+test('programme TV : chronologique, filtre payant', () => {
   const p = prefs();
-  const all = guideEntries({ day: '2026-10-18' }, p, session());
+  const all = guide({ day: '2026-10-18' }, p, session()).entries;
   const times = all.map((e) => e.at);
   assert.deepEqual(times, [...times].sort());
-  assert.ok(guideEntries({ day: '2026-10-18', filter: 'gratuit' }, p, session()).every((e) => e.access === 'Gratuit'));
-  assert.equal(guideEntries({ day: '2026-10-18', myAccess: true }, p, session()).length, 0);
-  assert.ok(guideEntries({ day: '2026-10-18', myAccess: true }, prefs({ services: ['sd1'] }), session()).every((e) => e.channel === 'sd1'));
+  const paid = guide({ day: '2026-10-18', filters: { favorites: false, competitions: [], access: 'payant', types: ['avant', 'integral', 'multiplex', 'apres'], mine: false, unconfirmed: true } }, p, session()).entries;
+  assert.equal(paid.length, all.length);
 });
 
 test('recherche : accents, abréviations, catégories, aucun spoiler', () => {

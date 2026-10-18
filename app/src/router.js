@@ -16,6 +16,8 @@ const ROUTES = [
   ['equipe', /^equipe\/([\w-]+)$/],
   ['competition', /^competition\/([\w-]+)$/],
   ['joueur', /^joueur\/([\w-]+)$/],
+  ['acces', /^acces$/],
+  ['offre', /^acces\/([\w-]+)$/],
 ];
 
 export function parse(hash) {

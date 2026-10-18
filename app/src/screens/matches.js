@@ -18,10 +18,10 @@ export function readMatchesQuery(ctx) {
   };
 }
 
-export function dateNav(day, k = 'matches') {
+export function dateNav(day, k = 'matches', sub = '') {
   return h`<div class="date-nav">
     <button class="icon-btn" data-action="day-shift" data-value="-1" aria-label="Jour précédent" data-k="${k}-prev">${icon('chevron-left')}</button>
-    <button class="date-center" data-action="open" data-overlay="date" data-k="${k}-date" aria-label="Choisir la date, actuellement ${longDayLabel(day)}">${icon('calendar')}<span>${dayLabel(day)}</span></button>
+    <button class="date-center" data-action="open" data-overlay="date" data-k="${k}-date" aria-label="Choisir la date, actuellement ${longDayLabel(day)}${sub ? `. ${sub}` : ''}">${icon('calendar')}<span class="date-text"><span>${dayLabel(day)}</span>${sub ? h`<small>${sub}</small>` : ''}</span></button>
     <button class="icon-btn" data-action="day-shift" data-value="1" aria-label="Jour suivant" data-k="${k}-next">${icon('chevron-right')}</button>
   </div>`;
 }

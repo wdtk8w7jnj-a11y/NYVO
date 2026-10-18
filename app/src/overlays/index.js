@@ -13,6 +13,7 @@ import { normalize } from '../domain/search.js';
 import { pitchSchema } from '../screens/match.js';
 import watch from './watch.js';
 import searchOverlay from './search.js';
+import { filters, broadcaster } from './guide.js';
 
 const country = {
   render(ctx) {
@@ -56,8 +57,8 @@ const settings = {
           ? followedTeams.map((id) => switchControl(`${TEAM[id].name} · ${TEAM[id].gender === 'F' ? 'féminine' : 'masculine'}`, p.spoiler.teams.includes(id), { action: 'toggle-team-spoiler', k: `ts-${id}`, id }))
           : h`<p class="small">Suivez une équipe pour la protéger individuellement.</p>`}
         <p class="small">Une rencontre révélée le reste jusqu’à la fermeture de l’application.</p></section>
-      <section><h3>Mes accès</h3><p class="small">Facultatif. Sélection locale, sans connexion à vos comptes de diffuseurs.</p>
-        ${CHANNELS.map((c) => h`<label class="check-line"><input type="checkbox" data-change="set-service" data-id="${c.id}"${attr('checked', p.services.includes(c.id))} data-k="ss-${c.id}"><span>${c.name} · ${c.access}</span></label>`)}</section>
+      <section><h3>Mes accès</h3><p class="small">Facultatif. Services et offres déclarés pour ${COUNTRY[p.country].name}, sans identifiant ni abonnement.</p>
+        <a class="btn btn-ghost btn-sm" href="#/acces" data-k="set-access">Gérer mes services</a></section>
       <section><h3>Alertes</h3><p class="small">Non disponibles dans ce prototype : aucune notification n’est envoyée.</p>
         <button class="btn btn-ghost btn-sm" data-action="open-sub" data-overlay="alertes" data-k="set-alerts">En savoir plus</button></section>
       <section><h3>Compte</h3><p class="small">Facultatif. Non disponible dans ce prototype : vos préférences restent sur cet appareil.</p></section>
@@ -65,20 +66,13 @@ const settings = {
         <p class="small">${status === 'ok' ? 'Préférences enregistrées dans ce navigateur.' : 'Stockage local indisponible : vos choix seront perdus à la fermeture.'}</p>
         <div class="btn-row"><button class="btn btn-ghost btn-sm" data-action="restart-onboarding" data-k="set-restart">Revoir le premier lancement</button>
         <button class="btn btn-ghost btn-sm danger" data-action="open-sub" data-overlay="effacer" data-k="set-reset">Effacer mes préférences</button></div></section>
-      <section><h3>À propos</h3><p class="small">NYVO · Prototype V0.3. Données, chaînes, actualités et vidéos fictives. Aucune API, aucun direct réel, aucune lecture vidéo ni notification.</p></section>
+      <section><h3>À propos</h3><p class="small">NYVO · Prototype V0.4. Données, chaînes, programmes, offres, actualités et vidéos fictives. Aucune API, aucun direct réel, aucune lecture vidéo ni notification.</p></section>
       </div>`,
     };
   },
   actions: {
     'noop-lang': (el, ctx) => {
       if (el.dataset.value === 'en') ctx.toast('L’interface anglaise n’est pas encore disponible.');
-    },
-    'set-service': (el, ctx) => {
-      ctx.save((s) => {
-        const i = s.services.indexOf(el.dataset.id);
-        if (i >= 0) s.services.splice(i, 1);
-        else s.services.push(el.dataset.id);
-      });
     },
     'open-sub': (el, ctx) => ctx.router.go(replaceOverlay(ctx, el.dataset.overlay), { replace: true }),
     'restart-onboarding': (el, ctx) => {
@@ -98,7 +92,7 @@ const resetConfirm = {
   render() {
     return {
       title: 'Effacer mes préférences ?',
-      body: h`<p>Pays, favoris, éléments enregistrés, accès et historique de recherche seront supprimés de cet appareil.</p>
+      body: h`<p>Pays, favoris, éléments enregistrés, accès déclarés et historique de recherche seront supprimés de cet appareil.</p>
         <div class="btn-row"><button class="btn btn-ghost" data-action="close" data-k="reset-cancel" autofocus>Annuler</button><button class="btn btn-primary" data-action="confirm-reset" data-k="reset-ok">Effacer</button></div>`,
     };
   },
@@ -247,4 +241,6 @@ export const OVERLAYS = {
   compte: account,
   pourquoi: why,
   moment,
+  filtres: filters,
+  diffuseur: broadcaster,
 };

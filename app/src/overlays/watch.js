@@ -1,33 +1,53 @@
-// Panneau « Où regarder » (planches 04 et 06).
+// Panneau « Où regarder » (planches V0.2 04 et 06, complété en V0.4 par Mes accès).
 import { h, attr } from '../ui/html.js';
 import { icon } from '../ui/icons.js';
 import { crest } from '../ui/crest.js';
 import { flag } from '../ui/flags.js';
 import { segmented } from '../ui/components.js';
-import { CHANNELS, COMPETITION, COUNTRIES, COUNTRY, TEAM } from '../data/catalog.js';
+import { COMPETITION, COUNTRIES, COUNTRY, TEAM } from '../data/catalog.js';
+import { SERVICE } from '../data/access.js';
 import { MATCH } from '../data/matches.js';
 import { broadcastFor, matchTitle } from '../domain/matchState.js';
-import { KIND_LABEL } from '../domain/tvGuide.js';
+import { TYPE_LABEL, typeOf } from '../domain/tvGuide.js';
+import { declared, accessState } from '../domain/access.js';
 import { time, verifiedLabel } from '../domain/time.js';
 
 export function watchMatchId(ctx) {
   return ctx.route.name === 'match' ? ctx.route.id : ctx.route.query.ref;
 }
 
-function option(o, i, ctx) {
+function option(o, i, ctx, d) {
   const featured = i === 0;
-  const expanded = featured || ctx.session.watchExpanded === o.channel;
+  const hit = d.verified.get(o.channel);
   return h`<li class="bc-option ${featured ? 'is-featured' : ''}">
     <div class="bc-option-head">
       <span class="bc-logo">${icon('tv', { size: 30 })}</span>
-      <div class="bc-option-text"><b>${o.channelName}</b><span>${o.medium} · ${o.access}</span>${o.subscription ? h`<span class="lockline">${icon('lock', { size: 16 })}Abonnement requis</span>` : ''}</div>
+      <div class="bc-option-text"><b>${o.channelName}</b><span>${o.medium} · ${o.access}</span>${o.subscription ? h`<span class="lockline">${icon('lock', { size: 16 })}Abonnement requis</span>` : ''}
+        ${o.format === 'Multiplex' ? h`<span class="small">Multiplex : ${o.matches.length} rencontres en alternance</span>` : ''}
+        ${hit ? h`<span class="pg-included">${icon('check', { size: 16 })}Incluse dans ton offre déclarée (${hit.label})</span>` : ''}</div>
       <span class="badge ${featured ? 'badge-ruby' : 'badge-dark'}">${o.format}</span>
     </div>
-    ${expanded
-      ? h`<button class="btn btn-primary btn-block" data-action="open-broadcaster" data-k="bc-go-${o.channel}">Ouvrir chez le diffuseur${icon('external', { size: 20 })}</button>
-         <p class="bc-dest">Destination : ${o.destination}<br><small>Lien illustratif · démo — aucun site n’est ouvert</small></p>`
-      : h`<button class="btn btn-ghost btn-sm bc-more" data-action="watch-expand" data-value="${o.channel}" aria-expanded="false" data-k="bc-more-${o.channel}">Voir l’accès${icon('chevron-right', { size: 18 })}</button>`}
+    <button class="btn ${featured ? 'btn-primary' : 'btn-ghost'} btn-block" data-action="open" data-overlay="diffuseur" data-ref="${o.id}" data-k="bc-go-${o.id}">Ouvrir chez le diffuseur${icon('external', { size: 20 })}</button>
+    <p class="bc-dest">Disponible sur ${SERVICE[o.service]?.name || 'service non précisé'} · lien fictif · démo</p>
   </li>`;
+}
+
+function mineContent(b, ctx, d) {
+  const state = accessState(d);
+  if (state === 'aucune-preference') {
+    return h`<div class="card access-pick"><p><b>Renseigne tes services (facultatif)</b></p><p class="small">Sélection locale, sans identifiant ni connexion à un compte diffuseur. Toutes les diffusions restent consultables.</p>
+      <a class="btn btn-outline btn-sm" href="#/acces" data-k="watch-config">Configurer mes services</a></div>`;
+  }
+  if (state === 'non-verifiee') {
+    return h`<div class="card access-pick"><p><b>Correspondance non vérifiée</b></p><p class="small">${d.pending.map((p) => p.service.name).join(', ') || 'Tes accès historiques'} : offre à préciser. Ces accès ne sont pas utilisés pour filtrer les diffusions.</p>
+      <div class="btn-row"><a class="btn btn-outline btn-sm" href="#/acces" data-k="watch-manage">Gérer mes services</a><button class="btn btn-ghost btn-sm" data-action="watch-view" data-value="toutes" data-k="see-all">Voir toutes les diffusions</button></div></div>`;
+  }
+  const options = b.options.filter((o) => d.verified.has(o.channel));
+  if (!options.length) {
+    return h`<div class="card access-pick"><p><b>Aucune diffusion confirmée ne correspond à tes offres renseignées.</b></p><p class="small">Offres déclarées : ${d.offers.map((o) => `${o.service.name} · ${o.label}`).join(' ; ')}.</p>
+      <div class="btn-row"><button class="btn btn-ghost btn-sm" data-action="watch-view" data-value="toutes" data-k="see-all">Voir toutes les diffusions</button><a class="btn btn-ghost btn-sm" href="#/acces" data-k="watch-manage">Gérer mes services</a></div></div>`;
+  }
+  return h`<ul class="bc-options">${options.map((o, i) => option(o, i, ctx, d))}</ul>`;
 }
 
 export default {
@@ -36,9 +56,8 @@ export default {
     if (!match) return { title: 'Où regarder', body: h`<p>Rencontre introuvable.</p>` };
     const country = COUNTRY[ctx.prefs.country];
     const b = broadcastFor(match, ctx.prefs.country, ctx.session);
+    const d = declared(ctx.prefs, ctx.prefs.country);
     const view = ctx.session.watchView || 'toutes';
-    const mine = ctx.prefs.services;
-    const options = view === 'mes-acces' ? b.options.filter((o) => mine.includes(o.channel)) : b.options;
     const provisional = b.schedule.filter((s) => s.provisional);
     let list;
     if (!b.confirmed) {
@@ -47,14 +66,10 @@ export default {
         <p>Cette absence d’information ne signifie pas que le match ne sera pas diffusé.</p>
         <p class="small">${b.verifiedAt ? `Vérifié le ${verifiedLabel(b.verifiedAt, country.tz)} · Démo` : 'Aucune donnée de diffusion pour ce pays dans la démonstration.'}</p>
         <button class="btn btn-outline btn-block" data-action="refresh-broadcast-sheet" data-k="sheet-refresh">Actualiser</button></div>`;
-    } else if (view === 'mes-acces' && (!mine.length || ctx.session.editServices)) {
-      list = h`<div class="card access-pick"><p><b>Indiquez vos accès (facultatif)</b></p><p class="small">Sélection locale, sans connexion à un compte diffuseur. Toutes les diffusions restent consultables.</p>
-        ${CHANNELS.map((c) => h`<label class="check-line"><input type="checkbox" data-change="toggle-service" data-id="${c.id}"${attr('checked', mine.includes(c.id))} data-k="svc-${c.id}"><span>${c.name} · ${c.access}</span></label>`)}
-        ${mine.length ? h`<button class="btn btn-outline btn-sm" data-action="services-done" data-k="svc-done">Terminé</button>` : ''}</div>`;
-    } else if (!options.length) {
-      list = h`<div class="card"><p>Aucune de vos offres sélectionnées ne diffuse ce match.</p><button class="text-btn ruby" data-action="watch-view" data-value="toutes" data-k="see-all">Voir toutes les diffusions</button></div>`;
+    } else if (view === 'mes-acces') {
+      list = mineContent(b, ctx, d);
     } else {
-      list = h`<ul class="bc-options">${options.map((o, i) => option(o, i, ctx))}</ul>`;
+      list = h`<ul class="bc-options">${b.options.map((o, i) => option(o, i, ctx, d))}</ul>`;
     }
     return {
       title: 'Où regarder',
@@ -71,12 +86,11 @@ export default {
         ${b.confirmed ? segmented([['toutes', 'Toutes les diffusions'], ['mes-acces', 'Mes accès']], view, { action: 'watch-view', label: 'Diffusions affichées', cls: 'seg-lg' }) : ''}
         ${b.confirmed ? h`<h3 class="watch-time">Match à ${time(match.kickoff, country.tz)}</h3>` : ''}
         ${list}
-        ${view === 'mes-acces' && mine.length && b.confirmed && !ctx.session.editServices ? h`<button class="text-btn small" data-action="services-edit" data-k="svc-edit">Modifier mes accès</button>` : ''}
         ${b.confirmed && b.schedule.length
           ? h`<h3>Toute la soirée</h3><ul class="evening">${b.schedule.map(
-              (s) => h`<li><span class="ev-time">${time(s.at, country.tz)}</span><span class="ev-text"><b>${KIND_LABEL[s.kind]}</b><span>${s.channelName}${s.medium ? ` · ${s.medium}` : ''}</span></span></li>`,
+              (s) => h`<li><span class="ev-time">${time(s.at, country.tz)}</span><span class="ev-text"><b>${TYPE_LABEL[typeOf(s)]}</b><span>${s.channelName}${s.medium ? ` · ${s.medium}` : ''}</span></span></li>`,
             )}</ul>
-            ${provisional.length ? h`<p class="note">${icon('clock', { size: 20 })}${provisional.map((s) => KIND_LABEL[s.kind]).join(', ')} : horaire prévisionnel.</p>` : ''}`
+            ${provisional.length ? h`<p class="note">${icon('clock', { size: 20 })}${provisional.map((s) => TYPE_LABEL[typeOf(s)]).join(', ')} : horaire prévisionnel.</p>` : ''}`
           : ''}
         ${b.confirmed ? h`<div class="sources"><p>Source : programme fictif</p><p>Dernière vérification : ${verifiedLabel(b.verifiedAt, country.tz)} · Démo</p></div>` : ''}
         <p class="note">${icon('info', { size: 20 })}L’accès et l’abonnement sont gérés par le diffuseur.</p>
@@ -88,26 +102,6 @@ export default {
       ctx.session.watchView = el.dataset.value;
       ctx.refresh();
     },
-    'watch-expand': (el, ctx) => {
-      ctx.session.watchExpanded = el.dataset.value;
-      ctx.refresh();
-    },
-    'toggle-service': (el, ctx) => {
-      ctx.save((s) => {
-        const i = s.services.indexOf(el.dataset.id);
-        if (i >= 0) s.services.splice(i, 1);
-        else s.services.push(el.dataset.id);
-      });
-    },
-    'services-edit': (el, ctx) => {
-      ctx.session.editServices = true;
-      ctx.refresh();
-    },
-    'services-done': (el, ctx) => {
-      ctx.session.editServices = false;
-      ctx.refresh();
-    },
-    'open-broadcaster': (el, ctx) => ctx.toast('Démonstration : aucun site de diffuseur n’est ouvert. Le lien réel sera ajouté après vérification.'),
     'refresh-broadcast-sheet': (el, ctx) => ctx.toast('Démonstration : la diffusion reste non confirmée.'),
   },
 };

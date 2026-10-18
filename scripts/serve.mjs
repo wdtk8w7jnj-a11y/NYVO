@@ -3,7 +3,7 @@
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize, resolve } from 'node:path';
-import { networkInterfaces } from 'node:os';
+import { localAddresses } from './lib/addresses.mjs';
 
 const root = resolve(process.argv[2] || 'app');
 const port = Number(process.argv[3] || process.env.PORT || 4173);
@@ -35,7 +35,7 @@ createServer(async (req, res) => {
 }).listen(port, '0.0.0.0', () => {
   console.log(`NYVO servi depuis ${root}`);
   console.log(`  → http://localhost:${port}/`);
-  for (const list of Object.values(networkInterfaces())) {
-    for (const i of list || []) if (i.family === 'IPv4' && !i.internal) console.log(`  → http://${i.address}:${port}/ (même réseau Wi-Fi)`);
-  }
+  const addresses = process.env.NYVO_NO_IFACES ? localAddresses(() => { throw new Error('désactivé'); }) : localAddresses();
+  if (addresses === null) console.log('  (adresses réseau locales indisponibles ici : seul localhost est affiché)');
+  else for (const a of addresses) console.log(`  → http://${a}:${port}/ (même réseau Wi-Fi)`);
 });

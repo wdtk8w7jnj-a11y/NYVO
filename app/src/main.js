@@ -52,6 +52,11 @@ const ctx = {
   },
   toast,
   refresh: () => render('update'),
+  // Ouvre un panneau en mémorisant l'élément d'origine pour lui rendre le focus.
+  open(el, name, extra = {}) {
+    overlayOpener = el;
+    router.openOverlay(name, extra);
+  },
   navigate: (href) => navigateFromAnywhere(href),
   // Ferme le panneau puis applique `fn` sur l'écran d'origine.
   closeThen(fn) {
@@ -91,6 +96,8 @@ function render(nav = 'update') {
     history.replaceState({ ...history.state }, '', redirect);
     route = parse(redirect);
   }
+  // Les brouillons de Mes accès ne survivent pas à la sortie du parcours.
+  if (route.name !== 'acces' && route.name !== 'offre') session.accessDraft = session.offerDraft = null;
   const key = screenKey(route);
   const screen = SCREENS[route.name] || SCREENS.introuvable;
 
@@ -208,10 +215,7 @@ function toast(message) {
 
 // ---------- Actions communes ----------
 const COMMON = {
-  open: (el) => {
-    overlayOpener = el;
-    router.openOverlay(el.dataset.overlay, el.dataset.ref ? { ref: el.dataset.ref } : {});
-  },
+  open: (el) => ctx.open(el, el.dataset.overlay, el.dataset.ref ? { ref: el.dataset.ref } : {}),
   close: () => router.closeOverlay(),
   back: (el) => router.back(el.dataset.fallback || '#/accueil'),
   go: (el) => navigateFromAnywhere(el.dataset.href),

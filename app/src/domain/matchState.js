@@ -3,6 +3,7 @@
 // pour garantir la cohérence accueil / liste / fiche / favoris.
 import { CHANNEL, COUNTRY, COMPETITION, TEAM } from '../data/catalog.js';
 import { MATCH } from '../data/matches.js';
+import { PROGRAMMES, VERIFIED_AT } from '../data/programmes.js';
 
 export const SCENARIOS = {
   normal: 'État normal',
@@ -21,21 +22,34 @@ export function isLimited(match, session) {
   return match.coverage === 'limited' || scenarioOf(match, session) === 'limited';
 }
 
-// Diffusion pour un pays. Ne renvoie jamais de chaîne absente des données.
+export const FORMAT_LABEL = { integral: 'Match intégral', multiplex: 'Multiplex', magazine: 'Magazine' };
+export const PHASE_LABEL = { pre: 'Avant-match', match: 'Match', post: 'Après-match' };
+
+// Programmes d'un pays, en tenant compte des rencontres passées en « non confirmée »
+// par le scénario de démonstration (le multiplex garde ses autres rencontres).
+export function programmesFor(countryId, session) {
+  const forced = (id) => session.scenarios?.[id] === 'unconfirmed';
+  return (PROGRAMMES[countryId] || [])
+    .map((p) => ({ ...p, matches: p.matches.filter((id) => !forced(id)) }))
+    .filter((p) => p.matches.length)
+    .map((p) => ({ ...p, channelName: CHANNEL[p.channel].name, access: CHANNEL[p.channel].access, service: CHANNEL[p.channel].service }));
+}
+
+// Diffusion d'une rencontre pour un pays. Ne renvoie jamais de chaîne absente des données.
 export function broadcastFor(match, countryId, session) {
-  const entry = match.broadcasts?.[countryId];
-  const scenario = scenarioOf(match, session);
-  if (!entry) return { confirmed: false, options: [], schedule: [], verifiedAt: null, noData: true };
-  if (scenario === 'unconfirmed' || entry.options.length === 0) {
-    return { confirmed: false, options: [], schedule: [], verifiedAt: entry.verifiedAt, noData: false };
-  }
-  return {
-    confirmed: true,
-    verifiedAt: entry.verifiedAt,
-    options: entry.options.map((o) => ({ ...o, channelName: CHANNEL[o.channel].name, destination: CHANNEL[o.channel].destination })),
-    schedule: entry.schedule.map((s) => ({ ...s, channelName: CHANNEL[s.channel].name, access: CHANNEL[s.channel].access })),
-    noData: false,
-  };
+  const verifiedAt = VERIFIED_AT[countryId] || null;
+  if (!verifiedAt) return { confirmed: false, options: [], schedule: [], verifiedAt: null, noData: true };
+  const items = programmesFor(countryId, session).filter((p) => p.matches.includes(match.id));
+  const rank = { integral: 0, multiplex: 1, magazine: 2 };
+  const options = items
+    .filter((p) => p.phase === 'match')
+    .sort((a, b) => rank[a.format] - rank[b.format] || a.channel.localeCompare(b.channel))
+    .map((p) => ({ ...p, format: FORMAT_LABEL[p.format], formatId: p.format, subscription: p.access === 'Payant' }));
+  const schedule = [...items]
+    .sort((a, b) => a.at.localeCompare(b.at) || rank[a.format] - rank[b.format])
+    .map((p) => ({ ...p, kind: p.phase }));
+  if (!options.length) return { confirmed: false, options: [], schedule: [], verifiedAt, noData: false };
+  return { confirmed: true, options, schedule, verifiedAt, noData: false };
 }
 
 export function primaryChannelName(match, countryId, session) {

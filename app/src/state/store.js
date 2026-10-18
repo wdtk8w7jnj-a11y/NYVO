@@ -2,14 +2,16 @@
 // Ne prétend jamais avoir sauvegardé si l'écriture échoue.
 import { COMPETITION, COUNTRY, PLAYER, TEAM, CHANNEL, COUNTRIES } from '../data/catalog.js';
 import { MATCH } from '../data/matches.js';
+import { SERVICE } from '../data/access.js';
 import { ARTICLE, VIDEO } from '../data/content.js';
 
-export const KEY = 'nyvo-v3';
+export const KEY = 'nyvo-v4';
+export const V3_KEY = 'nyvo-v3';
 export const LEGACY_KEY = 'nyvo-v1';
 
 export function defaults() {
   return {
-    version: 3,
+    version: 4,
     onboarded: false,
     country: 'FR',
     lang: 'fr',
@@ -17,13 +19,45 @@ export function defaults() {
     saved: { matches: [], articles: [], videos: [] },
     savedAt: {},
     spoiler: { global: false, teams: [] },
-    services: [],
+    // Mes accès, par pays : { FR: { services: { id: { offer, options } }, legacy: [chaînes] } }
+    access: {},
     searchHistory: [],
     accountCardDismissed: false,
   };
 }
 
 const keep = (list, table) => (Array.isArray(list) ? [...new Set(list.filter((id) => typeof id === 'string' && table[id]))] : []);
+
+// Accès déclarés : seuls les services, offres et options du catalogue du pays sont gardés.
+// Une offre inconnue redevient « à préciser » (null) ; rien n'est inventé.
+export function sanitizeAccess(raw) {
+  const out = {};
+  if (!raw || typeof raw !== 'object') return out;
+  for (const [country, a] of Object.entries(raw)) {
+    if (!COUNTRY[country] || !a || typeof a !== 'object') continue;
+    const services = {};
+    for (const [id, sel] of Object.entries(a.services || {})) {
+      const entry = SERVICE[id]?.countries[country];
+      if (!entry || !sel || typeof sel !== 'object') continue;
+      const offer = entry.offers.some((o) => o.id === sel.offer) ? sel.offer : null;
+      const options = Array.isArray(sel.options) ? [...new Set(sel.options.filter((o) => entry.options.some((x) => x.id === o)))] : [];
+      services[id] = { offer, options: offer ? options : [] };
+    }
+    const legacy = keep(a.legacy, CHANNEL);
+    if (Object.keys(services).length || legacy.length) out[country] = { services, legacy };
+  }
+  return out;
+}
+
+// Reprise des préférences V0.3 (clé nyvo-v3) : les chaînes cochées deviennent des
+// « accès historiques à préciser » pour le pays alors choisi, jamais une offre vérifiée.
+export function migrateV3(old) {
+  if (!old || typeof old !== 'object') return defaults();
+  const country = COUNTRY[old.country] ? old.country : 'FR';
+  const legacy = keep(old.services, CHANNEL);
+  const { services, ...rest } = old;
+  return sanitize({ ...rest, access: legacy.length ? { [country]: { services: {}, legacy } } : {} });
+}
 
 // Valide une valeur chargée : tout champ inconnu ou invalide revient à sa valeur par défaut.
 export function sanitize(raw) {
@@ -41,7 +75,7 @@ export function sanitize(raw) {
     saved: { matches: keep(s.matches, MATCH), articles: keep(s.articles, ARTICLE), videos: keep(s.videos, VIDEO) },
     savedAt: raw.savedAt && typeof raw.savedAt === 'object' ? Object.fromEntries(Object.entries(raw.savedAt).filter(([, v]) => typeof v === 'number')) : {},
     spoiler: { global: sp.global === true, teams: keep(sp.teams, TEAM) },
-    services: keep(raw.services, CHANNEL),
+    access: sanitizeAccess(raw.access),
     searchHistory: Array.isArray(raw.searchHistory) ? raw.searchHistory.filter((q) => typeof q === 'string' && q.length <= 60).slice(0, 8) : [],
     accountCardDismissed: raw.accountCardDismissed === true,
   };
@@ -84,6 +118,8 @@ export function createStore(storage) {
     try {
       const raw = storage.getItem(KEY);
       if (raw) return sanitize(JSON.parse(raw));
+      const v3 = storage.getItem(V3_KEY);
+      if (v3) return migrateV3(JSON.parse(v3));
       const legacy = storage.getItem(LEGACY_KEY);
       if (legacy) return migrateLegacy(JSON.parse(legacy));
     } catch {
@@ -119,6 +155,7 @@ export function createStore(storage) {
       if (available) {
         try {
           storage.removeItem(KEY);
+          storage.removeItem(V3_KEY);
           storage.removeItem(LEGACY_KEY);
           ok = true;
         } catch {

@@ -45,6 +45,10 @@ const P = {
   card: '<rect x="7" y="3.5" width="10" height="17" rx="1.6"/>',
   pitch: '<rect x="2.5" y="5" width="19" height="14" rx="1.5"/><path d="M12 5v14"/><circle cx="12" cy="12" r="2.6"/><path d="M2.5 9h3v6h-3m19-6h-3v6h3"/>',
   list: '<path d="M8.5 6.5h12m-12 5.5h12m-12 5.5h12"/><path d="M4 6.5h.01M4 12h.01M4 17.5h.01" stroke-width="2.6"/>',
+  link: '<path d="M10 14a4 4 0 0 0 5.7 0l3.6-3.6a4 4 0 0 0-5.7-5.7l-1.1 1.1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3.6 3.6a4 4 0 0 0 5.7 5.7l1.1-1.1"/>',
+  'link-off': '<path d="M15.5 13.3 19.3 9.5a4 4 0 0 0-5.7-5.7l-1.6 1.6M8.5 10.7 4.7 14.5a4 4 0 0 0 5.7 5.7l1.6-1.6"/><path d="m3 3 18 18"/>',
+  phone: '<rect x="7" y="2.8" width="10" height="18.4" rx="2.2"/><path d="M11 18h2"/>',
+  flag: '<path d="M5 21V4h11l-1.5 4L16 12H5"/>',
   sliders: '<path d="M4 7h10m4 0h2M4 17h4m4 0h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>',
 };
 

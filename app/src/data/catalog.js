@@ -48,11 +48,12 @@ export const PLAYERS = [
   { id: 'l-morel', name: 'L. Morel', team: 'paris-atlas', position: 'Milieu', aliases: [] },
 ];
 
-// Chaînes fictives. Les accès (gratuit/payant) sont des valeurs de démonstration.
+// Chaînes fictives. Accès (gratuit/payant) et service de rattachement : valeurs de démonstration.
+// V0.4 : Sport Démo 3 devient payante, car elle n'est accessible que par l'Option Sport Plus.
 export const CHANNELS = [
-  { id: 'sd1', name: 'Sport Démo 1', access: 'Payant', destination: 'site de Sport Démo', aliases: ['SD1'] },
-  { id: 'sd2', name: 'Sport Démo 2', access: 'Payant', destination: 'site de Sport Démo', aliases: ['SD2'] },
-  { id: 'sd3', name: 'Sport Démo 3', access: 'Gratuit', destination: 'site de Sport Démo', aliases: ['SD3'] },
+  { id: 'sd1', name: 'Sport Démo 1', access: 'Payant', service: 'vision-sport', aliases: ['SD1'] },
+  { id: 'sd2', name: 'Sport Démo 2', access: 'Payant', service: 'vision-sport', aliases: ['SD2'] },
+  { id: 'sd3', name: 'Sport Démo 3', access: 'Payant', service: 'vision-sport', aliases: ['SD3'] },
 ];
 
 const byId = (list) => Object.fromEntries(list.map((x) => [x.id, x]));

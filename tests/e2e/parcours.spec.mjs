@@ -89,8 +89,11 @@ test('parcours central : accueil → matchs → fiche → Où regarder → favor
   await expect(dialog.getByText('Sport Démo 1', { exact: true }).first()).toBeVisible();
   await expect(dialog.getByText('Après-match : horaire prévisionnel.')).toBeVisible();
   await expect(dialog.getByText('Sport Démo 3')).toBeVisible();
-  await dialog.getByRole('button', { name: /Ouvrir chez le diffuseur/ }).click();
-  await expect(dialog.getByText(/aucun site de diffuseur n’est ouvert/)).toBeVisible();
+  // V0.4 : le bouton ouvre le panneau d'accès au diffuseur ; Retour revient à Où regarder.
+  await dialog.getByRole('button', { name: /Ouvrir chez le diffuseur/ }).first().click();
+  await expect(page.getByRole('dialog', { name: /Ouvrir chez le diffuseur/ })).toBeVisible();
+  await page.goBack();
+  await expect(dialog).toBeVisible();
   // Retour navigateur : ferme le panneau, reste sur la fiche.
   await page.goBack();
   await expect(dialog).toBeHidden();
@@ -294,20 +297,7 @@ test('vidéos : aucune lecture automatique ni faux lecteur', async ({ page }) =>
   await expect(page.getByText(/la lecture vidéo n’est pas disponible/)).toBeVisible();
 });
 
-test('programme TV : vue par chaîne, filtres et Mes accès', async ({ page }) => {
-  await withPrefs(page);
-  await page.goto(BASE + '#/programme');
-  await expect(page.getByRole('link', { name: /Avant-match/ }).first()).toBeVisible();
-  await page.getByRole('button', { name: 'Par chaîne' }).click();
-  await expect(page.getByRole('heading', { name: /Sport Démo 3/ })).toBeVisible();
-  await page.getByRole('button', { name: 'Gratuit' }).click();
-  await expect(page.getByRole('heading', { name: /Sport Démo 1/ })).toHaveCount(0);
-  await page.getByRole('button', { name: 'Tous' }).click();
-  await page.getByRole('switch', { name: 'Mes accès' }).click();
-  await expect(page.getByText('Indiquez vos accès dans les réglages')).toBeVisible();
-});
-
-const ROUTES = ['#/bienvenue', '#/bienvenue?etape=2', '#/accueil', '#/matchs', '#/match/pa-ms', '#/match/pa-ms?onglet=compositions', '#/match/pa-ms?onglet=classement', '#/match/ln-bu?onglet=classement', '#/match/msp-lc', '#/programme', '#/actualites', '#/videos', '#/favoris', '#/favoris?vue=enregistres', '#/article/a1', '#/equipe/paris-atlas', '#/accueil?p=diffusion&ref=pa-ms', '#/accueil?p=reglages', '#/accueil?p=recherche'];
+const ROUTES = ['#/bienvenue', '#/bienvenue?etape=2', '#/accueil', '#/matchs', '#/match/pa-ms', '#/match/pa-ms?onglet=compositions', '#/match/pa-ms?onglet=classement', '#/match/ln-bu?onglet=classement', '#/match/msp-lc', '#/programme', '#/actualites', '#/videos', '#/favoris', '#/favoris?vue=enregistres', '#/article/a1', '#/equipe/paris-atlas', '#/accueil?p=diffusion&ref=pa-ms', '#/accueil?p=reglages', '#/accueil?p=recherche', '#/programme?vue=chaine', '#/programme?vue=match&mes=1', '#/programme?p=filtres', '#/programme?p=diffuseur&ref=fr-pams-sd1', '#/programme?p=diffuseur&ref=fr-trnr-sd2', '#/acces', '#/acces/vision-sport'];
 
 test('aucun débordement horizontal à 360 px et cibles tactiles ≥ 40 px', async ({ page }, info) => {
   test.skip(info.project.name !== 'smartphone-390', 'contrôle smartphone');

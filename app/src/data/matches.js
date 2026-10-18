@@ -1,7 +1,7 @@
 // Rencontres de démonstration. Heures en UTC (18/10/2026 : Paris = UTC+2).
 // Une valeur `null` signifie « donnée non disponible », jamais zéro.
 
-const VERIFIED = '2026-10-18T16:00:00Z'; // 18/10/2026 à 18:00, heure de Paris
+// Les diffusions sont décrites dans programmes.js.
 
 export const MATCHES = [
   {
@@ -57,20 +57,6 @@ export const MATCHES = [
         { label: 'Passes réussies', home: null, away: null },
       ],
     },
-    broadcasts: {
-      FR: {
-        verifiedAt: VERIFIED,
-        options: [
-          { channel: 'sd1', format: 'Match intégral', medium: 'TV + streaming', access: 'Payant', subscription: true },
-          { channel: 'sd2', format: 'Multiplex', medium: 'TV + streaming', access: 'Payant', subscription: true },
-        ],
-        schedule: [
-          { at: '2026-10-18T18:30:00Z', kind: 'pre', channel: 'sd1' },
-          { at: '2026-10-18T19:00:00Z', kind: 'match', channel: 'sd1' },
-          { at: '2026-10-18T21:00:00Z', kind: 'post', channel: 'sd3', provisional: true },
-        ],
-      },
-    },
   },
   {
     id: 'tr-nr',
@@ -82,13 +68,6 @@ export const MATCHES = [
     kickoff: '2026-10-18T19:00:00Z',
     status: 'upcoming',
     coverage: 'full',
-    broadcasts: {
-      FR: {
-        verifiedAt: VERIFIED,
-        options: [{ channel: 'sd2', format: 'Match intégral', medium: 'Streaming', access: 'Payant', subscription: true }],
-        schedule: [{ at: '2026-10-18T19:00:00Z', kind: 'match', channel: 'sd2', medium: 'Streaming' }],
-      },
-    },
   },
   {
     id: 'nl-se',
@@ -100,13 +79,6 @@ export const MATCHES = [
     kickoff: '2026-10-18T19:00:00Z',
     status: 'upcoming',
     coverage: 'full',
-    broadcasts: {
-      FR: {
-        verifiedAt: VERIFIED,
-        options: [{ channel: 'sd2', format: 'Match intégral', medium: 'Streaming', access: 'Payant', subscription: true }],
-        schedule: [{ at: '2026-10-18T19:00:00Z', kind: 'match', channel: 'sd2', medium: 'Streaming' }],
-      },
-    },
   },
   {
     id: 'ln-bu',
@@ -118,17 +90,6 @@ export const MATCHES = [
     kickoff: '2026-10-18T19:00:00Z',
     status: 'upcoming',
     coverage: 'full',
-    broadcasts: {
-      FR: {
-        verifiedAt: VERIFIED,
-        options: [{ channel: 'sd2', format: 'Match intégral', medium: 'Streaming', access: 'Payant', subscription: true }],
-        schedule: [
-          { at: '2026-10-18T18:30:00Z', kind: 'pre', channel: 'sd2', medium: 'Streaming' },
-          { at: '2026-10-18T19:00:00Z', kind: 'match', channel: 'sd2', medium: 'Streaming' },
-          { at: '2026-10-18T21:00:00Z', kind: 'post', channel: 'sd2', medium: 'Streaming' },
-        ],
-      },
-    },
   },
   {
     id: 'msp-lc',
@@ -140,8 +101,6 @@ export const MATCHES = [
     kickoff: '2026-10-18T19:00:00Z',
     status: 'upcoming',
     coverage: 'full',
-    // Aucune diffusion confirmée : la clé FR existe mais sans option.
-    broadcasts: { FR: { verifiedAt: VERIFIED, options: [], schedule: [] } },
   },
   {
     id: 'mso-lci',
@@ -155,17 +114,6 @@ export const MATCHES = [
     score: [1, 1],
     // Suivi limité : seul le score final est disponible.
     coverage: 'limited',
-    broadcasts: {
-      FR: {
-        verifiedAt: VERIFIED,
-        options: [{ channel: 'sd2', format: 'Match intégral', medium: 'TV + streaming', access: 'Payant', subscription: true }],
-        schedule: [
-          { at: '2026-10-18T15:30:00Z', kind: 'pre', channel: 'sd2' },
-          { at: '2026-10-18T16:00:00Z', kind: 'match', channel: 'sd2' },
-          { at: '2026-10-18T18:00:00Z', kind: 'post', channel: 'sd2' },
-        ],
-      },
-    },
   },
   {
     id: 'lnf-msf',
@@ -177,7 +125,6 @@ export const MATCHES = [
     kickoff: '2026-10-19T17:00:00Z',
     status: 'upcoming',
     coverage: 'full',
-    broadcasts: { FR: { verifiedAt: VERIFIED, options: [], schedule: [] } },
   },
 ];
 
