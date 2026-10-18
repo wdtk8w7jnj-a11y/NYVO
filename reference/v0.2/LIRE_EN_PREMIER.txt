@@ -1,0 +1,23 @@
+NYVO — DOSSIER DE REPRISE V0.2 — 18 octobre 2026
+
+Archive prête à joindre comme asset à une Release GitHub/GitLab du nouveau dépôt.
+Aucun dépôt ou Release distant n'a été créé : son URL n'a pas été fourni.
+1. Téléverser NYVO_HANDOFF_V0.2.zip dans les fichiers de la Release.
+2. Donner à Claude/Codex l'accès au dépôt et à cette archive (ou la décompresser dans le dépôt).
+3. Copier le texte de PROMPT_CLAUDE_CODEX.txt.
+Une archive de Release n'est pas automatiquement visible dans un clone Git : l'agent doit la télécharger puis la décompresser, ou disposer du dossier extrait.
+
+CONTENU
+01_MAQUETTES_VALIDEES : 9 planches canoniques (plusieurs contiennent deux vues).
+02_ARCHIVES_VISUELLES_NON_CANONIQUES : 11 images d'itérations historiques ; ne pas utiliser comme direction actuelle.
+03_PROTOTYPE : source autonome et 12 scénarios de régression de logique.
+04_DOCUMENTATION : décisions produit, limites, feuille de route, critères d'acceptation et références visuelles.
+INVENTAIRE_MAQUETTES.json : noms originaux, noms rangés, statut et empreintes.
+SHA256SUMS.txt : intégrité de tous les fichiers hors ce manifeste lui-même.
+
+20 PNG présents au moment de l'export ont été conservés sans retouche. Aucun fichier manquant n'a été reconstruit. Les anciens chemins upload/image-edit-target et screenshots mentionnés dans la conversation ne font pas partie de cet export.
+Les 9 maquettes validées gouvernent la direction artistique. Le prototype V0.2 est une base fonctionnelle simplifiée, pas une reproduction fidèle validée de chaque maquette.
+
+Prototype privé actuel : https://nyvo-rubis.readymars3.chatgpt.site
+Source exportée depuis le commit : 48c83e096db7a8718726d57a9e4878de09bdf1c0
+L'identité du site, les identifiants d'accès et le dossier .git sont volontairement exclus pour ne pas coupler le nouveau dépôt au site existant.

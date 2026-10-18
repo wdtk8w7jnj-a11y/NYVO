@@ -1,0 +1,47 @@
+[
+  {
+    "fichier": "MAQUETTES/01_PROGRAMME_HORAIRE.png",
+    "statut": "validée",
+    "reserve": "Chronologie à corriger selon le prompt"
+  },
+  {
+    "fichier": "MAQUETTES/02_PROGRAMME_CHAINE.png",
+    "statut": "validée",
+    "reserve": null
+  },
+  {
+    "fichier": "MAQUETTES/03_PROGRAMME_MATCH.png",
+    "statut": "validée",
+    "reserve": null
+  },
+  {
+    "fichier": "MAQUETTES/04_FILTRES.png",
+    "statut": "validée",
+    "reserve": null
+  },
+  {
+    "fichier": "MAQUETTES/05_MES_ACCES.png",
+    "statut": "validée",
+    "reserve": null
+  },
+  {
+    "fichier": "MAQUETTES/06_CHOIX_OFFRE.png",
+    "statut": "validée",
+    "reserve": null
+  },
+  {
+    "fichier": "MAQUETTES/07_PROGRAMME_MES_ACCES.png",
+    "statut": "validée",
+    "reserve": null
+  },
+  {
+    "fichier": "MAQUETTES/08_OUVRIR_DIFFUSEUR.png",
+    "statut": "validée",
+    "reserve": null
+  },
+  {
+    "fichier": "MAQUETTES/09_LIEN_INDISPONIBLE.png",
+    "statut": "validée",
+    "reserve": null
+  }
+]

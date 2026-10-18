@@ -1,0 +1,35 @@
+ÉTAT RÉEL AU PASSAGE DE RELAIS
+V0.2 buildless HTML/CSS/JS, données fictives, localStorage. Déployée privée le 18 octobre 2026. Code exporté et test Node inclus. Aucun backend, API, vrai direct, auth, sync, push, média réel, application native ou service hors ligne.
+Fonctionnel : onboarding pays/favoris et Plus tard, cinq onglets, fiches démo, panneaux diffusion, recherche limitée matchs/équipes/compétitions, favoris/enregistrements locaux, sans spoilers global avec révélation par match, états normal/non confirmé/interrompu/limité.
+12 scénarios de logique passent via vm et DOM simulé. Ce n'est ni du Playwright ni un test navigateur, ni un test réel iPhone/Android. Prévisualisation bloquée par bwrap/proc dans l'environnement ; rendu et interactions réelles non certifiés.
+Pour relancer : depuis 03_PROTOTYPE, node tests/journey.cjs. Ouvrir dist/index.html ou servir dist avec un serveur statique autorisé. Aucun npm requis.
+
+CORRECTIONS V0.2
+Date conservée après filtres/enregistrements ; résultats vides à dates hors démo. Mercato et fil par favoris ont un comportement distinct. Recherche favoris conservée après choix. Recherche match ferme le dialogue. Programme spécifique à la rencontre (pas toujours Sport Démo 1). Direct interrompu limité aux matchs live. Heures sans spoilers propres à la rencontre. Retour premier lancement conserve choix. Messages dans panneau affichés dans le dialogue. Validation basique des préférences chargées.
+
+LIMITES À TRAITER, PAS À PRÉSENTER COMME TERMINÉES
+- Fidélité graphique partielle : pas de vraies images de contenu, écussons initials, icônes Unicode, styles simplifiés, pas d'assets découpés/canoniques. Maquettes prioritaires.
+- Anglais prévu mais pas implémenté. Onboarding ne propose pas encore de sélection de langue effective.
+- Accueil encore principalement statique ; favoris non épinglés dynamiquement, pas de liste complète de tous favoris, vidéos absentes de l'accueil.
+- Programme TV complet (vues, filtres, Mes accès) non implémenté ; bouton mène à un match de démo.
+- Recherche globale incomplète, pas d'historique ni abréviations.
+- Sans spoilers par équipe/match persistant non réalisé ; états avancés de médias/notifications non réalisés. Révélation par match uniquement en mémoire. Rechargement remet volontairement la protection globale.
+- Compositions terrain seulement et une équipe illustrative ; pas de liste officielle/probable/remplaçants. Statistiques et classement réduits. Schéma 2D seulement placeholder.
+- Vidéos : aperçu inerte de lecteur clairement annoncé, boutons ouvrent panneau explicatif ; aucune lecture réelle. Actualités : deux contenus fictifs, variantes simples, pas de source externe.
+- Favoris limités équipes/compétitions ; pas joueurs ni filtres fins. Aucun réglage d'alertes actif, uniquement panneau explicatif.
+- Pays change le contexte affiché, pas une vraie grille locale validée. Toutes chaînes fictives.
+- Historique navigation navigateur et restauration de défilement à implémenter/tester.
+- Stockage bloqué/plein : ne pas affirmer une sauvegarde si écriture impossible (prototype ignore encore les erreurs localStorage).
+- Harmoniser dataset : certaines anciennes images changent le genre des équipes. Identifiants distincts équipe masculine/féminine, cohérence à établir sans inventer de faits réels.
+
+MISSION PROCHAINE RECOMMANDÉE
+1. Auditer archive/inventaire/source et références visuelles ; rapport court des manques.
+2. Créer branche de travail et versionner les références sans écraser dépôt existant.
+3. Refactoriser proprement en composants/données/états ; choix technique justifié et proportionné, pas refonte de marque.
+4. Rendre le parcours central fidèle aux neuf maquettes et réellement testable responsive, accessible, tactile/clavier. Ajouter éléments manquants nécessaires au parcours avec démo explicite ; ne pas prétendre implémenter toute l'application cible en une passe.
+5. Tester dans navigateur puis sur appareils utilisateur : petites largeurs 360/390, tablette et Chromebook, navigation, erreurs, persistance, spoilers, retours, dialogues.
+6. Livrer code, commandes, rapport des tests exécutés, captures et état clair, avec branche/PR de revue si dépôt autorisé. Ne pas fusionner/publier ailleurs sans instruction du propriétaire.
+7. Après validation du prototype, étude fournisseurs/contrats/coût/couverture/exactitude chaînes par pays. Architecture data et pilote réel ensuite. Aucun achat ni engagement automatique.
+
+À ARBITRER PLUS TARD
+Fournisseurs et droits, budget, modèle économique premium, traduction contenus, marque/domaines, stack native, backend/auth/sync, politique éditoriale/modération, stratégie hors ligne, stores et distribution. Les choix d'architecture proposés par l'agent ne deviennent pas des décisions utilisateur sans validation lorsque structurants.

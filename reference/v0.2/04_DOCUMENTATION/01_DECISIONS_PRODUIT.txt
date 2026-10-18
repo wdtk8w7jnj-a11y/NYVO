@@ -1,0 +1,60 @@
+NYVO — DÉCISIONS VALIDÉES
+
+VISION ET COUVERTURE
+Application football premium : matchs, direct, chaînes exactes, actualités et vidéos. L'ambition « tous les matchs » est limitée en pratique à la couverture effectivement vérifiée. Ne jamais annoncer une couverture exhaustive non démontrée.
+Audience européenne ; pays de diffusion sélectionnable. Sept pays cibles : France, Belgique, Suisse, Royaume-Uni, Espagne, Italie, Allemagne. Interfaces finales français et anglais, langue indépendante du pays.
+Championnats professionnels européens, divisions inférieures professionnelles, coupes nationales, coupes européennes ; clubs et sélections masculins/féminins ; grands tournois internationaux et qualifications. Liste et niveau de suivi par compétition à auditer selon les sources. Archives et saisons seulement si disponibles.
+
+NAVIGATION ET PREMIER LANCEMENT
+Cinq onglets : Accueil, Matchs, Actualités, Vidéos, Favoris. Recherche et réglages en haut. Programme TV accessible depuis Accueil et Matchs.
+Premier lancement court et facultatif : confirmer pays et langue, sélectionner clubs/compétitions, accéder à l'accueil. Plus tard, choix modifiables. Demander les notifications au moment de la première alerte, pas au démarrage.
+Consultation, favoris et réglages sans compte. Compte facultatif pour sauvegarde/synchronisation, sans perdre les préférences invité. Le prototype actuel conserve seulement dans localStorage.
+
+ACCUEIL, MATCHS ET RECHERCHE
+Accueil équilibré : favoris/rencontres en direct en haut, programme TV du jour, actualités puis vidéos personnalisées ; lien vers tous les matchs.
+Matchs : calendrier, favoris épinglés, filtres Tous / En direct / À venir / Terminés et Diffusés dans mon pays. Regroupement compétition par défaut, ordre horaire alternatif.
+Recherche globale : matchs, clubs, compétitions, joueurs, chaînes, actualités, vidéos ; catégories et filtres ; abréviations courantes et historique effaçable.
+Cartes de match : taille moyenne, écussons visibles, score/horaire central, diffuseur confirmé en bas, contour rubis discret pour favoris. Aucune photographie derrière les informations du match.
+
+DIFFUSION
+Résumé sous score avec pays et chaîne, panneau Où regarder. Chaîne/platforme exacte, gratuit/payant, match intégral ou multiplex, avant-match et après-match, horaires et dernière vérification. Afficher uniquement ce qui est confirmé.
+Non confirmé ne signifie pas non diffusé. Conserver un état explicite sans inventer chaîne ni horaires.
+Programme TV : ordre chronologique, vues chaîne/rencontre, filtres favoris/compétition/gratuit-payant ; pays/fuseau/vérification.
+Mes accès : sélection facultative de services/offres, aucune connexion avec identifiants du diffuseur ; inclusion uniquement si correspondance vérifiée. Toutes diffusions consultables.
+Ouvrir chez le diffuseur : lien officiel du match/app si possible, sinon site officiel ; destination et coût indiqués, abonnement géré par diffuseur. Pas de lecteur pirate ni retransmission intégrale implicite.
+
+FICHE MATCH ET DONNÉES
+Score et faits marquants immédiatement visibles, onglets Direct / Compositions / Statistiques / Classement. Données avancées selon disponibilité, source/horodatage, états limité/interrompu. Une donnée manquante n'est jamais zéro.
+Compositions : terrain et liste accessible, remplaçants et événements joueurs, probable/officiel distingués, formation uniquement connue.
+Statistiques : essentiels puis catégories et visuels ; définitions indicateurs avancés, source et mise à jour.
+Classement : tableau détaillé championnats/groupes, arbre des tours pour coupes ; provisoire en direct seulement avec données et règles disponibles, légende des qualifications.
+Buts : médias autorisés en priorité, schéma/animation 2D si données suffisantes, sinon récit textuel. Source et nature explicites, aucun déplacement inventé. Diagramme immédiat, animation/étapes si données disponibles, commandes et légende.
+Accès buts dans Direct et Moments forts ; vidéos autorisées également dans Vidéos ; pas de lecture automatique, masquage sans spoilers.
+
+FICHES ENTITÉS
+Club : aperçu/prochain match/diffusion, Matchs, Effectif, Statistiques, Actualités ; vidéos, classement, saison selon archives.
+Joueur : aperçu, Performances, Matchs, Parcours, Actualités ; vidéos, suivre ; stats adaptées au poste, saison/compétition, distinction club/sélection.
+Compétition : aperçu, Matchs, Classement ou Tableau, Statistiques, Actualités ; équipes, vidéos, diffusion par match et saisons.
+
+ACTUALITÉS ET VIDÉOS
+Actualités : fil personnalisé clubs/compétitions, grandes informations Europe et mercato ; accès général ; source/date ; officiel/information rapportée/rumeur. Aucune exclusivité prétendue sans provenance réelle.
+Vidéos : contenus officiels et amateurs sélectionnés au lancement, créateurs partenaires ensuite, contributions publiques après outils de modération/vérification. Droits établis avant intégration/téléchargement.
+Organisation mixte : catégories et recommandations selon favoris, accès depuis fiches concernées, lecture à la demande.
+Aucune licence fournisseur ou média réelle n'a été obtenue dans cette session. Les images générées sont références de conception, pas preuves de licences de vrais contenus football.
+
+FAVORIS ET NOTIFICATIONS
+Mon espace (ne jamais renommer Je suis) : équipes, compétitions, joueurs. Enregistrés : matchs, articles, vidéos. Filtres par catégorie, alertes séparées.
+Alertes personnalisables : rappels, événements, changements chaîne/horaire, infos importantes des favoris ; profils discrets, horaires silencieux, mode sans spoilers jusque dans titres/miniatures/notifications.
+Sans spoilers : global/équipe/match, masque score, événements, stats, classements révélateurs et contenus associés identifiés. Horaires/chaînes accessibles. Révélation explicite par match sans inscription.
+Hors connexion : derniers contenus consultés et enregistrement de fiches/programmes, fraîcheur visible, direct interrompu, actualisation au retour réseau, spoilers conservés. Médias seulement si droits. Enregistré ne veut pas dire téléchargé.
+
+PLATEFORMES ET DÉROULEMENT
+iPhone et Android, plus web responsive Chromebook/PC/tablette ; priorité smartphone. Fonctions propres à chaque plateforme à préciser.
+Étape 1 : prototype interactif données démo. Étape 2 : sources vérifiées sur périmètre pilote, élargissement pays/compétitions/contenus selon couverture.
+Parcours de démo validé : pays/favoris → accueil → liste match → fiche/direct simulé → chaîne → favoris. Inclure non confirmé, limité/interrompu, sans spoilers ; aperçus actualités/vidéos.
+
+IDENTITÉ
+Nom final NYVO (ni-vo), disponibilité juridique/domaines non vérifiée. Les anciennes pistes MATCHORA/NIVO et noir-or/indigo/violet sont abandonnées.
+DA finale : fond noir profond, cartes noires fumées, rouge rubis profond, néons fins et reflets subtils, blanc/argent pour lisibilité. Futuriste premium presque luxe, épuré artistique, typographie précise, espaces généreux. Éviter effets sci-fi gratuits, grosse lueur et écrans génériques.
+Le N géométrique était validé avant changement de palette ; ne pas réintroduire sa couleur dorée. Utiliser les références finales NYVO.
+Pendant les arbitrages visuels : une question à la fois, six propositions dont une recommandée, choix à cocher. Ne pas rouvrir une décision sans raison.

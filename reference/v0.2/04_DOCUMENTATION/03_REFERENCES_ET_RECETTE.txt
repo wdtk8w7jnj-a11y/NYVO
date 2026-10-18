@@ -1,0 +1,21 @@
+RÉFÉRENCES
+Les neuf PNG de 01_MAQUETTES_VALIDEES sont les références actuelles. L'inventaire fait foi pour leur correspondance avec les fichiers originaux.
+Les onze autres PNG sont conservés pour exhaustivité, pas pour implémentation. Parmi eux :
+exec-f0b73632-4e62-4846-af57-d10748c0dc82.png : planche ruby d'ensemble, antérieure aux écrans détaillés.
+exec-57ab3ee2-3ce4-476f-ad80-15597cc9a184.png : version erronée du non-confirmé avec chaîne ; remplacée par la référence 06.
+exec-f2afd17b-3461-4ef3-a158-5975eca10928.png : texte incorrect demandant connexion pour révéler contenu ; remplacée par la référence 09.
+Les variantes indigo/violet/or et autres anciens essais sont non canoniques. Ne pas réintroduire une palette rejetée.
+Les PNG sont des maquettes raster, pas des écrans applicatifs à coller en fond. Reconstruire chaque contrôle en composants accessibles. Ne pas traiter le texte généré dans l'image comme plus fiable que les décisions écrites.
+
+RECETTE CIBLE
+- Première ouverture propre, pays et favoris facultatifs, Plus tard sans compte. Retour réglages sans perte de choix.
+- Changer pays conserve les favoris mais modifie contexte diffusion ; jamais inventer de chaîne.
+- Choisir date puis filtre sans retour silencieux au jour de démo ; état vide utile.
+- Ouvrir chaque rencontre, retour liste stable ; scores/horaires et diffusion cohérents entre accueil, liste, fiche, favoris.
+- Enregistrer/retirer match/article/vidéo ; suivre/ne plus suivre équipe/compétition ; relancer navigateur et vérifier.
+- Tous les onglets de fiche fonctionnent, données absentes explicites, pas zéro inventé.
+- Non confirmé : aucun CTA vers fausse chaîne ; interrompu : dernier état daté + reprise ; limité : manque annoncé.
+- Sans spoilers : pas de score, événements, stats/classement révélateurs ni contenu associé dans texte, attribut accessible ou miniature ; chaîne/horaire disponibles ; révélation explicite sans compte.
+- Aucun autoplay vidéo ; aucun faux abonnement/paiement ; démo clairement identifiée.
+- Navigation clavier, libellés, contrastes, cibles tactiles, focus et dialogues ; absence débordement horizontal sur smartphone.
+- Les tests automatisés de logique ne suffisent pas pour déclarer l'expérience mobile validée.
