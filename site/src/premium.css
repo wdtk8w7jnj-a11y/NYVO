@@ -82,7 +82,7 @@ body{background:var(--pm-bg)}
 .pm-filtersum{font-size:13px;color:var(--pm-muted);margin:0 0 12px}
 
 /* Vidéos */
-.pm-tabs{margin:0 0 6px}
+.pm-tabs{margin:0 0 18px}
 .pm-tabs .segmented{gap:8px}
 .pm-datefield{position:relative;display:inline-flex;align-items:center;gap:6px;min-height:44px;color:var(--pm-muted)}
 .pm-datefield input{background:transparent;border:1px solid #30333c;border-radius:10px;min-height:40px;padding:0 8px;color:var(--pm-text);color-scheme:dark}
@@ -211,3 +211,5 @@ img.is-contain{object-fit:contain!important;background:#0d0e12}
 .pm-figure.is-broken::before,.pm-cover.is-broken::before{content:"Image indisponible pour le moment";display:block;font-size:12px;color:var(--pm-muted)}
 .pm-lead .pm-leadart.is-broken{min-height:0;aspect-ratio:auto;height:24px}
 .pm-toolbar .segmented .seg.is-on{background:var(--pm-s2);border-color:#3a3d48;color:var(--pm-text)}
+.pm-backtitle{font-size:17px;font-weight:650;margin:0}
+.sig-teamhero .real-crest{width:72px;height:72px;border-radius:50%;background:var(--pm-s2)}

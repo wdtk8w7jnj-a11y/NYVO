@@ -32,7 +32,7 @@ for(const [device,opts] of [['iphone12',{viewport:{width:390,height:844},deviceS
   await page.goto(base+hash);await page.waitForTimeout(900);
   if(act)await act(page);
   await page.waitForTimeout(400);
-  await page.screenshot({path:`${out}/${device}-${name}.png`,fullPage:device==='iphone12'});
+  await page.screenshot({path:`${out}/${device}-${name}.png`,fullPage:device==='iphone12'&&!name.includes('filtres')});
   if(external.length)console.log(name,device,'requêtes externes tentées (bloquées hors ligne) :',[...new Set(external)].join(', '));
   await ctx.close();
  }

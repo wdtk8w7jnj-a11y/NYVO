@@ -1223,7 +1223,7 @@ body{background:var(--pm-bg)}
 .pm-filtersum{font-size:13px;color:var(--pm-muted);margin:0 0 12px}
 
 /* Vidéos */
-.pm-tabs{margin:0 0 6px}
+.pm-tabs{margin:0 0 18px}
 .pm-tabs .segmented{gap:8px}
 .pm-datefield{position:relative;display:inline-flex;align-items:center;gap:6px;min-height:44px;color:var(--pm-muted)}
 .pm-datefield input{background:transparent;border:1px solid #30333c;border-radius:10px;min-height:40px;padding:0 8px;color:var(--pm-text);color-scheme:dark}
@@ -1352,6 +1352,8 @@ img.is-contain{object-fit:contain!important;background:#0d0e12}
 .pm-figure.is-broken::before,.pm-cover.is-broken::before{content:"Image indisponible pour le moment";display:block;font-size:12px;color:var(--pm-muted)}
 .pm-lead .pm-leadart.is-broken{min-height:0;aspect-ratio:auto;height:24px}
 .pm-toolbar .segmented .seg.is-on{background:var(--pm-s2);border-color:#3a3d48;color:var(--pm-text)}
+.pm-backtitle{font-size:17px;font-weight:650;margin:0}
+.sig-teamhero .real-crest{width:72px;height:72px;border-radius:50%;background:var(--pm-s2)}
 </style>
 </head>
 <body>
@@ -2404,6 +2406,9 @@ function pmLead(a,ctx,{tag='h2'}={}){
   <div class="pm-leadbody">${pmKicker(a,false)}${title}${a.summary?n`<p>${a.summary}</p>`:''}<small>${a.byline||a.sources[0].name} · ${pmWhen(a)}${a.readingMinutes?' · '+a.readingMinutes+' min de lecture':''}</small></div></a>${im?n`<p class="pm-credit">${im.kind==='infographic'?'Infographie NYVO':'Photo'} · ${pmCredit(im)}</p>`:''}</article>`;
 }
 
+// Back bar without a second level-1 heading: the content title is the page h1.
+function pmBack(title,fallback){return Y(String(sigBack(title)).replace('data-fallback="#/matchs"','data-fallback="'+fallback+'"').replace(/<h1 tabindex="-1">([^<]*)<\/h1>/,'<p class="pm-backtitle" aria-hidden="true">$1</p>'));}
+
 // ---------- Vidéos : ouverture externe uniquement ----------
 function pmVideoKind(v){return v.kind==='Résumé'?'Résumé officiel':v.kind==='Depuis les tribunes'?'Depuis les tribunes':'Contenu officiel';}
 function pmPoster(v,ctx,hidden){
@@ -2443,14 +2448,14 @@ function pmVideos(ctx){
 }
 function pmArchiveCard(a,ctx){const hidden=storyProtected(a,ctx);return n`<article class="pm-vcard is-archive"><a href="${a.archive.url}" target="_blank" rel="noopener noreferrer" aria-label="${hidden?'Archive masquée':a.archive.label}, ouvre UEFA.com"><span class="pm-poster pm-archiveposter">${hidden?c('eye-off',{size:26}):n`<b>${a.record?.value||'Archive'}</b><small>${a.subject||''}</small>`}</span><span class="pm-vbody"><span class="pm-kicker">Archives · éditeur officiel</span><b>${hidden?'Archive masquée':a.archive.label}</b><small>${new URL(a.archive.url).hostname.replace('www.','')} ${c('external',{size:14})} · lecture non vérifiée</small></span></a></article>`;}
 function pmVideoDetail(ctx){
- const s=hvState(ctx),v=s.editorial?.videos.find(x=>x.id===ctx.route.query.video),back=Y(String(sigBack('Vidéo')).replace('data-fallback="#/matchs"','data-fallback="#/videos"'));
- if(!v)return{title:'Vidéo',nav:'videos',body:n`<div class="pm pm-narrow">${back}${s.editorialBusy?sigSkeleton():sigEmpty('Vidéo indisponible','Cette vidéo n’est plus présente dans le catalogue. Aucune autre rencontre n’est proposée à sa place.',n`<a class="btn btn-outline" href="#/videos">Retour aux vidéos</a>`,'video')}</div>`};
+ const s=hvState(ctx),v=s.editorial?.videos.find(x=>x.id===ctx.route.query.video),back=pmBack('Vidéo','#/videos');
+ if(!v)return{title:'Vidéo',nav:'videos',body:n`<div class="pm pm-narrow">${back}<h1 class="sr-only" tabindex="-1">Vidéo indisponible</h1>${s.editorialBusy?sigSkeleton():sigEmpty('Vidéo indisponible','Cette vidéo n’est plus présente dans le catalogue. Aucune autre rencontre n’est proposée à sa place.',n`<a class="btn btn-outline" href="#/videos">Retour aux vidéos</a>`,'video')}</div>`};
  const hidden=videoProtected(v,ctx),available=hvAvailable(v,ctx.prefs.country),url=ytWatchUrl(v),comp=realCompetitions.find(x=>x.id===v.league)?.name||'Football';
- if(hidden)return{title:'Vidéo protégée',nav:'videos',body:n`<div class="pm pm-narrow">${back}<div class="pm-hero16 is-masked">${c('eye-off',{size:34})}<span>Titre et miniature masqués</span></div><h1 class="pm-vtitle">${v.home&&v.away?'Résumé : '+v.home+' – '+v.away:'Vidéo protégée'}</h1><p class="sig-caption">${v.publisher} · le titre et l’image peuvent révéler le résultat.</p><button class="btn btn-primary btn-block" data-action="video-reveal-real" data-id="${v.id}">Révéler cette vidéo</button></div>`};
+ if(hidden)return{title:'Vidéo protégée',nav:'videos',body:n`<div class="pm pm-narrow">${back}<div class="pm-hero16 is-masked">${c('eye-off',{size:34})}<span>Titre et miniature masqués</span></div><h1 class="pm-vtitle" tabindex="-1">${v.home&&v.away?'Résumé : '+v.home+' – '+v.away:'Vidéo protégée'}</h1><p class="sig-caption">${v.publisher} · le titre et l’image peuvent révéler le résultat.</p><button class="btn btn-primary btn-block" data-action="video-reveal-real" data-id="${v.id}">Révéler cette vidéo</button></div>`};
  return{title:v.title,nav:'videos',body:n`<div class="pm pm-narrow"><article class="pm-vdetail">${back}
   <div class="pm-hero16">${pmPoster(v,ctx,false)}</div>
   <div class="pm-vhead"><span class="pm-kicker">${pmVideoKind(v)} · ${hvLang(v)}</span>${hvSaved(v,ctx)}</div>
-  <h1 class="pm-vtitle">${v.title}</h1>
+  <h1 class="pm-vtitle" tabindex="-1">${v.title}</h1>
   <p class="pm-vby"><a href="${v.publisherUrl}" target="_blank" rel="noopener noreferrer">${v.publisher}</a>${hvDuration(v.duration)?' · '+hvDuration(v.duration):''}${v.publishedAt?' · publiée le '+pmShortDay(v.publishedAt):''}</p>
   ${!available?n`<p class="sig-error" role="alert">${v.state==='unavailable'?'Cette vidéo n’est plus disponible chez l’éditeur.':'Restriction déclarée pour votre pays.'} Elle n’est remplacée par aucune autre rencontre ; les autres versions officielles du même match restent listées ci-dessous.</p>`:''}
   ${url&&v.state!=='unavailable'?n`<a class="btn btn-primary btn-block pm-yt" href="${url}" target="_blank" rel="noopener noreferrer" data-yt="${v.id}">${c('external',{size:18})}Voir sur YouTube</a><p class="sig-caption sig-center">S’ouvre chez YouTube, dans le navigateur ou l’application selon les réglages de votre appareil. Revenez à NYVO avec le bouton retour ou l’onglet NYVO.</p>`:n`<p class="sig-caption">Lien externe indisponible pour cette version.</p>`}
@@ -2483,15 +2488,15 @@ function pmNews(ctx){
   <a class="sig-demo-link" href="#/actualites?demo=1">Actualités de démonstration</a></div>`};
 }
 function pmArticle(a,ctx){
- const back=Y(String(sigBack(a.category==='anecdote'?'Histoire':'Actualité')).replace('data-fallback="#/matchs"','data-fallback="#/actualites"'));
- if(storyProtected(a,ctx))return{title:'Actualité protégée',nav:'actualites',body:n`<div class="pm pm-narrow">${back}${sigEmpty('Contenu masqué','Son titre, ses images et ses chiffres peuvent révéler des informations protégées.',n`<button class="btn btn-outline" data-action="community-news-reveal" data-id="${a.id}">Révéler</button>`,'eye-off')}</div>`};
+ const back=pmBack(a.category==='anecdote'?'Histoire':'Actualité','#/actualites');
+ if(storyProtected(a,ctx))return{title:'Actualité protégée',nav:'actualites',body:n`<div class="pm pm-narrow">${back}<h1 class="sr-only" tabindex="-1">Contenu masqué</h1>${sigEmpty('Contenu masqué','Son titre, ses images et ses chiffres peuvent révéler des informations protégées.',n`<button class="btn btn-outline" data-action="community-news-reveal" data-id="${a.id}">Révéler</button>`,'eye-off')}</div>`};
  const images=pmVerifiedImages(a),cover=pmCover(a),sections=Array.isArray(a.sections)?a.sections:(Array.isArray(a.body)?a.body.map((p,i)=>({heading:a.headings?.[i]||null,paragraphs:[p]})):[]);
  const words=sections.flatMap(x=>x.paragraphs).join(' ').split(/\s+/).filter(Boolean).length,minutes=a.readingMinutes||(words?Math.max(1,Math.round(words/180)):0);
  const figure=id=>{const im=images.find(i=>i.id===id&&i.id!==cover?.id);return im?n`<figure class="pm-figure"><img data-pm-img="1" src="${im.src}" alt="${im.alt||''}" loading="lazy" decoding="async" referrerpolicy="no-referrer"${im.width?n` width="${im.width}" height="${im.height}"`:''}><figcaption>${im.caption}<span>${pmCredit(im)}</span></figcaption></figure>`:''};
  return{title:a.title,nav:'actualites',body:n`<div class="pm pm-narrow"><article class="pm-article">${back}
   ${cover?n`<figure class="pm-cover"><img data-pm-img="1" src="${cover.src}" alt="${cover.alt||''}" decoding="async" referrerpolicy="no-referrer"${cover.width?n` width="${cover.width}" height="${cover.height}"`:''}><figcaption>${cover.caption}<span>${pmCredit(cover)}</span></figcaption></figure>`:n`<div class="pm-cover pm-typeart" aria-hidden="true"><span>${a.sources[0].name}</span></div>`}
   <p class="pm-articlemeta">${pmKicker(a,false)}${minutes?n`<span>${minutes} min de lecture</span>`:''}</p>
-  <h1>${a.title}</h1>
+  <h1 tabindex="-1">${a.title}</h1>
   ${a.summary?n`<p class="pm-chapo">${a.summary}</p>`:''}
   <p class="pm-byline">${a.byline?n`<b>${a.byline}</b> · `:''}${a.automatic?'Publié par '+a.sources[0].name+' le '+pa(a.publishedAt):ue(String(a.publishedAt).slice(0,10))}${a.revisedAt?' · révisé le '+pmShortDay(a.revisedAt):''}${storySave(a,ctx)}</p>
   ${sections.map((sec,i)=>n`${sec.heading?n`<h2>${sec.heading}</h2>`:''}${sec.paragraphs.map(p=>n`<p class="pm-p">${p}</p>`)}${i===0&&a.record?n`<aside class="pm-record"><strong>${a.record.value}</strong><b>${a.record.label}</b><p>${a.record.scope}</p></aside>`:''}${sec.figure?figure(sec.figure):''}`)}
@@ -2505,6 +2510,7 @@ function pmArticle(a,ctx){
 
 // Earlier layers drew every article with the same generic stadium picture: replaced everywhere.
 storyCard=function(a,ctx){return pmStoryRow(a,ctx)};
+hvCard=function(v,ctx){return pmVideoCard(v,ctx)};
 homeStory=function(a,ctx){return pmLead(a,ctx)};
 
 // ---------- Accueil ----------

@@ -17,3 +17,12 @@ test('URL YouTube canonique construite uniquement depuis un identifiant vérifi�
 test('libellé « Information rapportée » absent de toute l’interface',()=>{
  assert.equal(/Information rapport(é|\\xE9)e/i.test(html),false);
 });
+test('public/nyvo.html contient exactement les sources src/premium.* assemblées',()=>{
+ const css=readFileSync(new URL('../src/premium.css',import.meta.url),'utf8').trim(),js=readFileSync(new URL('../src/premium.js',import.meta.url),'utf8').trim();
+ assert(html.includes(`<style id="nyvo-premium">\n${css}\n</style>`),'CSS non assemblée : node scripts/assemble-premium.mjs');
+ assert(html.includes(`/* NYVO-PREMIUM:BEGIN */\n${js}\n/* NYVO-PREMIUM:END */`),'JS non assemblé : node scripts/assemble-premium.mjs');
+});
+test('la couche Premium n’appelle aucun fournisseur directement',()=>{
+ const js=readFileSync(new URL('../src/premium.js',import.meta.url),'utf8');
+ assert.equal(/fetch\(|api\.football-data|googleapis|search\.list/.test(js),false);
+});
