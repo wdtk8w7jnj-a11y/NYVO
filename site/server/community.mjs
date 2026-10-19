@@ -10,9 +10,11 @@ export const ARTICLES=[
 // these collections with guessed links or reuse summary metadata as player data.
 export const MEDIA=[];
 export function validateMedia(item){
- if(!item||!['supporter','player'].includes(item.category)||!item.id||!item.title||!item.publisher||!item.checkedAt||!item.rightsVerified)return false;
+ if(!item||!['supporter','player','stands'].includes(item.category)||!item.id||!item.title||!item.publisher||!item.checkedAt||!item.rightsVerified)return false;
+ // Depuis les tribunes : publication YouTube canonique d'un créateur vérifié, rencontre confirmée.
+ if(item.category==='stands')return /^https:\/\/www\.youtube\.com\/watch\?v=[A-Za-z0-9_-]{11}$/.test(item.url||'')&&Number.isSafeInteger(item.matchId)&&Boolean(item.matchVerified&&item.authorVerified&&item.context);
  if(item.category==='supporter')return /^https:\/\/(?:www\.)?x\.com\/[A-Za-z0-9_]+\/status\/\d+$/.test(item.url||'')&&Number.isSafeInteger(item.matchId)&&Boolean(item.authorVerified&&item.context);
  return /^https:\/\/www\.youtube\.com\/watch\?v=[A-Za-z0-9_-]{11}$/.test(item.url||'')&&Boolean(item.player)&&['performance','compilation'].includes(item.format)&&(item.format==='performance'?Number.isSafeInteger(item.matchId)&&Boolean(item.matchVerified):Boolean(item.period));
 }
 export function newsCatalogue(){return{articles:ARTICLES,checkedAt:CHECKED_AT,automatic:false,sourceMode:'editorial',notice:'Sélection éditoriale vérifiée manuellement. Aucun flux d’actualité automatique connecté.'};}
-export function mediaCatalogue(){return{items:MEDIA.filter(validateMedia),checkedAt:CHECKED_AT,automatic:false,blockers:{supporter:'Aucune vidéo de supporter avec auteur, match et autorisation vérifiés.',player:'Aucun focus joueur dont la source et la rencontre ou la période sont vérifiés.'}};}
+export function mediaCatalogue(){return{items:MEDIA.filter(validateMedia),checkedAt:CHECKED_AT,automatic:false,blockers:{supporter:'Aucune vidéo de supporter avec auteur, match et autorisation vérifiés.',player:'Aucun focus joueur dont la source et la rencontre ou la période sont vérifiés.',stands:'Aucune vidéo « Depuis les tribunes » validée : six créateurs candidats restent en examen (identité, publications récentes, rencontre, droits).'}};}

@@ -9,7 +9,9 @@ export const ANECDOTES = [CR7_ANECDOTE,{
   summary: 'En Suède, Just Fontaine écrit une page majeure du football français. Derrière ses buts, il y a aussi un prêt de crampons de Stéphane Bruey.',
   category: 'anecdote',
   status: 'Histoire vérifiée',
-  author: 'NYVO — récit original documenté',
+  author: 'Rédaction NYVO',
+  byline: 'Rédaction NYVO',
+  revisedAt: '2026-10-19T14:00:00.000Z',
   publishedAt: '2026-10-19T12:00:00.000Z',
   checkedAt: '2026-10-19T12:00:00.000Z',
   readingMinutes: 2,
@@ -20,6 +22,7 @@ export const ANECDOTES = [CR7_ANECDOTE,{
     'La carrière internationale du Rémois donne un autre relief à cet été : la fiche fédérale recense vingt et une sélections et trente buts. La FIFA rappelle que 1958 fut son unique participation à une Coupe du monde. Sa performance suédoise concentre donc une part exceptionnelle de son histoire en bleu.',
     'Et les chaussures ? Selon le récit publié par la FFF, Fontaine les rend à Bruey à la fin de la compétition. L’anecdote n’a pas besoin d’un objet conservé dans une vitrine pour être remarquable : elle rappelle simplement qu’un exploit individuel peut aussi commencer par le geste ordinaire d’un partenaire.'
   ],
+  headings: [null, 'Treize buts, six matchs', 'Une équipe autour du buteur', 'Une seule Coupe du monde', null],
   record: {
     value: '13 buts / 6 matchs',
     label: 'Le tournoi de Just Fontaine',

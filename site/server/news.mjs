@@ -1,7 +1,7 @@
 import {XMLParser,XMLValidator} from 'fast-xml-parser';
 import {ARTICLES as EDITORIAL_ARTICLES} from './community.mjs';
 import {ANECDOTES} from './anecdotes.mjs';
-import {NEWS_SOURCES,NEWS_CANDIDATES} from './news-sources.mjs';
+import {NEWS_SOURCES,NEWS_CANDIDATES,NEWS_REGISTRY,NEWS_MAX_INTERVAL_MINUTES} from './news-sources.mjs';
 const ARTICLES=[...EDITORIAL_ARTICLES,...ANECDOTES];
 export const NEWS_SOURCE=NEWS_SOURCES[0];
 export const NEWS_TTL=3000000;
@@ -9,6 +9,8 @@ const TTL=NEWS_TTL;
 const array=v=>v==null?[]:Array.isArray(v)?v:[v];
 const text=v=>String(typeof v==='object'?v?.['#text']||'':v||'').replace(/<[^>]*>/g,'').trim();
 const stableId=value=>{let hash=2166136261;for(const ch of value)hash=Math.imul(hash^ch.charCodeAt(0),16777619);return(hash>>>0).toString(36)};
+// « Information rapportée » is no longer a visible label: provenance stays internal.
+export function retireReportedLabel(a){return a&&a.status==='Information rapportée'?{...a,status:null,provenance:a.provenance||'press-rss'}:a;}
 export function parseNewsFeed(xml,at,source=NEWS_SOURCE){
  if(typeof xml!=='string'||xml.length>1000000||/<!DOCTYPE|<!ENTITY/i.test(xml)||XMLValidator.validate(xml)!==true)throw new Error('invalid_feed');
  const doc=new XMLParser({ignoreAttributes:false,parseTagValue:false,trimValues:true}).parse(xml);
@@ -21,7 +23,7 @@ export function parseNewsFeed(xml,at,source=NEWS_SOURCE){
   seen.add(url.href);const slug=url.pathname.split('/').at(-1)?.replace(/\.html$/,'')||'';
   const number=slug.match(/(\d{5,})_(\d+)$/);
   const id=source.id==='lemonde-football'&&number?'lm-'+number[1]+'-'+number[2]:source.id+'-'+stableId(url.href),category=/mercato|transfert|recrutement/i.test(title+' '+array(row.category).map(text).join(' '))?'mercato':/justice|tribunal|procès|violence|racisme/i.test(title)?'hors-terrain':'football';
-  items.push({id,subject:id,title,summary:source.excerpt?text(row.description).slice(0,500):'',status:/rumeur|piste|viserait|pourrait|serait|intéress[ée]/i.test(title)?'Rumeur':'Information rapportée',category,league:null,teamIds:[],matchIds:[],spoilerSensitive:true,publishedAt:new Date(pub).toISOString(),checkedAt:new Date(at).toISOString(),sources:[{name:source.name,url:url.href,official:false}],image:null,language:source.language,sourceId:source.id,automatic:true,contentOrigin:'rss',access:'L’article complet peut être réservé aux abonnés.'});
+  items.push({id,subject:id,title,summary:source.excerpt?text(row.description).slice(0,500):'',status:/rumeur|piste|viserait|pourrait|serait|intéress[ée]/i.test(title)?'Rumeur':null,provenance:'press-rss',category,league:null,teamIds:[],matchIds:[],spoilerSensitive:true,publishedAt:new Date(pub).toISOString(),checkedAt:new Date(at).toISOString(),sources:[{name:source.name,url:url.href,official:false}],image:null,language:source.language,sourceId:source.id,automatic:true,contentOrigin:'rss',access:'L’article complet peut être réservé aux abonnés.'});
  }
  // A valid empty feed is allowed; malformed HTML must never clear the cache.
  return items.sort((a,b)=>b.publishedAt.localeCompare(a.publishedAt));
@@ -33,6 +35,7 @@ async function oneStatus(env,{now=Date.now,source=NEWS_SOURCE}={}){
  const cached=await db.prepare('SELECT * FROM pilot_cache WHERE key=?').bind(KEY).first();
  const control=await db.prepare('SELECT * FROM pilot_control WHERE id=?').bind(CONTROL).first();
  const data=cached?JSON.parse(cached.payload):{articles:[],etag:null,lastModified:null};
+ data.articles=(data.articles||[]).map(retireReportedLabel);
  const state=control?.blocked_until>now()?'paused':cached?'ready':'waiting';
  return{articles:[...data.articles,...ARTICLES].sort((a,b)=>b.publishedAt.localeCompare(a.publishedAt)),automatic:Boolean(cached),state,error:state==='paused'?'feed_unavailable':null,stale:!cached||cached.expires_at<=now(),checkedAt:cached?new Date(cached.fetched_at).toISOString():null,nextCheck:Math.max(cached?.expires_at||0,control?.blocked_until||0),intervalSeconds:TTL/1000,sourceMode:'rss',sources:[{...source,state,count:data.articles.length,lastSuccess:cached?new Date(cached.fetched_at).toISOString():null,lastAttempt:control?.last_call?new Date(control.last_call).toISOString():null,nextCheck:Math.max(cached?.expires_at||0,control?.blocked_until||0),error:state==='paused'?'feed_unavailable':null}],notice:'Lecteur RSS personnel privé. Article complet chez la source. Contrôle planifié horaire ; pauses des éditeurs prioritaires.'};
 }
@@ -74,7 +77,7 @@ export function retryDelay(header,at){const seconds=Number(header),date=Date.par
 export async function newsStatus(env,options={}){
  const sources=options.sources||NEWS_SOURCES,states=await Promise.all(sources.map(source=>oneStatus(env,{...options,source})));
  const articles=[...new Map(states.flatMap(s=>s.articles).map(a=>[a.id,a])).values()].sort((a,b)=>b.publishedAt.localeCompare(a.publishedAt)),checks=states.map(s=>s.checkedAt).filter(Boolean),paused=states.filter(s=>s.state==='paused').length;
- return{articles,automatic:states.some(s=>s.automatic),state:paused===states.length?'paused':paused?'partial':states.some(s=>s.state==='ready')?'ready':states[0]?.state,error:paused?'feed_unavailable':null,stale:states.some(s=>s.stale),checkedAt:checks.length?checks.sort()[0]:null,intervalSeconds:TTL/1000,sources:states.flatMap(s=>s.sources),candidates:NEWS_CANDIDATES,notice:states[0]?.notice};
+ return{articles,automatic:states.some(s=>s.automatic),state:paused===states.length?'paused':paused?'partial':states.some(s=>s.state==='ready')?'ready':states[0]?.state,error:paused?'feed_unavailable':null,stale:states.some(s=>s.stale),checkedAt:checks.length?checks.sort()[0]:null,intervalSeconds:TTL/1000,sources:states.flatMap(s=>s.sources),candidates:NEWS_CANDIDATES,registry:NEWS_REGISTRY,maxIntervalMinutes:NEWS_MAX_INTERVAL_MINUTES,notice:states[0]?.notice};
 }
 export async function refreshNews(env,options={}){
  // Per-source leases and independent failures; no retries inside this invocation.

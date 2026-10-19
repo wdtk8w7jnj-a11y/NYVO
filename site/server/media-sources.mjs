@@ -66,3 +66,31 @@ export const SOURCE_CANDIDATES = [
     note: 'Métadonnées, badge YouTube et existence de la chaîne confirmés ; lien réciproque exact à établir avant activation automatique.',
   },
 ];
+
+// « Depuis les tribunes » : créateurs candidats (audit du 19 octobre 2026).
+// Aucun n'est actif. Activation seulement après : identité et channel ID vérifiés
+// sur la chaîne elle-même, 10 à 20 publications récentes datées examinées, part de
+// contenus filmés au stade constatée. Même actif, chaque vidéo passe par la file
+// de modération : une caméra de supporter ne prouve ni la rencontre ni les droits.
+export const CREATOR_CANDIDATES = [
+  { id: 'awaydays', name: 'AwayDays', handle: '@awaydaysfootball', channelId: null, state: 'candidate',
+    evidenceUrls: ['https://www.youtube.com/@awaydaysfootball', 'https://awaydays.com/about'],
+    observed: 'Page « about » décrivant un projet football, voyages et supporters (audit fourni). Publications récentes non inspectées : YouTube inaccessible depuis l’environnement.' },
+  { id: 'thogden', name: 'Thogden', handle: '@Thogden', channelId: null, state: 'candidate',
+    evidenceUrls: ['https://www.youtube.com/@Thogden', 'https://footyapps.com/shows/thogden'],
+    observed: 'Vlogs de jour de match et réactions selon un index secondaire ; contrôle direct des vidéos requis.' },
+  { id: 'footy-adventures', name: 'Footy Adventures', handle: '@FootyAdventures', channelId: null, state: 'candidate',
+    evidenceUrls: ['https://www.youtube.com/@FootyAdventures'],
+    observed: 'Page de chaîne identifiée par l’audit ; contenu précis et cadence non contrôlés.' },
+  { id: 'stuntpegg', name: 'StuntPegg', handle: '@StuntPeggNieve', channelId: null, state: 'candidate',
+    evidenceUrls: ['https://www.youtube.com/@StuntPeggNieve'],
+    observed: 'Candidat groundhopping ; lecture directe indisponible pendant l’audit.' },
+  { id: 'smiv', name: 'Smiv', handle: '@smiv', channelId: null, state: 'candidate',
+    evidenceUrls: ['https://www.youtube.com/@smiv', 'https://www.pitchero.com/clubs/withamtown/videos/on-the-road--witham-town-v-heybridge-swifts--spa-road-100543.html'],
+    observed: 'Série « On The Road » relayée par un club ; activité actuelle à revérifier.' },
+  { id: 'la-tribune-olympienne', name: 'La Tribune Olympienne', handle: '@latribuneom', channelId: null, state: 'candidate',
+    evidenceUrls: ['https://www.youtube.com/@latribuneom'],
+    observed: 'Piste de réactions OM ; non validée comme source d’images filmées au stade.' },
+];
+// Only creators with a verified channel ID and an explicit activation are scanned.
+export const ACTIVE_CREATORS = CREATOR_CANDIDATES.filter(c => c.state === 'active' && /^UC[A-Za-z0-9_-]{22}$/.test(c.channelId || ''));

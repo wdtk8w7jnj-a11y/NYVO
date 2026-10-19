@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t d">
+<title id="t">17 buts — Ligue des champions 2013/14</title>
+<desc id="d">Infographie originale NYVO. Chiffre : bilan des buteurs UEFA, 24 mai 2014.</desc>
+<defs>
+<radialGradient id="g" cx="78%" cy="30%" r="70%"><stop offset="0" stop-color="#5a0b22"/><stop offset=".55" stop-color="#1a0c12"/><stop offset="1" stop-color="#08090c"/></radialGradient>
+<linearGradient id="r" x1="0" x2="1"><stop offset="0" stop-color="#db1646"/><stop offset="1" stop-color="#ff5d7f"/></linearGradient>
+</defs>
+<rect width="1200" height="675" fill="url(#g)"/>
+<g fill="none" stroke="#ffffff" stroke-opacity=".06" stroke-width="2"><circle cx="905" cy="338" r="250"/><circle cx="905" cy="338" r="170"/><path d="M655 338h500"/></g>
+<text x="80" y="118" fill="#a8abb7" font-family="Inter, system-ui, sans-serif" font-size="26" letter-spacing="6">LIGUE DES CHAMPIONS · 2013/14</text>
+<text x="64" y="470" fill="url(#r)" font-family="Inter, system-ui, sans-serif" font-size="400" font-weight="800" letter-spacing="-24">17</text>
+<text x="86" y="545" fill="#f5f5f7" font-family="Inter, system-ui, sans-serif" font-size="44" font-weight="700">buts en une seule campagne</text>
+<text x="86" y="595" fill="#a8abb7" font-family="Inter, system-ui, sans-serif" font-size="26">Cristiano Ronaldo · Real Madrid · septembre 2013 – mai 2014</text>
+<text x="1120" y="640" text-anchor="end" fill="#6f7380" font-family="Inter, system-ui, sans-serif" font-size="18">Infographie NYVO · source : UEFA.com</text>
+</svg>
