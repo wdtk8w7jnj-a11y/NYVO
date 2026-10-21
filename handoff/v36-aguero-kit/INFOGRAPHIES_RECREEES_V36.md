@@ -45,3 +45,12 @@ Le schéma de l'action finale ne reprend que les quatre étapes du texte V7. Les
 - SVG validés par `xmllint`.
 - Mesure automatique dans Chromium de chaque texte : rien hors du cadre, aucun chevauchement, rien ne déborde des cartouches. Test fait avec les polices prévues et dans le pire cas (DejaVu Sans et DejaVu Serif, plus larges que la police de l'iPhone et que Georgia).
 - WebKit et Safari ne sont pas disponibles dans l'environnement : un contrôle sur un iPhone réel reste à faire.
+
+## Aperçus en situation (21 octobre 2026), constats pour l'intégration
+
+Aperçus produits avec le serveur local de recette (`site/scripts/dev-fixtures.mjs`), dans une copie jetable et non commitée de `site/` (base V24 premium, pas la V35). Ils valident le rendu des SVG, pas l'intégration finale.
+
+- Les 3 SVG se chargent (HTTP 200), à 350 px de large sur mobile (390 × 844) et 688 px sur ordinateur (1440 × 900). Pas de défilement horizontal. Les 6 paragraphes et les 4 intertitres V7 sont rendus. En mode sans spoilers, l'article est masqué (aucun titre, aucune image).
+- **À corriger à l'intégration :** si la couverture est absente, `pmCover()` prend la première image vérifiée, ce qui ferait de la frise la couverture et la retirerait du corps de l'article. Il faut que la couverture ne soit jamais remplacée par une figure.
+- **À corriger à l'intégration :** la rubrique « Crédits des visuels » affiche « Photo » pour toute image qui n'est pas une infographie. La couverture (`kind: "illustration"`) y apparaît donc comme « Photo » ; il faut l'afficher comme « Illustration ».
+- Le contrôle sur Safari iOS réel reste à faire : WebKit n'est pas disponible dans l'environnement.
