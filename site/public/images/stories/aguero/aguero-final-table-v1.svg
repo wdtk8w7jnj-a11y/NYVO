@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="fr" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-labelledby="t d">
+<title id="t">Classement final de la Premier League 2011/12 : Manchester City et Manchester United</title>
+<desc id="d">Classement final, haut du tableau. 1er, Manchester City : 38 matchs, 28 victoires, 5 nuls, 5 défaites, 93 buts marqués, 29 encaissés, différence de buts +64, 89 points, champion. 2e, Manchester United : 38 matchs, 28 victoires, 5 nuls, 5 défaites, 89 buts marqués, 33 encaissés, différence de buts +56, 89 points. À égalité de points, City est champion grâce à sa différence de buts supérieure de huit buts.</desc>
+<metadata>Version recréée pour NYVO V36 le 21 octobre 2026, avec accord éditorial, d’après les faits et légendes validés de l’article V7. Ce n’est pas le fichier original perdu.</metadata>
+<rect width="1200" height="900" fill="#08090c"/>
+<g font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"><rect x="64" y="74" width="28" height="3" fill="#db1646"/><text x="108" y="84" fill="#ff5a7d" font-size="24" font-weight="700" letter-spacing="3">PREMIER LEAGUE 2011/12 · CLASSEMENT FINAL</text></g>
+<text x="64" y="176" font-family="Georgia, 'Times New Roman', serif" fill="#f1ece2" font-size="56">89 points chacun</text>
+<text x="64" y="230" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#a8abb7" font-size="28">La différence de buts donne le titre à Manchester City.</text>
+<g font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#80848f" font-size="21" font-weight="700" letter-spacing="2">
+<text x="136" y="346">CLUB</text><text x="600" y="346" text-anchor="middle">J</text><text x="720" y="346" text-anchor="middle">G-N-P</text><text x="868" y="346" text-anchor="middle">BUTS</text><text x="1004" y="346" text-anchor="middle">DIFF.</text><text x="1112" y="346" text-anchor="end">PTS</text>
+</g>
+<g font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<rect x="64" y="372" width="1072" height="100" rx="12" fill="#181a20" stroke="#db1646" stroke-width="2"/>
+<rect x="64" y="372" width="8" height="100" rx="4" fill="#db1646"/>
+<text x="88" y="436" fill="#ff5a7d" font-size="36" font-weight="800">1</text>
+<text x="136" y="424" fill="#f1ece2" font-size="36" font-weight="700">Manchester City</text>
+<text x="136" y="456" fill="#ff5a7d" font-size="21" font-weight="700" letter-spacing="3">CHAMPION</text>
+<text x="600" y="436" text-anchor="middle" fill="#a8abb7" font-size="32">38</text>
+<text x="720" y="436" text-anchor="middle" fill="#a8abb7" font-size="32">28-5-5</text>
+<text x="868" y="436" text-anchor="middle" fill="#a8abb7" font-size="32">93–29</text>
+<text x="1004" y="436" text-anchor="middle" fill="#ff5a7d" font-size="36" font-weight="800">+64</text>
+<text x="1112" y="436" text-anchor="end" fill="#f1ece2" font-size="40" font-weight="800">89</text>
+</g><g font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<rect x="64" y="490" width="1072" height="100" rx="12" fill="#121318" stroke="#2e313b" stroke-width="1.5"/>
+
+<text x="88" y="554" fill="#a8abb7" font-size="36" font-weight="800">2</text>
+<text x="136" y="554" fill="#f1ece2" font-size="36" font-weight="700">Manchester United</text>
+
+<text x="600" y="554" text-anchor="middle" fill="#a8abb7" font-size="32">38</text>
+<text x="720" y="554" text-anchor="middle" fill="#a8abb7" font-size="32">28-5-5</text>
+<text x="868" y="554" text-anchor="middle" fill="#a8abb7" font-size="32">89–33</text>
+<text x="1004" y="554" text-anchor="middle" fill="#f1ece2" font-size="36" font-weight="800">+56</text>
+<text x="1112" y="554" text-anchor="end" fill="#f1ece2" font-size="40" font-weight="800">89</text>
+</g>
+<text x="64" y="660" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#80848f" font-size="21" font-weight="700" letter-spacing="2">DIFFÉRENCE DE BUTS</text>
+<text x="64" y="710" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#a8abb7" font-size="26" font-weight="600">City</text><rect x="230" y="684" width="820" height="34" rx="6" fill="#db1646"/><text x="1066" y="712" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#ff5a7d" font-size="30" font-weight="800">+64</text>
+<text x="64" y="770" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#a8abb7" font-size="26" font-weight="600">United</text><rect x="230" y="744" width="718" height="34" rx="6" fill="#2e313b"/><text x="964" y="772" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#f1ece2" font-size="30" font-weight="800">+56</text>
+<path d="M948 794V808H1050V794" fill="none" stroke="#a8abb7" stroke-width="2"/>
+<text x="999" y="836" text-anchor="middle" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#f1ece2" font-size="24" font-weight="700">8 buts d’écart</text>
+<text x="1136" y="880" text-anchor="end" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#80848f" font-size="21">Infographie NYVO · source : Premier League</text>
+</svg>
