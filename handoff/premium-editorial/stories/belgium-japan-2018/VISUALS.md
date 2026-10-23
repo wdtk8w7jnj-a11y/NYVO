@@ -9,5 +9,16 @@ Palette NYVO : noir profond `#09090B`, charbon `#131316`, ivoire `#F4F0E8`, rubi
 | [03-contre-final.svg](assets/03-contre-final.svg) | 11 secondes selon FIFA; Courtois → De Bruyne → Meunier → Lukaku → Chadli | Schéma tactique indicatif, sans tracking. Alt : séquence du contre qui mène au but de Chadli; 11 secondes selon FIFA. |
 | [04-parcours-japon.svg](assets/04-parcours-japon.svg) | Temps forts japonais avant et après le 0–2, puis but décisif belge | Repères sélectionnés : 31', fin de 1re période, 48', 52', 90+2', 90+4' | Frise narrative, non exhaustive; faits JFA/FIFA. Alt : occasions du Japon, ses deux buts, le coup franc tardif de Honda puis le but belge. |
 
+## PNG corrigés — 24 octobre 2026
+Les trois exports PNG suivants sont la livraison principale pour l’intégration mobile, car ils s’affichent dans les aperçus iOS qui ne rendent pas correctement certains SVG. Ils sont générés par le script [make_graphs.py](assets/make_graphs.py); il s’agit de graphiques éditoriaux originaux, sans photographie ni ressource tierce.
+
+| PNG | Usage |
+|---|---|
+| [01-sequence-48-52.png](assets/01-sequence-48-52.png) | Haraguchi, poteau de Hazard, puis but d’Inui; frise non proportionnelle. |
+| [02-double-changement.png](assets/02-double-changement.png) | Remplacements à la 65e et buts belges jusqu’à 90+4; la chronologie ne démontre pas la causalité. |
+| [03-contre-11-secondes.png](assets/03-contre-11-secondes.png) | Contre final rapporté à onze secondes par FIFA; placements indicatifs. |
+
+Les SVG précédents restent archivés. Pour la sélection actuelle, intégrer ces trois PNG seulement; ne pas ajouter le SVG 04 sans validation séparée.
+
 ## Intégration
 Largeur fluide, max-width 100 %, lecture mobile 360–390 px, légende « Schéma NYVO; positions indicatives; séquence : FIFA ». En mode anti-spoiler, protéger les cartes et graphiques avec le contenu de l'article. Aucun fichier n'est intégré au site ou publié. Les SVG originaux ne sont pas des photos libres de droits réutilisées.

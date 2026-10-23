@@ -1,0 +1,12 @@
+<svg class="field" viewBox="0 0 420 230" role="img" aria-label="Schéma de principe de solutions courtes autour du gardien">
+        <defs><marker id="arrowIvory" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#eee7d9"/></marker><marker id="arrowRuby" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#b43449"/></marker></defs>
+        <rect class="pitch" x="12" y="12" width="396" height="206" rx="5"/>
+        <path class="marking" d="M12 115H408 M126 218V177 Q210 135 294 177V218 M171 218V197 Q210 178 249 197V218 M188 12V48 Q210 60 232 48V12"/>
+        <path class="pass" d="M210 187 Q167 158 128 130"/><path class="pass" d="M210 187 Q253 158 292 130"/><path class="ruby-pass" d="M210 184 Q210 151 210 116"/>
+        <circle class="player-ruby" cx="210" cy="190" r="15"/><text class="node-label" x="210" y="190">S</text>
+        <circle class="player" cx="119" cy="125" r="13"/><text class="node-label" x="119" y="125">DC</text>
+        <circle class="player" cx="301" cy="125" r="13"/><text class="node-label" x="301" y="125">DC</text>
+        <circle class="player" cx="210" cy="105" r="13"/><text class="node-label" x="210" y="105">6</text>
+        <text class="field-note" x="22" y="31">SOLUTIONS COURTES · PRINCIPE</text>
+        <text class="field-note" x="22" y="205">S = SAFONOV · DC = DÉFENSEUR CENTRAL</text>
+      </svg>

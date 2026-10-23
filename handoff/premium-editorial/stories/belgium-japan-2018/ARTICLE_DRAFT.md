@@ -1,13 +1,13 @@
 # Du 0–2 au 3–2 : le dernier éclair de la Belgique
 
-> **Brouillon V1, non validé pour publication.** Angle retenu : raconter le renversement en respectant aussi le match du Japon. Faits et repères : [SOURCES.md](SOURCES.md).
+> **Texte éditorial finalisé pour intégration — non encore intégré ni publié.** Angle retenu : raconter le renversement en respectant aussi le match du Japon. Titre, chapô A et conclusion A sont retenus. Faits et repères : [SOURCES.md](SOURCES.md).
 
 ## Chapô retenu — choix A
 
 **Version de travail retenue par l'utilisateur :**  
 Après l’ouverture du score d’Haraguchi, Hazard trouve le poteau. Quatre minutes plus tard, Inui fait passer le Japon à 2–0. Le match semble filer; la Belgique cherche encore le point d’appui qui peut le relancer. [S3]
 
-### Variantes conservées
+### Variantes B/C — notes éditoriales uniquement, ne pas intégrer
 
 **B · Lecture de la séquence**  
 À la 48e, le Japon marque. Hazard touche le poteau, puis Kagawa récupère le ballon et sert Inui pour le 2–0. Deux actions rapprochées, deux équipes encore menaçantes : l’écart se creuse sans que la tension retombe. [S3]
@@ -16,7 +16,7 @@ Après l’ouverture du score d’Haraguchi, Hazard trouve le poteau. Quatre min
 Haraguchi et Inui donnent deux buts d’avance au Japon en quatre minutes. Entre les deux, Hazard touche le poteau. Ce détail empêche de raconter ce 0–2 comme une domination tranquille : le Japon a été incisif, et la Belgique a aussi frôlé sa réponse. [S3]
 
 
-À la 52e minute du huitième de finale, le Japon mène 2–0. Pour comprendre comment la Belgique a ensuite trouvé sa réponse, il faut d’abord revenir sur la manière dont les Japonais ont construit leur avance et sur la réaction belge entre leurs deux buts. [S1, S3]
+Le score ne suffit pas à résumer cette séquence. Pour comprendre la réponse belge, il faut d’abord regarder les occasions créées par le Japon et les actions entre ses deux buts. [S1, S3]
 
 ## Le 0–2 japonais ne tombe pas du ciel
 
@@ -24,7 +24,7 @@ La fédération japonaise rappelle que le Japon s'était déjà créé des occas
 
 Le premier but naît d'une combinaison : Inui transmet à Shibasaki, qui lance Haraguchi dans la surface; après avoir pris le dessus sur son défenseur, Haraguchi marque à la 48e. La Belgique répond presque aussitôt : selon le compte rendu de la JFA, Hazard touche le poteau droit après l'ouverture du score. À la 52e, quatre minutes après le but d'Haraguchi, Kagawa récupère un ballon dégagé dans le camp belge et sert Inui. Celui-ci se décale vers la droite puis frappe depuis l'entrée de la surface pour le 2–0. [S3]
 
-Le passage du 1–0 au 2–0 n'est donc pas raconté comme une attaque à sens unique : Hazard frôle l'égalisation, puis le Japon reprend l'avantage dans l'action suivante et double son avance. Cette alternance prépare la réponse belge sans effacer ce que le Japon vient de réussir.
+Le passage du 1–0 au 2–0 n'est donc pas raconté comme une attaque à sens unique : Hazard frôle l'égalisation, puis le Japon creuse l'écart dans l'action suivante. Cette alternance prépare la réponse belge sans effacer ce que le Japon vient de réussir.
 
 ## À la 65e, Martínez change deux profils
 
@@ -58,12 +58,16 @@ La séquence combine une remise en jeu rapide, une progression axiale, une sorti
 
 Le schéma associé numérote les cinq étapes, mais les emplacements sont symboliques et les trajectoires explicatives. Il ne prétend pas reproduire les positions exactes du match.
 
-Le Japon avait mené 2–0 et, selon FIFA, commençait à envisager la prolongation. La Belgique a marqué trois fois, par Vertonghen, Fellaini et Chadli, avant la fin du temps additionnel. [S1, S2] Les deux réalités restent dans le récit : le Japon a construit deux buts d'avance et s'est encore procuré un coup franc dangereux dans le temps additionnel; la Belgique a transformé la dernière transition en qualification.
+Le 3–2 n’efface pas le 2–0 japonais. Le Japon a construit son avance et s’est encore procuré une occasion dangereuse dans le temps additionnel. La Belgique, elle, a trouvé les ressources collectives pour revenir, puis a joué sa dernière transition jusqu’au bout. Cette rencontre tient dans ces deux réalités : une avance méritée, puis une réponse menée avec sang-froid.
 
 ### Repères
 - Score : Belgique 3–2 Japon.
 - Buts : Haraguchi 48e, Inui 52e, Vertonghen 69e, Fellaini 74e, Chadli 90+4.
 - Double changement belge à la 65e : Fellaini et Chadli pour Mertens et Carrasco.
 
-### À valider ensuite
-Le chapô A est retenu comme version de travail, sans validation finale de l’article. Choisir le titre, puis retravailler la conclusion. Les onze secondes restent développées dans leur section et le schéma associé.
+## État éditorial
+- Titre retenu : « Du 0–2 au 3–2 : le dernier éclair de la Belgique ».
+- Chapô A retenu; les variantes B/C ci-dessus sont des notes de travail et ne doivent pas apparaître dans l’application.
+- Conclusion A retenue, reproduite dans le dernier paragraphe.
+- L’article est prêt pour intégration après application de la note de divergence de minute dans [SOURCES.md](SOURCES.md).
+- Aucune causalité n’est attribuée aux remplacements; les placements des schémas restent indicatifs.

@@ -7,6 +7,9 @@ Dernière vérification : 23 octobre 2026. Une source primaire officielle couvre
 
 Source primaire pour le résultat 3–2, les buteurs et minutes (Haraguchi 48e, Inui 52e, Vertonghen 69e, Fellaini 74e, Chadli 90+4), le double remplacement à la 65e (Fellaini et Chadli pour Mertens et Carrasco), et la dernière séquence Courtois → De Bruyne → Meunier → centre bas → leurre de Lukaku → finition de Chadli. FIFA rapporte aussi que le Japon commençait à envisager la prolongation.
 
+### Divergence de minute — but de Vertonghen
+FIFA (S1, S4) indique 69e; le compte rendu de la JFA (S3) indique 71e. Le texte et la chronologie retiennent la minute FIFA (69e) de façon cohérente, et cette divergence est conservée explicitement plutôt que mélangée.
+
 ## Méthode
 - Les écarts 48→52, 69→74 et 74→90+4 sont calculés à partir des minutes affichées; ils ne représentent pas une durée effective au chronomètre continu.
 - Les neuf minutes entre 65e et 74e sont des minutes de match indiquées.

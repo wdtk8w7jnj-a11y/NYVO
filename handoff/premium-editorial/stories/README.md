@@ -1,13 +1,15 @@
-# NYVO Story — index des anecdotes
+# NYVO Story et articles — index de reprise
 
-Chaque histoire a son propre dossier : entrée de reprise, brouillon, sources, registre des visuels et assets.
+Chaque dossier conserve le texte validé, ses sources, ses visuels et son point de reprise.
 
-| Histoire | État | Dossier |
+| Article | État | Dossier |
 |---|---|---|
-| Belgique–Japon, Coupe du monde 2018 | Brouillon V1; schémas prêts; angle en développement | [Dossier complet](belgium-japan-2018/README.md) |
+| Safonov et Chevalier : deux profils pour un même poste | Texte complet V10 et trois schémas tactiques; à intégrer | safonov-psg-2026/README.md |
+| Du 0–2 au 3–2 : le dernier éclair de la Belgique | Texte finalisé; trois PNG corrigés; à intégrer | belgium-japan-2018/README.md |
 
 ## Règles de travail
-- Sourcer chaque statistique avec sa période et sa définition; une chronologie ne prouve pas une causalité.
-- Séparer visuels NYVO originaux, images d'archives et créations sous licence.
-- Aucun récit n'est « publié » sans intégration vérifiée sur le site.
-- Après chaque étape, mettre à jour le point de reprise et proposer quatre choix A–D avec une recommandation.
+- Conserver les textes et choix approuvés; ne pas inventer de citations ou de statistiques.
+- Sourcer chaque chiffre et préciser la période; une chronologie ne prouve pas une causalité.
+- Utiliser les maquettes NYVO existantes comme référence immuable.
+- Aucun article n’est « publié » avant intégration et vérification du site.
+- Le prompt d’intégration le plus récent est PROMPT_CLAUDE_CODE_DEUX_ARTICLES_2026-10-24.md.

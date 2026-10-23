@@ -6,7 +6,7 @@ Dossier préparé le 19 octobre 2026 pour Claude Codex. Il s'agit d'un cahier de
 Lire PROMPT_CLAUDE.md, DESIGN_PREMIUM.md, SOURCES_ET_DROITS.md et RECETTE.md. Ouvrir MAQUETTES/index.html et consulter INVENTAIRE.json.
 
 ## Base technique : attention aux deux historiques
-Le site existant est https://nyvo-rubis.readymars3.chatgpt.site et doit rester strictement privé, propriétaire uniquement.
+Le site de production NYVO est géré dans l’espace Sites associé au compte et doit rester strictement privé, propriétaire uniquement.
 Le snapshot SITE_V24 contient les fichiers suivis du site à partir du commit 9f47b5f8e73a1cfba7595eb1cf42c5ac64f5743a. Les secrets, fichiers de configuration de déploiement privés, caches et dépendances ne sont pas exportés. Ce snapshot est une référence de migration : comparer avant de remplacer des fichiers.
 Le dépôt GitHub possède un historique différent. La branche de livraison part de claude/youthful-euler-lgq3fj, commit f606a635925180bed371a64ff83333774d8a8154. Ne pas repartir du main presque vide ni remettre en production l'ancien prototype. Inspecter les changements plus récents avant d'intégrer le snapshot.
 
@@ -23,5 +23,7 @@ Les maquettes sont fournies en WebP optimisé à leur résolution d'origine pour
 Le dépôt destinataire est public : ne jamais y ajouter de clé, jeton Sites, compte personnel, capture de configuration, réponse fournisseur privée ou catalogue RSS collecté.
 
 
-## Anecdotes en cours
-L'index des anecdotes est dans [stories/README.md](stories/README.md). Le dossier Belgique–Japon 2018 contient un brouillon, ses sources et trois schémas originaux. Consulte [son README](stories/belgium-japan-2018/README.md) avant toute modification. Le récit est en développement; il n'est ni intégré au site ni publié.
+## Deux articles à intégrer — 24 octobre 2026
+L’index des deux dossiers est dans [stories/README.md](stories/README.md). Safonov est disponible en texte complet V10 avec trois schémas tactiques. Belgique–Japon a son texte finalisé, ses sources et trois PNG corrigés. Aucun des deux n’est encore intégré ni publié.
+
+Le prompt dédié [PROMPT_CLAUDE_CODE_DEUX_ARTICLES_2026-10-24.md](PROMPT_CLAUDE_CODE_DEUX_ARTICLES_2026-10-24.md) prévaut sur les anciennes consignes de refonte générale : il interdit tout changement de DA et limite l’intervention à ces deux articles. Les maquettes et spécifications de design sont des références à conserver, jamais à modifier.

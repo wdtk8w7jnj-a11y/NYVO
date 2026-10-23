@@ -1,0 +1,12 @@
+<svg class="field" viewBox="0 0 420 230" role="img" aria-label="Schéma de principe d'un long ballon vers une zone de réception suggérée">
+        <defs><marker id="arrowIvory2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#eee7d9"/></marker></defs>
+        <rect class="pitch" x="12" y="12" width="396" height="206" rx="5"/>
+        <path class="marking" d="M12 115H408 M126 12V53 Q210 93 294 53V12 M171 12V32 Q210 52 249 32V12 M188 218V182 Q210 170 232 182V218"/>
+        <path d="M220 178 Q301 154 310 122 Q319 87 292 66" fill="none" stroke="#b43449" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 7" marker-end="url(#arrowRuby2)"/>
+        <defs><marker id="arrowRuby2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#b43449"/></marker></defs>
+        <ellipse cx="292" cy="66" rx="57" ry="25" fill="#a52a3d" fill-opacity=".13" stroke="#bd5969" stroke-width="1.5" stroke-dasharray="5 5"/>
+        <circle class="player-ruby" cx="210" cy="190" r="15"/><text class="node-label" x="210" y="190">S</text>
+        <circle class="player" cx="292" cy="66" r="13"/><text class="node-label" x="292" y="66">C</text>
+        <text class="field-note" x="22" y="31">ZONE DE RÉCEPTION SUGGÉRÉE</text>
+        <text class="field-note" x="22" y="205">TRAJECTOIRE ILLUSTRATIVE · NON GÉOLOCALISÉE</text>
+      </svg>

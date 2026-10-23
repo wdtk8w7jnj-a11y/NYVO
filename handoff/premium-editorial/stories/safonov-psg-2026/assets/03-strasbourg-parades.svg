@@ -1,0 +1,13 @@
+<svg class="field" viewBox="0 0 420 230" role="img" aria-label="Schéma de principe distinguant le but dévié de la 17e minute et l'arrêt de la 50e">
+        <rect class="pitch" x="12" y="12" width="396" height="206" rx="5"/>
+        <path class="marking" d="M12 115H408 M95 12V72 Q210 118 325 72V12 M151 12V47 Q210 79 269 47V12 M179 218V187 Q210 170 241 187V218"/>
+        <path d="M185 26H235V12H185Z" fill="none" stroke="#857c75" stroke-width="1.5"/>
+        <circle cx="143" cy="89" r="11" fill="#a52a3d" stroke="#eee7d9" stroke-width="1.5"/><text class="minute" x="134" y="92">17′</text>
+        <path d="M143 89 Q166 61 194 36" fill="none" stroke="#b43449" stroke-width="2" stroke-dasharray="5 5"/>
+        <circle cx="273" cy="78" r="12" fill="#eee7d9" stroke="#a52a3d" stroke-width="2"/><text x="264" y="81" fill="#171315" font-size="9" font-weight="700">50′</text>
+        <path d="M273 78 Q248 55 222 38" fill="none" stroke="#eee7d9" stroke-width="2" stroke-dasharray="4 5"/>
+        <path d="M213 25v23 M203 36h20" stroke="#a52a3d" stroke-width="2"/>
+        <text class="event-label" x="26" y="158">17′ · BUT DÉVIÉ</text><text class="event-label" x="242" y="158">50′ · PARADE</text>
+        <text class="field-note" x="22" y="31">PSG — STRASBOURG</text>
+        <text class="field-note" x="22" y="205">POSITIONS ET TRAJECTOIRES ILLUSTRATIVES</text>
+      </svg>

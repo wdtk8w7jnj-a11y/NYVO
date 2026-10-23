@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <title>NYVO — Safonov et Chevalier : deux profils pour un même poste</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080808;--panel:#101011;--ivory:#eee7d9;--muted:#aaa39a;--rubis:#a52a3d;--line:#393638;--field:#151619;--field-line:#5a5552}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(ellipse at top,#191315 0,#080808 52rem);color:var(--ivory);font-family:Arial,Helvetica,sans-serif}
+    main{max-width:1440px;margin:0 auto;padding:clamp(24px,5vw,72px)}
+    header{max-width:900px;margin:0 auto 42px;text-align:center}
+    .brand{font-size:12px;letter-spacing:.34em;color:#d8cfc1}
+    .brand b{color:var(--rubis)}
+    h1{font:500 clamp(32px,5vw,62px)/1.02 Georgia,'Times New Roman',serif;letter-spacing:-.035em;margin:22px 0 14px}
+    .dek{color:#c0b9b0;font:16px/1.6 Arial,sans-serif;max-width:690px;margin:auto}
+    .lead{max-width:820px;margin:0 auto 34px;padding:20px 24px;border-left:2px solid var(--rubis);background:linear-gradient(90deg,rgba(165,42,61,.09),transparent 78%)}
+    .lead p{margin:0;color:#e2dace;font:clamp(17px,2vw,21px)/1.55 Georgia,'Times New Roman',serif}
+    .ucl{max-width:1100px;margin:0 auto 30px;padding:clamp(20px,3vw,34px);background:linear-gradient(140deg,rgba(165,42,61,.08),transparent 48%),#0d0d0e;border:1px solid #302d2e;border-radius:16px}
+    .ucl h2{min-height:0;margin:10px 0 13px;font-size:clamp(25px,3vw,37px)}
+    .ucl-copy{max-width:850px;margin:0 0 20px;color:#d8d0c5;font:15px/1.65 Georgia,'Times New Roman',serif}
+    .ucl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .ucl-match{padding:18px;background:#131315;border:1px solid #353133;border-radius:11px}
+    .ucl-match h3{margin:0 0 16px;color:#c5b9aa;font-size:11px;letter-spacing:.13em;text-transform:uppercase}
+    .ucl-stat{display:flex;align-items:baseline;gap:8px}
+    .ucl-stat strong{font:600 42px/.95 Georgia,'Times New Roman',serif;color:#eee7d9}
+    .ucl-stat span{color:#c5beb4;font-size:12px}
+    .ucl-conceded{margin-top:10px;padding-top:9px;border-top:1px solid #353133;color:#b6aea4;font-size:12px}
+    .ucl-source{margin-top:15px;color:#a9a29a;font-size:10px;line-height:1.55}
+    .analysis-copy{max-width:940px;margin:0 auto 28px;padding:4px 8px}
+    .analysis-copy h2{min-height:0;margin:10px 0 12px;font-size:clamp(25px,3vw,37px)}
+    .analysis-copy p{margin:0;color:#d8d0c5;font:16px/1.7 Georgia,'Times New Roman',serif}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+    .card{position:relative;overflow:hidden;padding:25px 23px 22px;background:linear-gradient(155deg,rgba(255,255,255,.035),transparent 42%),var(--panel);border:1px solid #322f30;border-radius:16px;box-shadow:0 18px 50px #0008}
+    .card:before{content:"";position:absolute;inset:0 auto 0 0;width:2px;background:linear-gradient(var(--rubis),transparent 70%)}
+    .kicker{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#c4b7a7}
+    h2{font:500 clamp(22px,2.2vw,31px)/1.08 Georgia,'Times New Roman',serif;margin:12px 0 20px;min-height:2.1em}
+    .stat{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
+    .stat strong{font:600 clamp(37px,4vw,53px)/.95 Georgia,'Times New Roman',serif;color:#f2eadd;letter-spacing:-.045em}
+    .stat strong em{font-style:normal;color:#c44a5e}
+    .stat span{color:#c5beb4;font-size:12px;line-height:1.45}
+    .field{display:block;width:100%;height:auto;border:1px solid #343134;border-radius:10px;background:#0b0c0d}
+    .caption{font:14px/1.55 Georgia,'Times New Roman',serif;color:#e8e0d4;margin:16px 0 17px;min-height:5.7em}
+    .source{border-top:1px solid #353133;padding-top:12px;color:#b1aaa0;font:11px/1.55 Arial,sans-serif}
+    .source strong{color:#e6dfd4;font-weight:600}
+    .tag{display:inline-block;margin-top:8px;padding:5px 8px;border:1px solid #59434a;border-radius:99px;color:#c89da4;font-size:9px;letter-spacing:.09em;text-transform:uppercase}
+    .compare{margin-top:22px;padding:clamp(22px,3vw,38px);background:linear-gradient(130deg,rgba(165,42,61,.10),transparent 42%),#101011;border:1px solid #322f30;border-radius:16px}
+    .compare h2{min-height:0;margin:10px 0 8px;font-size:clamp(24px,3vw,36px)}
+    .compare-intro{margin:0 0 20px;color:#bdb6ad;font-size:13px;line-height:1.55}
+    .compare table{width:100%;border-collapse:collapse;table-layout:fixed}
+    .compare th,.compare td{padding:14px 12px;border-bottom:1px solid #353133;text-align:left}
+    .compare thead th{color:#bcae9f;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+    .compare tbody th{color:#d0c8bd;font-size:13px;font-weight:500}
+    .compare td{font:500 24px/1.1 Georgia,'Times New Roman',serif;color:#eee7d9}
+    .compare td:first-of-type{color:#d6cbbd}
+    .compare-note{margin:17px 0 0;color:#c2bab0;font:14px/1.55 Georgia,'Times New Roman',serif}
+    .compare-source{margin-top:14px;padding-top:12px;border-top:1px solid #353133;color:#aaa39a;font-size:11px;line-height:1.5}
+    footer{max-width:850px;margin:30px auto 0;color:#817c77;text-align:center;font-size:11px;line-height:1.6}
+    svg text{font-family:Arial,Helvetica,sans-serif}
+    .pitch{fill:var(--field);stroke:var(--field-line);stroke-width:1.3}
+    .marking{fill:none;stroke:var(--field-line);stroke-width:1.15;opacity:.8}
+    .pass{fill:none;stroke:#eee7d9;stroke-width:2.3;stroke-linecap:round;marker-end:url(#arrowIvory)}
+    .ruby-pass{fill:none;stroke:#b43449;stroke-width:2.3;stroke-linecap:round;stroke-dasharray:7 7;marker-end:url(#arrowRuby)}
+    .player{fill:#101112;stroke:#eee7d9;stroke-width:2}
+    .player-ruby{fill:#a52a3d;stroke:#f0e8dc;stroke-width:1.2}
+    .node-label{fill:#efe7da;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:middle}
+    .field-note{fill:#9f9992;font-size:9px;letter-spacing:.8px}
+    .minute{fill:#eee7d9;font-size:10px;font-weight:700}
+    .event-label{fill:#c9c1b6;font-size:9px;letter-spacing:.5px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr;max-width:650px;margin:auto}.card{padding:24px}.caption{min-height:0}h2{min-height:0}.stat strong{font-size:50px}.field{max-height:none}}
+    @media(max-width:620px){.ucl-grid{grid-template-columns:1fr}.ucl-match{padding:16px}.ucl-stat strong{font-size:38px}}
+    @media(max-width:520px){.compare{padding:20px 14px}.compare th,.compare td{padding:11px 6px}.compare thead th{font-size:9px;letter-spacing:.04em}.compare tbody th{font-size:11px}.compare td{font-size:19px}}
+    @media(min-width:901px) and (max-width:1120px){main{padding:30px}.card{padding:19px 16px}.caption{font-size:13px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="brand">NY<b>V</b>O&nbsp; · &nbsp;LE DÉBAT EN CHIFFRES</div>
+    <h1>Safonov et Chevalier : deux profils pour un même poste</h1>
+    <p class="dek">Le PSG doit-il miser sur son duo actuel ou chercher encore un gardien ? L’analyse commence par les performances, pas par un verdict.</p>
+  </header>
+  <section class="lead" aria-label="Ouverture de l’article">
+    <p>Safonov et Chevalier ont affiché des statistiques différentes la saison passée. Pour comprendre ce que le PSG peut attendre de son duo, il faut dépasser les pourcentages et observer le jeu.</p>
+  </section>
+  <section class="ucl" aria-labelledby="ucl-title">
+    <div class="kicker">01 &nbsp;·&nbsp; La régularité en Ligue des champions</div>
+    <h2 id="ucl-title">Des arrêts décisifs, une régularité à confirmer</h2>
+    <p class="ucl-copy">Sur trois rencontres, les fiches FBref recensent 3 arrêts contre le Slovan (1 but encaissé), 6 contre Manchester City (2), puis 3 contre Barcelone (2). Le volume d’interventions face à City ressort, mais ces totaux ne disent ni la difficulté de chaque tir ni la responsabilité du gardien sur chaque but. La régularité se juge aussi dans le contexte des actions.</p>
+    <div class="ucl-grid" role="list" aria-label="Statistiques match par match">
+      <article class="ucl-match" role="listitem"><h3>Slovan Bratislava</h3><div class="ucl-stat"><strong>3</strong><span>arrêts</span></div><div class="ucl-conceded">1 but encaissé</div></article>
+      <article class="ucl-match" role="listitem"><h3>Manchester City</h3><div class="ucl-stat"><strong>6</strong><span>arrêts</span></div><div class="ucl-conceded">2 buts encaissés</div></article>
+      <article class="ucl-match" role="listitem"><h3>FC Barcelone</h3><div class="ucl-stat"><strong>3</strong><span>arrêts</span></div><div class="ucl-conceded">2 buts encaissés</div></article>
+    </div>
+    <div class="ucl-source"><strong>Source :</strong> FBref · fiches de match de Ligue des champions 2026–27 · consultation le 23 octobre 2026.<br>Présentation match par match; aucun total cumulé affiché.</div>
+  </section>
+  <section class="analysis-copy" aria-labelledby="distribution-title">
+    <div class="kicker">02 &nbsp;·&nbsp; Le gardien dans la construction</div>
+    <h2 id="distribution-title">La relance se lit dans son contexte</h2>
+    <p>Le gardien ne se juge pas seulement sur les tirs arrêtés. La relance compte aussi, mais un taux de réussite global ne dit pas si le ballon a cassé une ligne, échappé au pressing ou simplement circulé sans risque. Les chiffres de passes et de longs ballons invitent donc à regarder les choix de Safonov dans le contexte du jeu.</p>
+  </section>
+  <section class="grid" aria-label="Trois schémas tactiques sur Matvey Safonov">
+    <article class="card">
+      <div class="kicker">01 &nbsp;·&nbsp; Première relance</div>
+      <h2>Construire court</h2>
+      <div class="stat"><strong>80,4<em>%</em></strong><span><b>115 / 143</b><br>passes réussies</span></div>
+      <svg class="field" viewBox="0 0 420 230" role="img" aria-label="Schéma de principe de solutions courtes autour du gardien">
+        <defs><marker id="arrowIvory" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#eee7d9"/></marker><marker id="arrowRuby" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#b43449"/></marker></defs>
+        <rect class="pitch" x="12" y="12" width="396" height="206" rx="5"/>
+        <path class="marking" d="M12 115H408 M126 218V177 Q210 135 294 177V218 M171 218V197 Q210 178 249 197V218 M188 12V48 Q210 60 232 48V12"/>
+        <path class="pass" d="M210 187 Q167 158 128 130"/><path class="pass" d="M210 187 Q253 158 292 130"/><path class="ruby-pass" d="M210 184 Q210 151 210 116"/>
+        <circle class="player-ruby" cx="210" cy="190" r="15"/><text class="node-label" x="210" y="190">S</text>
+        <circle class="player" cx="119" cy="125" r="13"/><text class="node-label" x="119" y="125">DC</text>
+        <circle class="player" cx="301" cy="125" r="13"/><text class="node-label" x="301" y="125">DC</text>
+        <circle class="player" cx="210" cy="105" r="13"/><text class="node-label" x="210" y="105">6</text>
+        <text class="field-note" x="22" y="31">SOLUTIONS COURTES · PRINCIPE</text>
+        <text class="field-note" x="22" y="205">S = SAFONOV · DC = DÉFENSEUR CENTRAL</text>
+      </svg>
+      <p class="caption">Safonov participe à la première relance. En Ligue 1, il a réussi 115 de ses 143 passes (80,4 %). Ce chiffre mesure sa précision globale, pas à lui seul l’efficacité de ses passes courtes.</p>
+      <div class="source"><strong>Source :</strong> FotMob · Ligue 1 2026–27 · données consultées le 23 octobre 2026.<br>Trajectoires et positions illustratives, sans données de tracking.</div>
+      <span class="tag">Schéma de principe</span>
+    </article>
+    <article class="card">
+      <div class="kicker">02 &nbsp;·&nbsp; Sortie directe</div>
+      <h2>Le jeu long</h2>
+      <div class="stat"><strong>43,8<em>%</em></strong><span><b>21</b><br>longs ballons précis</span></div>
+      <svg class="field" viewBox="0 0 420 230" role="img" aria-label="Schéma de principe d'un long ballon vers une zone de réception suggérée">
+        <defs><marker id="arrowIvory2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#eee7d9"/></marker></defs>
+        <rect class="pitch" x="12" y="12" width="396" height="206" rx="5"/>
+        <path class="marking" d="M12 115H408 M126 12V53 Q210 93 294 53V12 M171 12V32 Q210 52 249 32V12 M188 218V182 Q210 170 232 182V218"/>
+        <path d="M220 178 Q301 154 310 122 Q319 87 292 66" fill="none" stroke="#b43449" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 7" marker-end="url(#arrowRuby2)"/>
+        <defs><marker id="arrowRuby2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#b43449"/></marker></defs>
+        <ellipse cx="292" cy="66" rx="57" ry="25" fill="#a52a3d" fill-opacity=".13" stroke="#bd5969" stroke-width="1.5" stroke-dasharray="5 5"/>
+        <circle class="player-ruby" cx="210" cy="190" r="15"/><text class="node-label" x="210" y="190">S</text>
+        <circle class="player" cx="292" cy="66" r="13"/><text class="node-label" x="292" y="66">C</text>
+        <text class="field-note" x="22" y="31">ZONE DE RÉCEPTION SUGGÉRÉE</text>
+        <text class="field-note" x="22" y="205">TRAJECTOIRE ILLUSTRATIVE · NON GÉOLOCALISÉE</text>
+      </svg>
+      <p class="caption">Le jeu long offre une autre option de relance. FotMob recense 21 longs ballons précis, soit 43,8 %. Ce chiffre éclaire une facette de son jeu, sans suffire à juger chaque choix ni son effet sur l’action.</p>
+      <div class="source"><strong>Source :</strong> FotMob · Ligue 1 2026–27 · données consultées le 23 octobre 2026.<br>Zone et trajectoire illustratives, sans données de tracking.</div>
+      <span class="tag">Schéma de principe</span>
+    </article>
+    <article class="card">
+      <div class="kicker">03 &nbsp;·&nbsp; Protection de la surface</div>
+      <h2>Deux moments à Strasbourg</h2>
+      <div class="stat"><strong>7</strong><span><b>arrêts</b><br>contre Strasbourg</span></div>
+      <svg class="field" viewBox="0 0 420 230" role="img" aria-label="Schéma de principe distinguant le but dévié de la 17e minute et l'arrêt de la 50e">
+        <rect class="pitch" x="12" y="12" width="396" height="206" rx="5"/>
+        <path class="marking" d="M12 115H408 M95 12V72 Q210 118 325 72V12 M151 12V47 Q210 79 269 47V12 M179 218V187 Q210 170 241 187V218"/>
+        <path d="M185 26H235V12H185Z" fill="none" stroke="#857c75" stroke-width="1.5"/>
+        <circle cx="143" cy="89" r="11" fill="#a52a3d" stroke="#eee7d9" stroke-width="1.5"/><text class="minute" x="134" y="92">17′</text>
+        <path d="M143 89 Q166 61 194 36" fill="none" stroke="#b43449" stroke-width="2" stroke-dasharray="5 5"/>
+        <circle cx="273" cy="78" r="12" fill="#eee7d9" stroke="#a52a3d" stroke-width="2"/><text x="264" y="81" fill="#171315" font-size="9" font-weight="700">50′</text>
+        <path d="M273 78 Q248 55 222 38" fill="none" stroke="#eee7d9" stroke-width="2" stroke-dasharray="4 5"/>
+        <path d="M213 25v23 M203 36h20" stroke="#a52a3d" stroke-width="2"/>
+        <text class="event-label" x="26" y="158">17′ · BUT DÉVIÉ</text><text class="event-label" x="242" y="158">50′ · PARADE</text>
+        <text class="field-note" x="22" y="31">PSG — STRASBOURG</text>
+        <text class="field-note" x="22" y="205">POSITIONS ET TRAJECTOIRES ILLUSTRATIVES</text>
+      </svg>
+      <p class="caption">À Strasbourg, Safonov réalise sept arrêts. Le but dévié de Reyna à la 17ᵉ minute et sa parade sur la tête de Harder à la 50ᵉ illustrent deux situations différentes.</p>
+      <div class="source"><strong>Sources :</strong> PSG · Reuters · PSG–Strasbourg, 17 octobre 2026.<br>Repères événementiels documentés; placements du schéma non à l’échelle.</div>
+      <span class="tag">Schéma de principe</span>
+    </article>
+  </section>
+  <section class="compare" aria-labelledby="compare-title">
+    <div class="kicker">04 &nbsp;·&nbsp; Repères de la saison précédente</div>
+    <h2 id="compare-title">Deux profils, un même poste</h2>
+    <p class="compare-intro">Ligue 1 · saison 2025–26. Une comparaison de contexte, sans verdict sur la hiérarchie actuelle.</p>
+    <table aria-label="Comparaison de statistiques de Matvey Safonov et Lucas Chevalier en Ligue 1 2025-2026">
+      <thead><tr><th scope="col">Indicateur</th><th scope="col">Matvey Safonov</th><th scope="col">Lucas Chevalier</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Arrêts réussis</th><td>74,6 %</td><td>71,7 %</td></tr>
+        <tr><th scope="row">Buts encaissés / match</th><td>0,93</td><td>0,76</td></tr>
+      </tbody>
+    </table>
+    <p class="compare-note">Ces indicateurs éclairent deux aspects différents et ne désignent pas un vainqueur. Les apparitions et les périodes de jeu diffèrent ; il faut donc les lire avec prudence.</p>
+    <div class="compare-source"><strong>Source :</strong> Ligue 1 · bilan officiel de la saison 2025–26.</div>
+  </section>
+  <section class="analysis-copy" aria-labelledby="evaluation-title">
+    <div class="kicker">05 &nbsp;·&nbsp; Les critères d’une concurrence juste</div>
+    <h2 id="evaluation-title">La concurrence se juge sur la durée</h2>
+    <p>Pour comparer les deux gardiens dans un cadre cohérent, le staff peut suivre quatre repères sur plusieurs matchs : la qualité des arrêts, la maîtrise aérienne, la relance face au pressing et la régularité. Chaque donnée doit être replacée dans le contexte du match, du temps de jeu et du niveau d’opposition.</p>
+    <p>Aucun chiffre isolé ne suffit à fixer une hiérarchie. Cette grille donne plutôt des critères concrets pour suivre les progrès de chacun et décider à partir de performances répétées.</p>
+  </section>
+  <section class="analysis-copy" aria-labelledby="recruitment-title">
+    <div class="kicker">06 &nbsp;·&nbsp; La décision de recrutement</div>
+    <h2 id="recruitment-title">Réévaluer si une limite revient</h2>
+    <p>Le duo peut d’abord être observé dans la durée. Le PSG pourrait rouvrir la réflexion sur un renfort si une même limite réapparaît dans plusieurs matchs et différentes situations, à la lumière des critères retenus.</p>
+    <p>Cette méthode laisse à Safonov et Chevalier le temps de montrer ce qu’ils peuvent apporter, tout en gardant la décision ouverte si un besoin durable se confirme.</p>
+  </section>
+  <footer>Ces visuels sont des schémas éditoriaux originaux. Les chiffres sont attribués aux sources indiquées; les emplacements et trajectoires ne prétendent pas reproduire un tracking de match.</footer>
+</main>
+</body>
+</html>
