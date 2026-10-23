@@ -3,7 +3,7 @@
 **État :** brouillon V1, en développement; non intégré, non publié.  
 **Angle choisi :** raconter le passage de 0–2 à 3–2 sans réduire la performance du Japon.  
 **Branche :** `feat/nyvo-story-belgium-japan-2018`, créée depuis `feat/nyvo-premium-editorial` au commit `941bc3cb2b7997d6edd8597d529e421754f9ecca`.  
-**Point de reprise :** 23 octobre 2026.
+**Point de reprise :** 23 octobre 2026 — trois chapôs préparés, choix utilisateur en attente.
 
 ## À lire
 1. [ARTICLE_DRAFT.md](ARTICLE_DRAFT.md) — premier texte à développer avec l'utilisateur.
@@ -24,7 +24,7 @@ Le passage sur le Japon et l'analyse prudente du double changement de Martínez 
 Le brouillon relie maintenant le but d'Haraguchi, le poteau touché par Hazard et le 2–0 d'Inui. La frise 04 rappelle aussi la réponse belge avant le second but japonais.
 
 ## Prochaine étape
-Travailler le titre et le chapô, ou vérifier la conclusion. Continuer avec quatre choix A–D et une recommandation.
+Trois propositions de chapô sont maintenant dans `ARTICLE_DRAFT.md` (A recommandée, B séquencée, C analytique). Demander à l'utilisateur de choisir A, B, C ou de réécrire avec lui; puis verrouiller le chapô et travailler le titre/conclusion. Continuer en QCM A–D avec une recommandation.
 
 ## Pour Claude Code
 Lire aussi le [handoff Premium](../../README.md) et le [prompt général](../../PROMPT_CLAUDE.md). Le site NYVO doit rester privé. Ne pas ajouter de secrets au dépôt public, intégrer ou publier cet article sans demande explicite, ni prétendre qu'il est validé. Les positions des joueurs dans le schéma sont indicatives, sans données de tracking. Avant toute intégration, récupérer et comparer les sources actuelles de Sites; ne pas repartir aveuglément d'un snapshot GitHub.
