@@ -37,3 +37,7 @@ Au clic sur une équipe réelle : aperçu, résultats/calendrier, actualités, m
 
 ## 7. Livraison
 Commencer par audit et plan court, puis réaliser sans multiplier les demandes de validation. Tester les parcours de RECETTE.md et corriger les régressions. Fournir diff, captures, tests réellement exécutés, registre des sources/illustrations, nombre de contenus vérifiés, fonctions actives et bloquées. Ne pas annoncer de test iPhone physique ou de lecture vidéo non effectué. Aucun achat ni changement d'accès. Ne pas fusionner de force ni effacer les travaux existants.
+
+
+## Anecdotes en cours
+Avant toute modification d'un récit, lire `handoff/premium-editorial/stories/README.md`, puis le README de l'histoire active. Belgique–Japon 2018 est encore un brouillon; ses positions tactiques sont indicatives. Ne pas annoncer validation, intégration ou publication sans vérification réelle et accord éditorial. Respecter les sources, droits, confidentialité et procédures du handoff.

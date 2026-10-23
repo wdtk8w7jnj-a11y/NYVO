@@ -21,3 +21,7 @@ Les anciennes maquettes comportent des informations fictives, des photos illustr
 Les maquettes sont fournies en WebP optimisé à leur résolution d'origine pour rendre le ZIP transportable. Le manifeste conserve les noms et empreintes SHA-256 des originaux retrouvés, ainsi que les doublons. Ce dossier contient les maquettes récupérables, pas une garantie de retrouver un fichier dont l'envoi avait échoué.
 
 Le dépôt destinataire est public : ne jamais y ajouter de clé, jeton Sites, compte personnel, capture de configuration, réponse fournisseur privée ou catalogue RSS collecté.
+
+
+## Anecdotes en cours
+L'index des anecdotes est dans [stories/README.md](stories/README.md). Le dossier Belgique–Japon 2018 contient un brouillon, ses sources et trois schémas originaux. Consulte [son README](stories/belgium-japan-2018/README.md) avant toute modification. Le récit est en développement; il n'est ni intégré au site ni publié.
