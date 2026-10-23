@@ -2,6 +2,17 @@
 
 > **Brouillon V1, non validé pour publication.** Angle retenu : raconter le renversement en respectant aussi le match du Japon. Faits et repères : [SOURCES.md](SOURCES.md).
 
+## Propositions de chapô — à choisir
+
+**A · Recommandé — récit et tension**  
+Après l’ouverture du score d’Haraguchi, Hazard trouve le poteau. Quatre minutes plus tard, Inui fait passer le Japon à 2–0. Le match semble filer; la Belgique cherche encore le point d’appui qui peut le relancer. [S3]
+
+**B · Lecture de la séquence**  
+À la 48e, le Japon marque. Hazard touche le poteau, puis Kagawa récupère le ballon et sert Inui pour le 2–0. Deux actions rapprochées, deux équipes encore menaçantes : l’écart se creuse sans que la tension retombe. [S3]
+
+**C · Analyse équilibrée**  
+Haraguchi et Inui donnent deux buts d’avance au Japon en quatre minutes. Entre les deux, Hazard touche le poteau. Ce détail empêche de raconter ce 0–2 comme une domination tranquille : le Japon a été incisif, et la Belgique a aussi frôlé sa réponse. [S3]
+
 À 52 minutes, la Belgique est menée de deux buts. Le Japon a frappé deux fois en quatre minutes : Haraguchi ouvre le score à la 48e, Inui double l'avance à la 52e. [S1]
 
 Ce match ne se résume pas à une équipe qui s'effondre et à une autre qui se réveille. Le Japon a construit un avantage réel; la Belgique doit trouver une réponse. La suite tient à des choix précis, deux buts rapprochés, puis une dernière transition jouée jusqu'au bout.
@@ -54,4 +65,4 @@ Le Japon avait mené 2–0 et, selon FIFA, commençait à envisager la prolongat
 - Double changement belge à la 65e : Fellaini et Chadli pour Mertens et Carrasco.
 
 ### À valider ensuite
-Préciser ensemble la place du Japon dans le récit et décider si les onze secondes apparaissent dès le chapô ou seulement dans le schéma.
+Choisir le chapô A, B ou C ci-dessus, ou le réécrire ensemble. Le placement des onze secondes dans le chapô ou seulement dans le schéma reste à décider.
