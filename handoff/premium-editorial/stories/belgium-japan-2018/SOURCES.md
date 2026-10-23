@@ -27,7 +27,7 @@ Les trois SVG sont des schémas originaux créés pour NYVO; pas de photo, logo 
 ## S3 — Japan Football Association, compte rendu du match
 - Page : [Japan National Team comes short from advancing to the quarterfinals](https://www.jfa.jp/eng/samuraiblue/worldcup_2018/news/00017982/)
 - Publié le 3 juillet 2018 par la fédération japonaise.
-- Faits utilisés : tête d'Inui arrêtée à la 31e après un centre de Nagatomo; occasion d'Osako en fin de première période sur un autre centre; combinaison Inui–Shibasaki–Haraguchi à la 48e; Kagawa récupère un ballon dégagé et sert Inui pour le 2–0 à la 52e; coup franc de Honda à 90+2 détourné par Courtois en corner.
+- Faits utilisés : tête d'Inui arrêtée à la 31e après un centre de Nagatomo; occasion d'Osako en fin de première période sur un autre centre; combinaison Inui–Shibasaki–Haraguchi à la 48e; Hazard touche le poteau droit immédiatement après le premier but japonais; Kagawa récupère un ballon dégagé et sert Inui pour le 2–0 à la 52e; coup franc de Honda à 90+2 détourné par Courtois en corner.
 - Limite : compte rendu de la fédération de l'équipe concernée; utilisé pour les actions rapportées, pas comme mesure indépendante de possession ou de supériorité tactique.
 
 

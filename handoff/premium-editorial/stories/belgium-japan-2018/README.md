@@ -20,8 +20,11 @@ La contre-attaque finale est développée en cinq temps dans le brouillon et dan
 ## Étape réalisée — choix A
 Le passage sur le Japon et l'analyse prudente du double changement de Martínez sont dans le brouillon. Les faits distinguent les entrants buteurs des autres actions décisives; le graphique indique que deux des trois buts belges après 65' sont signés par Fellaini et Chadli, sans attribuer la victoire aux seuls remplacements.
 
+## Étape réalisée — transition
+Le brouillon relie maintenant le but d'Haraguchi, le poteau touché par Hazard et le 2–0 d'Inui. La frise 04 rappelle aussi la réponse belge avant le second but japonais.
+
 ## Prochaine étape
-Travailler la transition entre l'avance japonaise et la réponse belge, ou valider le titre et le chapô. Continuer avec quatre choix A–D et une recommandation.
+Travailler le titre et le chapô, ou vérifier la conclusion. Continuer avec quatre choix A–D et une recommandation.
 
 ## Pour Claude Code
 Lire aussi le [handoff Premium](../../README.md) et le [prompt général](../../PROMPT_CLAUDE.md). Le site NYVO doit rester privé. Ne pas ajouter de secrets au dépôt public, intégrer ou publier cet article sans demande explicite, ni prétendre qu'il est validé. Les positions des joueurs dans le schéma sont indicatives, sans données de tracking. Avant toute intégration, récupérer et comparer les sources actuelles de Sites; ne pas repartir aveuglément d'un snapshot GitHub.

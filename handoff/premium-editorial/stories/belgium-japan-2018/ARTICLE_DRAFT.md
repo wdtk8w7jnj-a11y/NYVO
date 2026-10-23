@@ -10,9 +10,9 @@ Ce match ne se résume pas à une équipe qui s'effondre et à une autre qui se 
 
 La fédération japonaise rappelle que le Japon s'était déjà créé des occasions avant de marquer : à la 31e minute, Inui reprend de la tête un centre de Nagatomo, mais Courtois arrête le ballon. En fin de première période, Osako dévie un autre centre rapide de Nagatomo et manque de peu le cadre. [S3]
 
-Le premier but naît d'une combinaison : Inui transmet à Shibasaki, qui lance Haraguchi dans la surface; après avoir pris le dessus sur son défenseur, Haraguchi marque à la 48e. Quatre minutes plus tard, Kagawa récupère un ballon dégagé dans le camp belge et sert Inui. Celui-ci se décale vers la droite puis frappe depuis l'entrée de la surface pour le 2–0. [S3]
+Le premier but naît d'une combinaison : Inui transmet à Shibasaki, qui lance Haraguchi dans la surface; après avoir pris le dessus sur son défenseur, Haraguchi marque à la 48e. La Belgique répond presque aussitôt : selon le compte rendu de la JFA, Hazard touche le poteau droit après l'ouverture du score. À la 52e, quatre minutes après le but d'Haraguchi, Kagawa récupère un ballon dégagé dans le camp belge et sert Inui. Celui-ci se décale vers la droite puis frappe depuis l'entrée de la surface pour le 2–0. [S3]
 
-Ces deux buts racontent deux actions concrètes et rapprochées, pas une simple erreur belge répétée. Le récit doit laisser voir ce que le Japon a construit avant d'aborder la réponse de Martínez.
+Le passage du 1–0 au 2–0 n'est donc pas raconté comme une attaque à sens unique : Hazard frôle l'égalisation, puis le Japon reprend l'avantage dans l'action suivante et double son avance. Cette alternance prépare la réponse belge sans effacer ce que le Japon vient de réussir.
 
 ## À la 65e, Martínez change deux profils
 
