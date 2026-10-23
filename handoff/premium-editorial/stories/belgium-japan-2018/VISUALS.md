@@ -7,6 +7,7 @@ Palette NYVO : noir profond `#09090B`, charbon `#131316`, ivoire `#F4F0E8`, rubi
 | [01-chronologie.svg](assets/01-chronologie.svg) | 5 buts; score final 3–2 | Chronologie (non proportionnelle aux arrêts de jeu). Alt : chronologie des buts Belgique–Japon 2018. |
 | [02-apres-les-changements.svg](assets/02-apres-les-changements.svg) | Changements 65'; buts 69', 74', 90+4; écarts +4, +5, +20 | Encadré sur les repères temporels; la causalité n'est pas démontrée. |
 | [03-contre-final.svg](assets/03-contre-final.svg) | 11 secondes selon FIFA; Courtois → De Bruyne → Meunier → Lukaku → Chadli | Schéma tactique indicatif, sans tracking. Alt : séquence du contre qui mène au but de Chadli; 11 secondes selon FIFA. |
+| [04-parcours-japon.svg](assets/04-parcours-japon.svg) | Temps forts japonais avant et après le 0–2, puis but décisif belge | Repères sélectionnés : 31', fin de 1re période, 48', 52', 90+2', 90+4' | Frise narrative, non exhaustive; faits JFA/FIFA. Alt : occasions du Japon, ses deux buts, le coup franc tardif de Honda puis le but belge. |
 
 ## Intégration
 Largeur fluide, max-width 100 %, lecture mobile 360–390 px, légende « Schéma NYVO; positions indicatives; séquence : FIFA ». En mode anti-spoiler, protéger les cartes et graphiques avec le contenu de l'article. Aucun fichier n'est intégré au site ou publié. Les SVG originaux ne sont pas des photos libres de droits réutilisées.

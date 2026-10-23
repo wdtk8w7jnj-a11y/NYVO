@@ -17,8 +17,11 @@ Le 2 juillet 2018, la Belgique bat le Japon 3–2 en huitième de finale. Haragu
 ## Étape réalisée — choix A
 La contre-attaque finale est développée en cinq temps dans le brouillon et dans [TACTICAL_BREAKDOWN.md](TACTICAL_BREAKDOWN.md). La statistique des onze secondes est attribuée à FIFA. Le schéma 03 conserve des positions indicatives.
 
+## Étape réalisée — choix A
+Le passage sur le Japon est ajouté au brouillon à partir du rapport de la JFA : occasions avant les buts, construction des deux buts et coup franc de Honda à 90+2. Une quatrième frise originale replace ces temps forts dans le récit.
+
 ## Prochaine étape
-Développer le rôle du Japon dans le récit et l'équilibre du ton. Continuer avec des choix éditoriaux A–D, dont un recommandé.
+Poursuivre avec le double changement de Martínez ou travailler le titre et le chapô. Continuer avec quatre choix A–D et une recommandation.
 
 ## Pour Claude Code
 Lire aussi le [handoff Premium](../../README.md) et le [prompt général](../../PROMPT_CLAUDE.md). Le site NYVO doit rester privé. Ne pas ajouter de secrets au dépôt public, intégrer ou publier cet article sans demande explicite, ni prétendre qu'il est validé. Les positions des joueurs dans le schéma sont indicatives, sans données de tracking. Avant toute intégration, récupérer et comparer les sources actuelles de Sites; ne pas repartir aveuglément d'un snapshot GitHub.

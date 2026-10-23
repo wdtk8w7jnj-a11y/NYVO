@@ -1,8 +1,7 @@
 # La contre-attaque de 90+4 — faits et lecture tactique
 
 ## Faits rapportés par FIFA
-1. Le Japon obtient un corner en fin de match; l'occasion ne donne rien.
-2. Courtois capte le ballon puis le relance vers De Bruyne.
+1. À 90+2, Honda tente un coup franc; Courtois détourne le ballon en corner. Sur ce corner, Courtois capte le ballon et relance vers De Bruyne.
 3. De Bruyne progresse sur environ la moitié du terrain et sert Meunier.
 4. Meunier envoie un centre bas dans la surface.
 5. Lukaku laisse passer le ballon; Chadli conclut au second poteau à 90+4.
