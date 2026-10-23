@@ -16,3 +16,9 @@ Source primaire pour le résultat 3–2, les buteurs et minutes (Haraguchi 48e, 
 
 ## Attribution et droits
 Les trois SVG sont des schémas originaux créés pour NYVO; pas de photo, logo d'équipe, capture de diffusion ou illustration de tiers. Crédit prévu : « Schéma NYVO; faits de match : FIFA ». La source des faits ne suggère pas une approbation FIFA. Les créations ne sont pas déclarées domaine public ou « libres de droits » de manière générale : toute licence affichée doit correspondre aux droits du projet et à la licence du dépôt.
+
+## S2 — FIFA, récit rétrospectif du but de Chadli
+- Version française : [Le clou du spectacle signé Chadli](https://www.fifa.com/fr/tournaments/mens/worldcup/canadamexicousa2026/articles/but-nacer-chadli-belgique-japon-russie-2018)
+- Version anglaise : [The Red Devils’ remarkable rally](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/belgium-japan-comeback-2018)
+- Faits additionnels : Courtois relance vers De Bruyne; De Bruyne parcourt environ la moitié du terrain et sert Meunier; centre bas, feinte de Lukaku, Chadli conclut au second poteau. FIFA évalue à onze secondes l'intervalle entre la relance et le but.
+- Limite : les onze secondes sont rapportées par FIFA; le dossier ne prétend pas les avoir mesurées indépendamment image par image.

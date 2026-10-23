@@ -14,8 +14,11 @@
 ## Repères confirmés
 Le 2 juillet 2018, la Belgique bat le Japon 3–2 en huitième de finale. Haraguchi marque à la 48e, Inui à la 52e. À la 65e, Martínez fait entrer Fellaini et Chadli pour Mertens et Carrasco. Vertonghen marque à la 69e, Fellaini à la 74e, puis Chadli à 90+4. La dernière action décrite par FIFA part de Courtois, passe par De Bruyne et Meunier; Lukaku laisse passer le centre et Chadli conclut. Voir [SOURCES.md](SOURCES.md).
 
-## Étape suivante
-Développer ensemble la lecture de la contre-attaque finale, en distinguant ce que FIFA décrit de l'analyse NYVO. Puis compléter les sources, valider le texte et seulement ensuite envisager l'intégration. Garder le prochain choix utilisateur sous forme de quatre réponses A–D avec une recommandation.
+## Étape réalisée — choix A
+La contre-attaque finale est développée en cinq temps dans le brouillon et dans [TACTICAL_BREAKDOWN.md](TACTICAL_BREAKDOWN.md). La statistique des onze secondes est attribuée à FIFA. Le schéma 03 conserve des positions indicatives.
+
+## Prochaine étape
+Développer le rôle du Japon dans le récit et l'équilibre du ton. Continuer avec des choix éditoriaux A–D, dont un recommandé.
 
 ## Pour Claude Code
 Lire aussi le [handoff Premium](../../README.md) et le [prompt général](../../PROMPT_CLAUDE.md). Le site NYVO doit rester privé. Ne pas ajouter de secrets au dépôt public, intégrer ou publier cet article sans demande explicite, ni prétendre qu'il est validé. Les positions des joueurs dans le schéma sont indicatives, sans données de tracking. Avant toute intégration, récupérer et comparer les sources actuelles de Sites; ne pas repartir aveuglément d'un snapshot GitHub.
