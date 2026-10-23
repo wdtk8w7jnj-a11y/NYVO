@@ -2,10 +2,12 @@
 
 > **Brouillon V1, non validé pour publication.** Angle retenu : raconter le renversement en respectant aussi le match du Japon. Faits et repères : [SOURCES.md](SOURCES.md).
 
-## Propositions de chapô — à choisir
+## Chapô retenu — choix A
 
-**A · Recommandé — récit et tension**  
+**Version de travail retenue par l'utilisateur :**  
 Après l’ouverture du score d’Haraguchi, Hazard trouve le poteau. Quatre minutes plus tard, Inui fait passer le Japon à 2–0. Le match semble filer; la Belgique cherche encore le point d’appui qui peut le relancer. [S3]
+
+### Variantes conservées
 
 **B · Lecture de la séquence**  
 À la 48e, le Japon marque. Hazard touche le poteau, puis Kagawa récupère le ballon et sert Inui pour le 2–0. Deux actions rapprochées, deux équipes encore menaçantes : l’écart se creuse sans que la tension retombe. [S3]
@@ -13,9 +15,8 @@ Après l’ouverture du score d’Haraguchi, Hazard trouve le poteau. Quatre min
 **C · Analyse équilibrée**  
 Haraguchi et Inui donnent deux buts d’avance au Japon en quatre minutes. Entre les deux, Hazard touche le poteau. Ce détail empêche de raconter ce 0–2 comme une domination tranquille : le Japon a été incisif, et la Belgique a aussi frôlé sa réponse. [S3]
 
-À 52 minutes, la Belgique est menée de deux buts. Le Japon a frappé deux fois en quatre minutes : Haraguchi ouvre le score à la 48e, Inui double l'avance à la 52e. [S1]
 
-Ce match ne se résume pas à une équipe qui s'effondre et à une autre qui se réveille. Le Japon a construit un avantage réel; la Belgique doit trouver une réponse. La suite tient à des choix précis, deux buts rapprochés, puis une dernière transition jouée jusqu'au bout.
+À la 52e minute du huitième de finale, le Japon mène 2–0. Pour comprendre comment la Belgique a ensuite trouvé sa réponse, il faut d’abord revenir sur la manière dont les Japonais ont construit leur avance et sur la réaction belge entre leurs deux buts. [S1, S3]
 
 ## Le 0–2 japonais ne tombe pas du ciel
 
@@ -65,4 +66,4 @@ Le Japon avait mené 2–0 et, selon FIFA, commençait à envisager la prolongat
 - Double changement belge à la 65e : Fellaini et Chadli pour Mertens et Carrasco.
 
 ### À valider ensuite
-Choisir le chapô A, B ou C ci-dessus, ou le réécrire ensemble. Le placement des onze secondes dans le chapô ou seulement dans le schéma reste à décider.
+Le chapô A est retenu comme version de travail, sans validation finale de l’article. Choisir le titre, puis retravailler la conclusion. Les onze secondes restent développées dans leur section et le schéma associé.
