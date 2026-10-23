@@ -16,9 +16,17 @@ Ces deux buts racontent deux actions concrètes et rapprochées, pas une simple 
 
 ## À la 65e, Martínez change deux profils
 
-Roberto Martínez fait entrer Marouane Fellaini et Nacer Chadli à la place de Dries Mertens et Yannick Carrasco. Le score est toujours de 2–0. [S1] La chronologie invite à regarder ce choix, sans prouver qu'il explique à lui seul le retournement.
+Roberto Martínez fait entrer Marouane Fellaini et Nacer Chadli à la place de Dries Mertens et Yannick Carrasco alors que la Belgique est menée 0–2. [S1, S4]
 
-Quatre minutes plus tard, Jan Vertonghen réduit l'écart. À la 74e, Fellaini égalise. Neuf minutes de chronomètre séparent le double changement du 2–2; les deux entrants font partie des buteurs de cette séquence. [S1] C'est un repère marquant, pas une preuve automatique de causalité. Le récit doit aussi laisser sa place à ce que le Japon a réussi avant ces buts.
+### Ce que la chronologie montre
+
+Quatre minutes après le double changement, Vertonghen réduit l'écart. À la 74e, Fellaini égalise de la tête sur un centre d'Eden Hazard. À 90+4, Chadli, l'autre entrant, marque le but vainqueur. Au total, les remplaçants Fellaini et Chadli inscrivent deux des trois buts belges après la 65e. [S1, S2, S4]
+
+Le compte rendu de la JFA remarque que, dans la phase qui suit les changements, Meunier initie des attaques depuis le côté droit. Un rapport de match de FIFA décrit l'entrée de Fellaini comme un changement d'approche et évoque son profil aérien; le but de l'égalisation vient bien d'une tête. Ces éléments donnent une piste de lecture, sans transformer la suite des événements en preuve de causalité. [S3, S4]
+
+### Ce que cela ne permet pas d'affirmer
+
+La chronologie seule ne démontre pas que les deux remplacements ont « fait gagner » la Belgique. Vertonghen marque aussi dans cette séquence; le centre d'Hazard amène le 2–2; le dernier but dépend ensuite de De Bruyne, Meunier, Lukaku et Chadli. On peut dire que les deux entrants ont marqué et que leurs profils ont compté dans ces actions. On ne peut pas isoler leur effet de celui du collectif, des joueurs déjà sur le terrain ni des réponses du Japon.
 
 ## Le contre de onze secondes
 

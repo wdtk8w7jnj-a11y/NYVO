@@ -29,3 +29,9 @@ Les trois SVG sont des schémas originaux créés pour NYVO; pas de photo, logo 
 - Publié le 3 juillet 2018 par la fédération japonaise.
 - Faits utilisés : tête d'Inui arrêtée à la 31e après un centre de Nagatomo; occasion d'Osako en fin de première période sur un autre centre; combinaison Inui–Shibasaki–Haraguchi à la 48e; Kagawa récupère un ballon dégagé et sert Inui pour le 2–0 à la 52e; coup franc de Honda à 90+2 détourné par Courtois en corner.
 - Limite : compte rendu de la fédération de l'équipe concernée; utilisé pour les actions rapportées, pas comme mesure indépendante de possession ou de supériorité tactique.
+
+
+## S4 — FIFA, compte rendu du match publié en 2018
+- Page : [Belgium dig deep to edge out Japan](https://inside.fifa.com/tournaments/mens/worldcup/2018russia/news/belgium-dig-deep-edge-japan-2980668)
+- Faits et analyse publiés après le match : entrée de Fellaini à la 65e décrite comme un changement d'approche; Vertonghen réduit l'écart à 69e; Fellaini égalise de la tête à 74e.
+- Limite : le « changement d'approche » est la lecture du journaliste FIFA, non une déclaration tactique documentée de Martínez. Le brouillon le présente comme une analyse attribuée, et non comme une causalité démontrée.
